@@ -2,6 +2,7 @@ import React from "react"
 import Video from "./Video"
 
 const Main = () => {
+    const [video, setVideo] = React.useState("video_1")
 
     const VideoListData = [
         {
@@ -111,10 +112,10 @@ const Main = () => {
     ];
 
     return (
-        <article>
+        <article setVideo={setVideo}>
             {
                 VideoListData.map((elem) => {
-                    return <Video key={elem.id} data={elem} />
+                    return <Video key={elem.id} data={elem}/>
                 })
             }
         </article>

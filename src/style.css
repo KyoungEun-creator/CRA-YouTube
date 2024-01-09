@@ -9,6 +9,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: white;
+  z-index: 100;
 }
 #headerLeft {
   display: flex;
@@ -502,4 +503,100 @@ article {
 }
 .shortsBtnLabel {
   font-size: 15px;
+}
+/* ==================== Screen ==================== */
+#screenContainer {
+  z-index: 0;
+  position: relative;
+  width: 930px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 72px;
+  padding: 70px 20px 0 0px;
+}
+#screenImg {
+  width: 100%;
+  height: 100%;
+}
+#videoControlContainer {
+  position: absolute;
+  bottom: 0;
+  width: 930px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 0 5px 0;
+  box-sizing: border-box;
+}
+#videoControlLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#videoControlRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.videoControlBtns {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px 0 10px;
+}
+.videoControlBtnImgs {
+  width: 20px;
+  height: 20px;
+}
+/* ==================== VideoData ==================== */
+#videoData {
+  margin: 10px 0 10px 0;
+  width: 930px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin-left: 72px;
+  border: 1px solid orange;
+  padding: 0;
+}
+#videoDataMiddle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#videoDataMiddleLeft {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid orangered;
+  align-items: center;
+}
+
+#videoDataUploaderProfileImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 12px 0 0;
+}
+#videoDataUploader {
+  border: 1px solid rebeccapurple;
+  margin-right: 12px;
+}
+#subscribeBtn {
+  background-color: black;
+  color: white;
+  width: 60px;
+  height: 40px;
+  border-radius: 20px;
+}
+#videoDataMiddleRight {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+}
+.videoDataMetaImg {
+  width: 30px;
+  height: 30px;
 }
