@@ -4,10 +4,10 @@ import ShortsBtnsContainer from "./ShortsBtnsContainer"
 
 const Shorts = () => {
     return (
-        <div id="shortsArticle">
+        <article id="shortsArticle">
             <ShortsVideo />
             <ShortsBtnsContainer />
-        </div>
+        </article>
     )
 }
 

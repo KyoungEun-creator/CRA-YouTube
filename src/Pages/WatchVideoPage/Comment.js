@@ -11,17 +11,21 @@ const Comment = (props) => {
             </div>
             <div id="commentDetails">
                 <div id="commentMetaData">
-                    {channelName} {commentUpload}
+                    <span id="commentUploader">{channelName}</span> 
+                    <span id="commentUploadDate">{commentUpload}</span>
                 </div>
                 {commentContent}
                 <div id="aboutComment">
-                    <button id="videoDataThumbUpBtn">
-                        <img className="videoDataMetaImg" src="imgs/thumb-up.png" />
+                    <span id="commentThumbUp">
+                        <span id="commentThumbUpBtn" className="commentThumbBtn">
+                            <img className="commentThumbImg" src="imgs/thumb-up.png" />
+                        </span>
                         2.1
-                    </button>
-                    <button id="videoDataThumbDownBtn">
-                        <img className="videoDataMetaImg" src="imgs/thumb-down.png" />
-                    </button>
+                    </span>
+                    <span id="commentThumbDownBtn" className="commentThumbBtn">
+                        <img className="commentThumbImg" src="imgs/thumb-down.png" />
+                    </span>
+                    <button id="sendReplyBtn">답글</button>
                 </div>
             </div>
         </div>
