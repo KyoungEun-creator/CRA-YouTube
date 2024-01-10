@@ -1,11 +1,11 @@
 import React from "react"
 import "./style.css"
 import "./commonStyle.css"
-import HeaderContainer from "./components/HeaderContainer"
-import Nav from "./components/Nav"
-import Main from "./components/Main"
-import Shorts from "./components/Shorts"
-import Watch from "./components/Watch"
+import HeaderContainer from "./Components/HeaderContainer"
+import Nav from "./Components/Nav/Nav"
+import Main from "./Pages/MainPage/Main"
+import Shorts from "./Pages/ShortsPage/Shorts"
+import Watch from "./Pages/WatchVideoPage/Watch"
 
 const App = () => {
     const [page, setPage] = React.useState("home")

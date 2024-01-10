@@ -1,6 +1,6 @@
 import React from "react"
-import Header from "./Header"
-import DetailedNav from "./DetailedNav"
+import Header from "./Header/Header"
+import DetailedNav from "./DetailedNav/DetailedNav"
 
 const HeaderContainer = (props) => {
     const { setPage } = props

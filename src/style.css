@@ -506,15 +506,12 @@ article {
 }
 /* ==================== Screen ==================== */
 #screenContainer {
-  z-index: 0;
   position: relative;
   width: 930px;
-  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-left: 72px;
-  padding: 70px 20px 0 0px;
+  padding: 0 20px 0 0px;
 }
 #screenImg {
   width: 100%;
@@ -558,9 +555,10 @@ article {
   height: fit-content;
   display: flex;
   flex-direction: column;
-  margin-left: 72px;
-  border: 1px solid orange;
   padding: 0;
+}
+h1 {
+  margin-top: 10px;
 }
 #videoDataMiddle {
   display: flex;
@@ -570,10 +568,8 @@ article {
 #videoDataMiddleLeft {
   display: flex;
   flex-direction: row;
-  border: 1px solid orangered;
   align-items: center;
 }
-
 #videoDataUploaderProfileImg {
   width: 40px;
   height: 40px;
@@ -581,7 +577,6 @@ article {
   margin: 0 12px 0 0;
 }
 #videoDataUploader {
-  border: 1px solid rebeccapurple;
   margin-right: 12px;
 }
 #subscribeBtn {
@@ -592,11 +587,129 @@ article {
   border-radius: 20px;
 }
 #videoDataMiddleRight {
-  border: 1px solid green;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  width: 300px;
 }
 .videoDataMetaImg {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
+  margin: 3px 3px 3px 3px;
+}
+.videoDataBtns {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+  height: 40px;
+}
+.videoDataBtns:hover {
+  background-color: lightgray;
+}
+#videoDataThumbUpBtn {
+  padding: 10px 15px 10px 15px;
+  justify-content: space-between;
+  border-radius: 45% 0 0 45%;
+  width: 95px;
+}
+#videoDataThumbDownBtn {
+  border-radius: 0 45% 45% 0;
+  width: 50px;
+  justify-content: center;
+  margin-right: 20px;
+}
+#videoDataShareBtn {
+  border-radius: 45%;
+  justify-content: center;
+  width: 70px;
+  margin-right: 20px;
+}
+#videoDataMoreBtn {
+  width: 40px;
+  border-radius: 50%;
+  justify-content: center;
+}
+#videoDataBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  padding: 10px 20px 20px 10px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 120px;
+  margin: 20px 0 20px 0;
+  background-color: lightgray;
+  border-radius: 10px 10px 10px 10px;
+}
+#videoDataBottomMetaData {
+  font-weight: bold;
+}
+/* ==================== RecommendedVideo ==================== */
+#recommendedVideoContainer {
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 30px 15px 0;
+}
+.recommendedVideoThumbnailBox {
+  position: relative;
+  z-index: -1;
+  margin-right: 10px;
+}
+.recommendedVideoThumbnail {
+  object-fit: cover;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+}
+#recommendedVideoDataContainer {
+  display: flex;
+  flex-direction: column;
+}
+/* ==================== Comment ==================== */
+#commentForm {
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid red; */
+  margin-bottom: 20px;
+  width: 930px;
+  height: fit-content;
+}
+#commentDetails {
+  display: flex;
+  flex-direction: column;
+}
+/* ==================== CommentsContainer ==================== */
+#commentsContainer {
+  display: flex;
+  flex-direction: column;
+}
+#commentsCount {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+#addComment {
+  width: 930px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+#commentWriter {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+#writeComment {
+  flex-grow: 1;
+}
+/* ==================== Watch ==================== */
+#watchVideoPage {
+  z-index: 0;
+  margin-left: 72px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
 }
