@@ -35,11 +35,10 @@ const Watch = () => {
                 }
                 <CommentsContainer />
             </div>
-            <div>
+            <div id="recommendationContainer">
                 <RecommendationList />
             </div>
-        </div>
-        
+        </div>     
     )
 }
 

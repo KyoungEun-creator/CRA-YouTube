@@ -1,9 +1,10 @@
 import React from "react"
 import Video from "./Video"
 
-const Main = () => {
-    const [video, setVideo] = React.useState("video_1")
+const Main = (props) => {
 
+    const { setPage } = props
+    
     const VideoListData = [
         {
             id: "video_1",
@@ -112,10 +113,10 @@ const Main = () => {
     ];
 
     return (
-        <article setVideo={setVideo}>
+        <article>
             {
                 VideoListData.map((elem) => {
-                    return <Video key={elem.id} data={elem}/>
+                    return <Video key={elem.id} data={elem} setPage={setPage}/>
                 })
             }
         </article>

@@ -1,7 +1,8 @@
 import React from "react"
 
 const Video = (props) => {
-    const { moveToVideoUrl, thumbnailImgSrc, thumbnailVideoSrc, runningTime, channelProfileUrl, channelProfileImgSrc, videoTitle, channelName, view, upload } = props.data;
+    const { id, thumbnailImgSrc, thumbnailVideoSrc, runningTime, channelProfileUrl, channelProfileImgSrc, videoTitle, channelName, view, upload } = props.data;
+    const { setPage } = props
 
     // ------------------- .contents-row-item 호버 이벤트 -------------------
     const [isVideoVisible, setIsVideoVisible] = React.useState(false)
@@ -44,15 +45,19 @@ const Video = (props) => {
         uploadMention = `${currentDate - uploadDate}일 전`
     }
 
+    const watchVideoEvent = (videoNum) => {
+        setPage(videoNum)
+    }
+
     return (
-        <section className="contents-row-item" onMouseOver={videoDisplayBlockEvent} onMouseOut={videoDisplayNoneEvent}>
-            <a href={moveToVideoUrl}>
+        <section className="contents-row-item" onMouseOver={videoDisplayBlockEvent} onMouseOut={videoDisplayNoneEvent} onClick={()=>watchVideoEvent(id)}>
+            {/*<a href={moveToVideoUrl}>*/}
                 <div className="thumbnail-box">
                     <img className="thumbnail" src={thumbnailImgSrc} style={{display: isVideoVisible ? "none" : "block"}}/>
                     <iframe className="thumbnail-video" style={{display: isVideoVisible ? "block" : "none"}} src={thumbnailVideoSrc} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     <div className="time-status"> {runningTime} </div>
                 </div>
-            </a>
+            {/*</a>*/}
             <div className="contents-details" onMouseOver={detailBtnDisplayBlockEvent} onMouseOut={detailBtnDisplayNoneEvent}>
                 <a href={channelProfileUrl}>
                     <img className="avatar" src={channelProfileImgSrc} />
