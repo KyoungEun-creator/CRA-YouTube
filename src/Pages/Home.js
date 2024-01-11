@@ -1,12 +1,15 @@
 import React from "react"
-import Header from "../Components/Header/Header"
+import HeaderContainer from "../Components/HeaderContainer"
 import MainContainer from "./MainPage/MainContainer"
+// import { Link } from "react-router-dom"
+
 
 const Home = () => {
     return (
         <>
-            <Header />
+            <HeaderContainer />
             <MainContainer />
+            {/* <Link to="./ShortsHome">쇼츠</Link> */}
         </>
     )
 }

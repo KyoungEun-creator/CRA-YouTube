@@ -1,4 +1,5 @@
 import React from "react"
+// import { Link } from "react-router-dom"
 import HoverAlertItem from "./HoverAlertItem"
 
 const Header = (props) => {
@@ -55,7 +56,7 @@ const Header = (props) => {
                 <button id="navOpenBtn" onClick={navOpenEvent}>
                     <img id="navOpenBtnImg" src="imgs/bars-solid.svg" />
                 </button>
-                <a href="https://www.youtube.com/" title="YouTube 홈">
+                <a href="https://www.youtube.com/" title="youtube">
                     <img id="youtubePremiumLogo" src="imgs/YouTube_Premium_logo.svg" alt="Youtube 홈" />
                     <span id="countryCode">KR</span>
                 </a>

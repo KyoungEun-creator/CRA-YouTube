@@ -40,6 +40,8 @@ const ShortsBtnsContainer = () => {
         }
     ]
 
+    // 나중에 각 버튼에 대한 이벤트가 추가될 경우 여기서
+
     return (
         <div id="shortsBtnsContainer">
             {
