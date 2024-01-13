@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const Screen = (props) => {
+const WatchScreenItem = (props) => {
 
     const { thumbnailImgSrc, runningTime } = props.data
 
@@ -42,4 +42,4 @@ const Screen = (props) => {
     )
 }
 
-export default Screen
+export default WatchScreenItem

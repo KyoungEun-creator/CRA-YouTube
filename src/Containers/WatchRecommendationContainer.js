@@ -1,7 +1,7 @@
-import React from "react"
-import RecommendedVideo from "./RecommendedVideo"
+import React from "react";
+import WatchRecommendationItem from "../Components/WatchRecommendationItem";
 
-const Recommendation = () => {
+const WatchRecommendationContainer = () => {
 
     const RecommendationVideosData = [
         {
@@ -118,11 +118,11 @@ const Recommendation = () => {
         <>
             {
                 RecommendationVideosData.map((elem) => {
-                    return <RecommendedVideo key={elem.id} data={elem} />
+                    return <WatchRecommendationItem key={elem.id} data={elem} />
                 })
             }
         </>
     )
 }
 
-export default Recommendation
+export default WatchRecommendationContainer

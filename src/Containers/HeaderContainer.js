@@ -1,8 +1,9 @@
-import React from "react"
+import React from "react";
 // import { Link } from "react-router-dom"
-import HoverAlertItem from "./HoverAlertItem"
+import HeaderHoverAlertItem from "../Components/HeaderHoverAlertItem";
 
-const Header = (props) => {
+const HeaderContainer = (props) => {
+    
     const { isNavOpen, setIsNavOpen } = props
 
     const HeaderMiddleItemData = [
@@ -71,7 +72,7 @@ const Header = (props) => {
                     </div>
                     {
                         HeaderMiddleItemData.map((elem) => {
-                            return <HoverAlertItem key={elem.id} data={elem}/>
+                            return <HeaderHoverAlertItem key={elem.id} data={elem}/>
                         })
                     }
                 </span> 
@@ -79,7 +80,7 @@ const Header = (props) => {
             <div id="headerRight">
                 {
                     HeaderRightItemData.map((elem) => {
-                        return <HoverAlertItem key={elem.id} data={elem} isHover/>
+                        return <HeaderHoverAlertItem key={elem.id} data={elem} isHover/>
                     })
                 }
             </div>
@@ -87,4 +88,4 @@ const Header = (props) => {
     )
 }
 
-export default Header
+export default HeaderContainer

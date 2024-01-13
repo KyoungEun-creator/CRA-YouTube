@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const RecommendedVideo = (props) => {
+const WatchRecommendationItem = (props) => {
 
     const { thumbnailImgSrc, runningTime, videoTitle, channelName, view, upload } = props.data
 
@@ -20,4 +20,4 @@ const RecommendedVideo = (props) => {
         </div>
     )
 }
-export default RecommendedVideo
+export default WatchRecommendationItem

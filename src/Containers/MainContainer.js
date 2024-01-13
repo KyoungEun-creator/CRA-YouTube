@@ -1,7 +1,7 @@
-import React from "react"
-import Video from "./Video"
+import React from "react";
+import MainVideoItem from "../Components/MainVideoItem";
 
-const Main = (props) => {
+const MainContainer = (props) => {
 
     const { setPage } = props
     
@@ -116,11 +116,11 @@ const Main = (props) => {
         <article>
             {
                 VideoListData.map((elem) => {
-                    return <Video key={elem.id} data={elem} setPage={setPage}/>
+                    return <MainVideoItem key={elem.id} data={elem} setPage={setPage}/>
                 })
             }
         </article>
     )
 }
 
-export default Main
+export default MainContainer

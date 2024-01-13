@@ -1,6 +1,7 @@
-import React from "react"
+import React from "react";
 
-const HoverAlertItem = (props) => {
+const HeaderHoverAlertItem = (props) => {
+    
     const { idName, imgId, imgClassName, imgSrc, tagContent, alarmNum } = props.data
     const { isHover } = props
 
@@ -30,4 +31,4 @@ const HoverAlertItem = (props) => {
     )
 }
 
-export default HoverAlertItem
+export default HeaderHoverAlertItem

@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const NavItem = (props) => {
+const NavBtnItem = (props) => {
     const { value, title, imgSrc, label } = props.data
     const { setPage } = props
 
@@ -29,4 +29,4 @@ const NavItem = (props) => {
     )
 }
 
-export default NavItem
+export default NavBtnItem

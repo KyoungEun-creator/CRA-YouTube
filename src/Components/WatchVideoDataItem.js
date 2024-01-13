@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const VideoDataContainer = (props) => {
+const WatchVideoDataItem = (props) => {
 
     const { videoTitle, channelName, view, upload, channelProfileImgSrc, subscribers } = props.data
 
@@ -45,4 +45,4 @@ const VideoDataContainer = (props) => {
     )
 }
 
-export default VideoDataContainer
+export default WatchVideoDataItem

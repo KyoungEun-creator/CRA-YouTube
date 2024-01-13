@@ -1,7 +1,7 @@
-import React from "react"
-import NavItem from "./NavItem"
+import React from "react";
+import NavBtnItem from "../Components/NavBtnItem";
 
-const Nav = (props) => {
+const NavContainer = (props) => {
     const { setPage } = props
 
     const NavBtnData = [
@@ -53,11 +53,11 @@ const Nav = (props) => {
         <nav id="implicit-nav">
             {
                 NavBtnData.map((elem) => {
-                    return <NavItem key={elem.id} data={elem} setPage={setPage}/>
+                    return <NavBtnItem key={elem.id} data={elem} setPage={setPage}/>
                 })   
             }
         </nav>
     )
 }
 
-export default Nav
+export default NavContainer

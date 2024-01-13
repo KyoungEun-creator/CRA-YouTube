@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const Comment = (props) => {
+const WatchCommentItem = (props) => {
 
     const { channelProfileImgSrc, channelName, commentUpload, commentContent } = props.data
 
@@ -32,4 +32,4 @@ const Comment = (props) => {
     )
 }
 
-export default Comment
+export default WatchCommentItem

@@ -1,5 +1,5 @@
-import React from "react"
-import ShortsBtnItem from "./ShortsBtnItem"
+import React from "react";
+import ShortsBtnItem from "../Components/ShortsBtnItem";
 
 const ShortsBtnsContainer = () => {
     

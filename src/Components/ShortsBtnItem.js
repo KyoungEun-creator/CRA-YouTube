@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const ShortsBtnItem = (props) => {
     const { imgClassName, imgSrc, label, tagContent } = props.data

@@ -1,8 +1,8 @@
-import React from "react"
-import DetailedNavItem from "./DetailedNavItem"
-import DetailedNavFooterItem from "./DetailedNavFooterItem"
+import React from "react";
+import DetailedNavItem from "../Components/DetailedNavItem";
+import DetailedNavFooterItem from "../Components/DetailedNavFooterItem";
 
-const DetailedNav = (props) => {
+const DetailedNavContainer = (props) => {
     const { isNavOpen } = props
     const { setPage } = props
 
@@ -366,4 +366,4 @@ const DetailedNav = (props) => {
     )
 }
 
-export default DetailedNav
+export default DetailedNavContainer

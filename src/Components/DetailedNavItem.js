@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const DetailedNavItem = (props) => {
     const { value, title, className, imgSrc, label } = props.data

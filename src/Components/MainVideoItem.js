@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const Video = (props) => {
+const MainVideoItem = (props) => {
     const { id, thumbnailImgSrc, thumbnailVideoSrc, runningTime, channelProfileUrl, channelProfileImgSrc, videoTitle, channelName, view, upload } = props.data;
     const { setPage } = props
 
@@ -79,4 +79,4 @@ const Video = (props) => {
     )
 }
 
-export default Video
+export default MainVideoItem

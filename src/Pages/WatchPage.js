@@ -1,8 +1,8 @@
-import React from "react"
-import Screen from "./Screen"
-import VideoDataContainer from "./VideoDataContainer"
-import CommentsContainer from "./CommentsContainer"
-import RecommendationList from "./RecommendationList"
+import React from "react";
+import WatchScreenItem from "../Components/WatchScreenItem";
+import WatchVideoDataItem from "../Components/WatchVideoDataItem";
+import WatchCommentsContainer from "../Containers/WatchCommentsContainer";
+import WatchRecommendationContainer from "../Containers/WatchRecommendationContainer";
 
 const Watch = () => {
 
@@ -25,18 +25,18 @@ const Watch = () => {
             <div>
                 {
                     watchVideoData.map((elem) => {
-                        return <Screen key={elem.id} data={elem} />
+                        return <WatchScreenItem key={elem.id} data={elem} />
                     })
                 }
                 {
                     watchVideoData.map((elem) => {
-                        return <VideoDataContainer key={elem.id} data={elem} />
+                        return <WatchVideoDataItem key={elem.id} data={elem} />
                     })
                 }
-                <CommentsContainer />
+                <WatchCommentsContainer />
             </div>
             <div id="recommendationContainer">
-                <RecommendationList />
+                <WatchRecommendationContainer />
             </div>
         </div>     
     )

@@ -1,7 +1,7 @@
-import React from "react"
-import Comment from "./Comment"
+import React from "react";
+import WatchCommentItem from "../Components/WatchCommentItem";
 
-const CommentsContainer = () => {
+const WatchCommentsContainer = () => {
 
     const commentsListData = [
         {
@@ -35,11 +35,11 @@ const CommentsContainer = () => {
             </div>
             {
                 commentsListData.map((elem) => {
-                    return <Comment key={elem.id} data={elem} />
+                    return <WatchCommentItem key={elem.id} data={elem} />
                 })
             }
         </div>
     )
 }
 
-export default CommentsContainer
+export default WatchCommentsContainer
