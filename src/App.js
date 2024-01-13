@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HeaderContainer from "./Containers/HeaderContainer";
+import DefaultContainer from "./Containers/DefaultContainer";
 import MainPage from "./Pages/MainPage";
 import ShortsPage from "./Pages/ShortsPage";
 import WatchPage from "./Pages/WatchPage";
 
 const App = () => {
-    const [page, setPage] = React.useState("home")
+    const [ page, setPage ] = React.useState("home")
 
     return (
         <>
-            <HeaderContainer setPage={setPage} />
+            <DefaultContainer setPage={setPage} />
             { 
                 page === "home" 
                 ? <MainPage setPage={setPage} /> 
