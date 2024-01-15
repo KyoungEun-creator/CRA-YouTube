@@ -1,6 +1,6 @@
 import React from "react";
 import NavContainer from "../Containers/NavContainer";
-import ShortsContainer from "../Containers/ShortsContainer";
+import ShortsBtnsContainer from "../Containers/ShortsBtnsContainer";
 
 const ShortsPage = (props) => {
 
@@ -9,8 +9,10 @@ const ShortsPage = (props) => {
     return (
         <>
             <NavContainer setPage={setPage}/>
-            <ShortsContainer />
-            {/* 쇼츠 컴포넌트를 여기에 넣어줘도 무방하지 않을까 */}
+            <article id="shortsArticle">
+                <img id="shortsVideo" src="imgs/shorts.jpeg" />
+                <ShortsBtnsContainer />
+            </article>
         </>
     )
 }

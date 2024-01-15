@@ -1,7 +1,5 @@
 import React from "react";
 
-// ------------------- upload 시점과 현시점 간의 차이 계산을 통한 경과기간 도출 모듈 -------------------
-
 const UploadMentionModule = (props) => {
     const { upload } = props.data
 

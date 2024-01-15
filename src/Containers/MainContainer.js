@@ -78,7 +78,7 @@ const MainContainer = (props) => {
             thumbnailVideoSrc: "https://www.youtube.com/embed/ezzDBTX7Z3w?si=670s8l40UbIdCITs",
             runningTime: "8:14:31",
             channelProfileUrl: "https://www.youtube.com/@jazzoppa",
-            channelProfileImgSrc: "https://yt3.ggpht.com/Xo80SrZKXQbOIf3vxV_rbspOArWwdODWrMyQaV_k-xhIKGvCv7h1uPqchD-m8ZDxm59Ix01xxA=s68-c-k-c0x00ffffff-no-rj",
+            channelProfileImgSrc: "https://yt3.ggpht.com/ayr7hPQ8q04Lms3TZpp9lkZosTjSo4euJ0l_pIyjsC9OhZkqXh7fo7AnHJwmErEiTWBbnoSE=s88-c-k-c0x00ffffff-no-rj",
             videoTitle: "'재진스 pt.III' | 뉴진스 재즈 플리 pt.III [playlist]",
             channelName: "재즈오빠 Jazzoppa",
             view: "27만회",
