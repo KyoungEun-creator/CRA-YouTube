@@ -1,8 +1,11 @@
 import React from "react";
+import UploadMentionModule from "./UploadMentionModule";
 
 const WatchVideoDataItem = (props) => {
 
-    const { videoTitle, channelName, view, upload, channelProfileImgSrc, subscribers } = props.data
+    const { videoTitle, channelName, view, channelProfileImgSrc, subscribers } = props.data
+
+    const uploadMention = UploadMentionModule({ data: props.data })
 
     return (
         <article id="videoData">
@@ -36,7 +39,7 @@ const WatchVideoDataItem = (props) => {
                 </div>
             </div>
             <div id="videoDataBottom">
-                <div id="videoDataBottomMetaData">조회수 {view} {upload}</div>
+                <div id="videoDataBottomMetaData">조회수 {view} {uploadMention}</div>
                 <br/>스웨덴의 전설적인 재즈 피아니스트 얀 요한손의 두 음반,
                 <br/>≪Jazz på svenska≫와 ≪Jazz på ryska≫의 명곡들을 전합니다.
                 <br/>…더보기

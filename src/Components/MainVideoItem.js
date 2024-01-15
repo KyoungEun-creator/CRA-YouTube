@@ -1,7 +1,8 @@
 import React from "react";
+import UploadMentionModule from "./UploadMentionModule";
 
 const MainVideoItem = (props) => {
-    const { id, thumbnailImgSrc, thumbnailVideoSrc, runningTime, channelProfileUrl, channelProfileImgSrc, videoTitle, channelName, view, upload } = props.data;
+    const { id, thumbnailImgSrc, thumbnailVideoSrc, runningTime, channelProfileUrl, channelProfileImgSrc, videoTitle, channelName, view } = props.data
     const { setPage } = props
 
     // ------------------- .contents-row-item 호버 이벤트 -------------------
@@ -24,27 +25,10 @@ const MainVideoItem = (props) => {
         setIsDetailBtnVisible(false)
     }
 
-    // ------------------- upload 시점과 현시점 간의 차이 계산을 통한 경과기간 도출 모듈 -------------------
-    const now = new Date()
-    const currentYear = now.getFullYear()
-    const currentMonth = now.getMonth()+1
-    const currentDate = now.getDate()
+    //  ------------------- 업로드 경과 시간 도출 -------------------
+    const uploadMention = UploadMentionModule({ data: props.data })
 
-    let uploadMention = ""
-    const uploadYear = upload.split('.')[0]
-    const uploadMonth = upload.split('.')[1]
-    const uploadDate = upload.split('.')[2]
-
-    if (currentYear - uploadYear > 0) {
-        uploadMention = `${currentYear - uploadYear}년 전`
-    }
-    else if (currentMonth - uploadMonth > 0) {
-        uploadMention = `${currentMonth - uploadMonth}개월 전`
-    }
-    else if (currentDate - uploadDate > 0) {
-        uploadMention = `${currentDate - uploadDate}일 전`
-    }
-
+    //  ------------------- 비디오 시청 페이지로 이동 이벤트 -------------------
     const watchVideoEvent = (videoNum) => {
         setPage(videoNum)
     }

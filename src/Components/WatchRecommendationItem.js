@@ -1,8 +1,12 @@
 import React from "react";
+import UploadMentionModule from "./UploadMentionModule";
 
 const WatchRecommendationItem = (props) => {
 
-    const { thumbnailImgSrc, runningTime, videoTitle, channelName, view, upload } = props.data
+    const { thumbnailImgSrc, runningTime, videoTitle, channelName, view } = props.data
+    
+    //  ------------------- 업로드 경과 시간 도출 -------------------
+    const uploadMention = UploadMentionModule({ data: props.data })
 
     return (
         <div id="recommendedVideoContainer">
@@ -14,7 +18,7 @@ const WatchRecommendationItem = (props) => {
                     <h3 className="title"> {videoTitle} </h3>
                     <div>
                         <div className="metadatas"> {channelName} </div>
-                        <div className="metadatas"> 조회수 {view} ∙ {upload} </div>
+                        <div className="metadatas"> 조회수 {view} ∙ {uploadMention} </div>
                     </div>
                 </div>
         </div>
