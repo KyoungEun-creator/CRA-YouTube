@@ -6,7 +6,7 @@ const DetailedNavItem = (props) => {
     const { setPage } = props;
 
     // ------------------- .exnav-btn 호버 이벤트 -------------------
-    const [isHovered, handleHoverOnEvent, handleHoverOffEvent] = useHover(false);
+    const [isHovered, exNavBtnHoverEvent, exNavBtnHoverOutEvent] = useHover(false);
     
     const btnStyle = {
         backgroundColor: isHovered ? "lightgray" : "transparent"
@@ -28,7 +28,7 @@ const DetailedNavItem = (props) => {
                 )
                 :
                 (
-                    <button className="exnav-btn" value={value} title={title} type="button" onMouseOver={handleHoverOnEvent} onMouseOut={handleHoverOffEvent} style={btnStyle} onClick={() => changePageEvent(value)}>
+                    <button className="exnav-btn" value={value} title={title} type="button" onMouseOver={exNavBtnHoverEvent} onMouseOut={exNavBtnHoverOutEvent} style={btnStyle} onClick={() => changePageEvent(value)}>
                         <img className={className} src={imgSrc} alt={alt}/>
                         <div className="exnav-name"> {label} </div>
                     </button>

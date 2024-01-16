@@ -5,10 +5,10 @@ import DetailedNavContainer from "./DetailedNavContainer";
 
 const DefaultContainer = (props) => {
 
-    const { setPage } = props
+    const { setPage } = props;
 
     // ------------------- #navOpenBtn 클릭 이벤트 -------------------
-    const [isNavOpen, setIsNavOpen] = useState(false)
+    const [isNavOpen, setIsNavOpen] = useState(false);
 
     return (
         <>

@@ -6,7 +6,7 @@ const NavBtnItem = (props) => {
     const { setPage } = props;
 
     // ------------------- .imnav-btn 호버 이벤트 -------------------
-    const [isHovered, handleHoverOnEvent, handleHoverOffEvent] = useHover(false);
+    const [isHovered, imNavBtnHoverEvent, imNavBtnHoverOutEvent] = useHover(false);
 
     const btnStyle = {
         backgroundColor: isHovered ? "lightgray" : "transparent"
@@ -18,7 +18,7 @@ const NavBtnItem = (props) => {
     };
 
     return (
-        <button className="imnav-btn" value={value} title={title} onMouseOver={handleHoverOnEvent} onMouseOut={handleHoverOffEvent} style={btnStyle} onClick={() => changePageEvent(value)}>
+        <button className="imnav-btn" value={value} title={title} onMouseOver={imNavBtnHoverEvent} onMouseOut={imNavBtnHoverOutEvent} style={btnStyle} onClick={() => changePageEvent(value)}>
             <img className="imnav-btn-img" src={imgSrc} alt={alt}/>
             <div className="imnav-name"> {label} </div>
         </button>

@@ -7,10 +7,10 @@ const HeaderHoverAlertItem = (props) => {
     const { isHover } = props;
 
     // ------------------- .hoverBtn 호버 이벤트 -------------------
-    const [isHovered, handleHoverOnEvent, handleHoverOffEvent] = useHover(false);
+    const [isHovered, hoverDetailsDisplayBlockEvent, hoverDetailsDisplayNoneEvent] = useHover(false);
 
     return (
-        <button id={idName} className={isHover && "headerRightBtns"} onMouseOver={handleHoverOnEvent} onMouseOut={handleHoverOffEvent} type="button">
+        <button id={idName} className={isHover && "headerRightBtns"} onMouseOver={hoverDetailsDisplayBlockEvent} onMouseOut={hoverDetailsDisplayNoneEvent} type="button">
             { imgId
                 ? <img id={imgId} className={imgClassName} src={imgSrc} alt={alt} />
                 : <img className={imgClassName} src={imgSrc} alt={alt} />

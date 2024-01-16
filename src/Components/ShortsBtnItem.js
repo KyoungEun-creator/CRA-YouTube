@@ -5,10 +5,10 @@ const ShortsBtnItem = (props) => {
     const { imgClassName, imgSrc, alt, label, tagContent } = props.data;
 
     // ------------------- .hoverBtn 호버 이벤트 -------------------
-    const [isHovered, handleHoverOnEvent, handleHoverOffEvent] = useHover(false);
+    const [isHovered, hoverDetailsDisplayBlockEvent, hoverDetailsDisplayNoneEvent] = useHover(false);
 
     return (
-        <div className="shortsBtn" onMouseOver={handleHoverOnEvent} onMouseOut={handleHoverOffEvent} >
+        <div className="shortsBtn" onMouseOver={hoverDetailsDisplayBlockEvent} onMouseOut={hoverDetailsDisplayNoneEvent} >
             {imgClassName 
                 ? (<button className={imgClassName} type="button">
                     <img src={imgSrc} className="shortsProfileBtnImg" alt={alt} />
