@@ -10,6 +10,7 @@ const NavContainer = (props) => {
             value: "home",
             title: "홈",
             imgSrc: "imgs/house-solid.svg",
+            alt: "navBtn",
             label: "홈"
         },
         {
@@ -17,6 +18,7 @@ const NavContainer = (props) => {
             value: "shorts",
             title: "Shorts",
             imgSrc: "imgs/youtube-shorts-logo.svg",
+            alt: "navBtn",
             label: "Shorts"
         },
         {
@@ -24,6 +26,7 @@ const NavContainer = (props) => {
             value: "subscribe",
             title: "구독",
             imgSrc: "imgs/warehouse-solid.svg",
+            alt: "navBtn",
             label: "구독"
         },
         {
@@ -31,6 +34,7 @@ const NavContainer = (props) => {
             value: "youtubeMusic",
             title: "YouTube Music",
             imgSrc: "imgs/database-solid.svg",
+            alt: "navBtn",
             label: "YouTube Music"
         },
         {
@@ -38,6 +42,7 @@ const NavContainer = (props) => {
             value: "storage",
             title: "보관함",
             imgSrc: "imgs/photo-film-solid.svg",
+            alt: "navBtn",
             label: "보관함"
         },
         {
@@ -45,6 +50,7 @@ const NavContainer = (props) => {
             value: "offlineSaved",
             title: "오프라인 저장 동영상",
             imgSrc: "imgs/download-solid.svg",
+            alt: "navBtn",
             label: "오프라인 저장 동영상"
         }
     ];

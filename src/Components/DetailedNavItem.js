@@ -1,26 +1,21 @@
 import React from "react";
+import useHover from "../Hooks/useHover";
 
 const DetailedNavItem = (props) => {
-    const { value, title, className, imgSrc, label, content } = props.data
-    const { setPage } = props
+    const { value, title, className, imgSrc, alt, label, content } = props.data;
+    const { setPage } = props;
 
     // ------------------- .exnav-btn 호버 이벤트 -------------------
-    const [isHovered, setIsHovered] = React.useState(false)
-
-    const exNavBtnHoverEvent = () => {
-        setIsHovered(true)
-    }
-    const exNavBtnHoverOutEvent = () => {
-        setIsHovered(false)
-    }
+    const [isHovered, handleHoverOnEvent, handleHoverOffEvent] = useHover(false);
+    
     const btnStyle = {
         backgroundColor: isHovered ? "lightgray" : "transparent"
-    }
+    };
 
     // ------------------- 페이지 선택 클릭 이벤트 -------------------
     const changePageEvent = (pageName) => {
         setPage(pageName)
-    }
+    };
 
     return (
         <>
@@ -33,8 +28,8 @@ const DetailedNavItem = (props) => {
                 )
                 :
                 (
-                    <button className="exnav-btn" value={value} title={title} type="button" onMouseOver={exNavBtnHoverEvent} onMouseOut={exNavBtnHoverOutEvent} style={btnStyle} onClick={() => changePageEvent(value)}>
-                        <img className={className} src={imgSrc} />
+                    <button className="exnav-btn" value={value} title={title} type="button" onMouseOver={handleHoverOnEvent} onMouseOut={handleHoverOffEvent} style={btnStyle} onClick={() => changePageEvent(value)}>
+                        <img className={className} src={imgSrc} alt={alt}/>
                         <div className="exnav-name"> {label} </div>
                     </button>
                 )

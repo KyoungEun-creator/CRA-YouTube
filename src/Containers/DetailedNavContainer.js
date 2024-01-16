@@ -1,6 +1,5 @@
 import React from "react";
 import DetailedNavItem from "../Components/DetailedNavItem";
-// import DetailedNavFooterItem from "../Components/DetailedNavFooterItem";
 
 const DetailedNavContainer = (props) => {
     const { isNavOpen } = props
@@ -13,6 +12,7 @@ const DetailedNavContainer = (props) => {
             title: "홈",
             className: "exnav-btn-img",
             imgSrc: "imgs/house-solid.svg", 
+            alt: "detailedNavBtn",
             label: "홈", 
         },
         {
@@ -21,6 +21,7 @@ const DetailedNavContainer = (props) => {
             title: "Shorts",
             className: "exnav-btn-img",
             imgSrc: "imgs/youtube-shorts-logo.svg", 
+            alt: "detailedNavBtn",
             label: "Shorts", 
         },
         {
@@ -29,6 +30,7 @@ const DetailedNavContainer = (props) => {
             title: "구독",
             className: "exnav-btn-img",
             imgSrc: "imgs/warehouse-solid.svg", 
+            alt: "detailedNavBtn",
             label: "구독", 
         },
         {
@@ -37,6 +39,7 @@ const DetailedNavContainer = (props) => {
             title: "YouTube Music",
             className: "exnav-btn-img",
             imgSrc: "imgs/database-solid.svg", 
+            alt: "detailedNavBtn",
             label: "YouTube Music", 
         },
         {
@@ -45,6 +48,7 @@ const DetailedNavContainer = (props) => {
             title: "보관함",
             className: "exnav-btn-img",
             imgSrc: "imgs/photo-film-solid.svg", 
+            alt: "detailedNavBtn",
             label: "보관함", 
         },
         {
@@ -53,6 +57,7 @@ const DetailedNavContainer = (props) => {
             title: "시청기록",
             className: "exnav-btn-img",
             imgSrc: "imgs/clock-rotate-left-solid.svg", 
+            alt: "detailedNavBtn",
             label: "시청기록", 
         },
         {
@@ -61,6 +66,7 @@ const DetailedNavContainer = (props) => {
             title: "내 동영상",
             className: "exnav-btn-img",
             imgSrc: "imgs/square-caret-right-regular.svg", 
+            alt: "detailedNavBtn",
             label: "내 동영상", 
         },
         {
@@ -69,6 +75,7 @@ const DetailedNavContainer = (props) => {
             title: "내 영화",
             className: "exnav-btn-img",
             imgSrc: "imgs/clapperboard-solid.svg", 
+            alt: "detailedNavBtn",
             label: "내 영화", 
         },
         {
@@ -77,6 +84,7 @@ const DetailedNavContainer = (props) => {
             title: "나중에 볼 동영상",
             className: "exnav-btn-img",
             imgSrc: "imgs/clock-regular.svg", 
+            alt: "detailedNavBtn",
             label: "나중에 볼 동영상", 
         },
         {
@@ -85,6 +93,7 @@ const DetailedNavContainer = (props) => {
             title: "오프라인 저장 동영상",
             className: "exnav-btn-img",
             imgSrc: "imgs/download-solid.svg", 
+            alt: "detailedNavBtn",
             label: "오프라인 저장 동영상", 
         },
         {
@@ -93,6 +102,7 @@ const DetailedNavContainer = (props) => {
             title: "더보기",
             className: "exnav-btn-img",
             imgSrc: "imgs/angle-down-solid.svg", 
+            alt: "detailedNavBtn",
             label: "더보기", 
         }
     ]
@@ -104,6 +114,7 @@ const DetailedNavContainer = (props) => {
             title: "YouTube Music",
             className: "subscribing-channel-img",
             imgSrc: "https://yt3.ggpht.com/bMa6Y7qQ6Q0zCt-5M0gxsmHh6gRdU7m4AnJ6LTN1aNxH7nDMNjnB3vucd4sJ_d6olVEMSh-gMg=s68-c-k-c0x00ffffff-no-rj", 
+            alt: "detailedNavBtn",
             label: "Jazz Melody", 
         },
         {
@@ -112,6 +123,7 @@ const DetailedNavContainer = (props) => {
             title: "YouTube Music",
             className: "subscribing-channel-img",
             imgSrc: "https://yt3.ggpht.com/aW-CCbaQ2rbDrEvmpjf630Xhh4wiXEAYs_vZuhX7t3T7tqohQGYl1YzpWNORdJwPin6SMtstyw=s68-c-k-c0x00ffffff-no-rj", 
+            alt: "detailedNavBtn",
             label: "때껄룩ᴛᴀᴋᴇ ᴀ ʟᴏᴏᴋ", 
         },
         {
@@ -120,6 +132,7 @@ const DetailedNavContainer = (props) => {
             title: "YouTube Music",
             className: "subscribing-channel-img",
             imgSrc: "https://yt3.ggpht.com/Lo23b_zLzkxOi2UyFCCWvRPp7jmVv7qLv3yMgEV1hi7iq2Bf9E4tRIDhhfDPeYdO2dNQAgaaAAQ=s88-c-k-c0x00ffffff-no-rj", 
+            alt: "detailedNavBtn",
             label: "반고흐가 되고싶어", 
         },
         {
@@ -128,6 +141,7 @@ const DetailedNavContainer = (props) => {
             title: "YouTube Music",
             className: "subscribing-channel-img",
             imgSrc: "https://yt3.ggpht.com/ytc/AOPolaSBFQ8BAVyWY5yo-CNlnFmJ3LE_7syzZpjG11lntg=s68-c-k-c0x00ffffff-no-rj", 
+            alt: "detailedNavBtn",
             label: "재즈기자 Jazz Editor", 
         },
         {
@@ -136,6 +150,7 @@ const DetailedNavContainer = (props) => {
             title: "YouTube Music",
             className: "subscribing-channel-img",
             imgSrc: "https://yt3.ggpht.com/RL_eRSTZjEdc3vAB78wiK6xihSd3wInZ4g1TA3JLzOvxRdJg_2IKqIw8y3CAd03qvgsBb-P5jQ=s68-c-k-c0x00ffffff-no-rj", 
+            alt: "detailedNavBtn",
             label: "딩고 뮤직 / dingo music", 
         },
         {
@@ -144,6 +159,7 @@ const DetailedNavContainer = (props) => {
             title: "YouTube Music",
             className: "subscribing-channel-img",
             imgSrc: "https://yt3.ggpht.com/Xo80SrZKXQbOIf3vxV_rbspOArWwdODWrMyQaV_k-xhIKGvCv7h1uPqchD-m8ZDxm59Ix01xxA=s68-c-k-c0x00ffffff-no-rj", 
+            alt: "detailedNavBtn",
             label: "재즈오빠 Jazzoppa", 
         },
         {
@@ -152,6 +168,7 @@ const DetailedNavContainer = (props) => {
             title: "YouTube Music",
             className: "subscribing-channel-img",
             imgSrc: "https://yt3.ggpht.com/v-yQ9UVqUgQlxBwlA2qBPI7_QeqbmgrD7uJQiKK4GIvgmrsJeau059F0uFLTRX3XaopNyEm25w=s68-c-k-c0x00ffffff-no-rj", 
+            alt: "detailedNavBtn",
             label: "때잉", 
         },
         {
@@ -160,6 +177,7 @@ const DetailedNavContainer = (props) => {
             title: "YouTube Music",
             className: "subscribing-channel-img",
             imgSrc: "https://yt3.ggpht.com/7C7gf_M2SLHMxYY74vn7QPRJuGrc9Ul2ehvf6LXmHDeAVi4-dBiSOGB8bXhMeLz0GYvqzwbk=s68-c-k-c0x00ffffff-no-rj", 
+            alt: "detailedNavBtn",
             label: "기분Jazz네 | Mood is Jazz", 
         },
         {
@@ -168,6 +186,7 @@ const DetailedNavContainer = (props) => {
             title: "구독 더보기",
             className: "exnav-btn-img",
             imgSrc: "imgs/angle-down-solid.svg", 
+            alt: "detailedNavBtn",
             label: "376개 더보기", 
         }
     ]
@@ -179,6 +198,7 @@ const DetailedNavContainer = (props) => {
             title: "인기 급상승",
             className: "exnav-btn-img",
             imgSrc: "imgs/fire-solid.svg", 
+            alt: "detailedNavBtn",
             label: "인기 급상승", 
         },
         {
@@ -187,6 +207,7 @@ const DetailedNavContainer = (props) => {
             title: "쇼핑",
             className: "exnav-btn-img",
             imgSrc: "imgs/bag-shopping-solid.svg", 
+            alt: "detailedNavBtn",
             label: "쇼핑", 
         },
         {
@@ -195,6 +216,7 @@ const DetailedNavContainer = (props) => {
             title: "음악",
             className: "exnav-btn-img",
             imgSrc: "imgs/music-solid.svg", 
+            alt: "detailedNavBtn",
             label: "음악", 
         },
         {
@@ -203,6 +225,7 @@ const DetailedNavContainer = (props) => {
             title: "영화",
             className: "exnav-btn-img",
             imgSrc: "imgs/clapperboard-solid.svg", 
+            alt: "detailedNavBtn",
             label: "영화", 
         },
         {
@@ -211,6 +234,7 @@ const DetailedNavContainer = (props) => {
             title: "YouTube Music",
             className: "exnav-btn-img",
             imgSrc: "imgs/wifi-solid.svg", 
+            alt: "detailedNavBtn",
             label: "실시간", 
         },
         {
@@ -219,6 +243,7 @@ const DetailedNavContainer = (props) => {
             title: "게임",
             className: "exnav-btn-img",
             imgSrc: "imgs/gamepad-solid.svg", 
+            alt: "detailedNavBtn",
             label: "게임", 
         },
         {
@@ -227,6 +252,7 @@ const DetailedNavContainer = (props) => {
             title: "스포츠",
             className: "exnav-btn-img",
             imgSrc: "imgs/medal-solid.svg", 
+            alt: "detailedNavBtn",
             label: "스포츠", 
         },
         {
@@ -235,6 +261,7 @@ const DetailedNavContainer = (props) => {
             title: "학습",
             className: "exnav-btn-img",
             imgSrc: "imgs/lightbulb-regular.svg", 
+            alt: "detailedNavBtn",
             label: "학습", 
         }
     ]
@@ -246,6 +273,7 @@ const DetailedNavContainer = (props) => {
             title: "YouTube Studio",
             className: "exnav-btn-img",
             imgSrc: "imgs/youtube-studio.webp", 
+            alt: "detailedNavBtn",
             label: "YouTube 스튜디오", 
         },
         {
@@ -254,6 +282,7 @@ const DetailedNavContainer = (props) => {
             title: "YouTube Music",
             className: "exnav-btn-img",
             imgSrc: "imgs/youtube-music_icon.png", 
+            alt: "detailedNavBtn",
             label: "YouTube Music", 
         },
         {
@@ -262,6 +291,7 @@ const DetailedNavContainer = (props) => {
             title: "YouTube Kids",
             className: "exnav-btn-img",
             imgSrc: "imgs/youtube-kids.png", 
+            alt: "detailedNavBtn",
             label: "YouTube Kids", 
         }
     ]
@@ -273,6 +303,7 @@ const DetailedNavContainer = (props) => {
             title: "설정",
             className: "exnav-btn-img",
             imgSrc: "imgs/gear-solid.svg", 
+            alt: "detailedNavBtn",
             label: "설정", 
         },
         {
@@ -281,6 +312,7 @@ const DetailedNavContainer = (props) => {
             title: "신고 기록",
             className: "exnav-btn-img",
             imgSrc: "imgs/flag-regular.svg", 
+            alt: "detailedNavBtn",
             label: "신고 기록", 
         },
         {
@@ -289,6 +321,7 @@ const DetailedNavContainer = (props) => {
             title: "고객센터",
             className: "exnav-btn-img",
             imgSrc: "imgs/circle-question-solid.svg", 
+            alt: "detailedNavBtn",
             label: "고객센터", 
         },
         {
@@ -297,6 +330,7 @@ const DetailedNavContainer = (props) => {
             title: "의견 보내기",
             className: "exnav-btn-img",
             imgSrc: "imgs/circle-exclamation-solid.svg", 
+            alt: "detailedNavBtn",
             label: "의견 보내기", 
         }
     ]
