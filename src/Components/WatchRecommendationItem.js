@@ -15,7 +15,7 @@ const WatchRecommendationItem = (props) => {
                     <div className="time-status"> {runningTime} </div>
                 </div>
             <div id="recommendedVideoDataContainer">
-                    <h3 className="title"> {videoTitle} </h3>
+                    <h3 className="recommendedVideoTitle"> {videoTitle} </h3>
                     <div>
                         <div className="metadatas"> {channelName} </div>
                         <div className="metadatas"> 조회수 {view} ∙ {uploadMention} </div>

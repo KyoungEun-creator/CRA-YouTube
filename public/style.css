@@ -670,19 +670,35 @@ h1 {
   margin: 0 30px 15px 0;
 }
 .recommendedVideoThumbnailBox {
+  display: flex;
+  align-items: center;
   position: relative;
   z-index: -1;
   margin-right: 10px;
 }
 .recommendedVideoThumbnail {
   object-fit: cover;
-  width: 100%;
+  height: 90px;
   aspect-ratio: 16 / 9;
   border-radius: 10px;
 }
+.recommendedVideoTitle {
+  color: black;
+  font-size: 16px;
+  width: 241.73px;
+  height: fit-content;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* margin: 12px 0 4px 0; */
+  display: -webkit-box; /* 두 줄부터 말줄임표 */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
 #recommendedVideoDataContainer {
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 #recommendationContainer {
   margin-top: 70px;
@@ -694,7 +710,8 @@ h1 {
   /* border: 1px solid red; */
   margin-bottom: 20px;
   width: 930px;
-  height: fit-content;
+  /* height: fit-content; */
+  height: 100%;
 }
 #commentDetails {
   display: flex;
@@ -787,7 +804,7 @@ h1 {
 /* ==================== Watch ==================== */
 #watchVideoPage {
   z-index: 0;
-  margin-left: 72px;
+  margin-left: 40px;
   display: flex;
   flex-direction: row;
 }
