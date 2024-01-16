@@ -1,6 +1,6 @@
 import React from "react";
 import DetailedNavItem from "../Components/DetailedNavItem";
-import DetailedNavFooterItem from "../Components/DetailedNavFooterItem";
+// import DetailedNavFooterItem from "../Components/DetailedNavFooterItem";
 
 const DetailedNavContainer = (props) => {
     const { isNavOpen } = props
@@ -358,7 +358,7 @@ const DetailedNavContainer = (props) => {
             <section id="footer">
                 {
                     FooterData.map((elem) => {
-                        return <DetailedNavFooterItem key={elem.id} data={elem} />
+                        return <DetailedNavItem key={elem.id} data={elem} />
                     })
                 }
             </section>

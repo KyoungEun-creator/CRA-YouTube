@@ -1,7 +1,7 @@
 import React from "react";
 
 const DetailedNavItem = (props) => {
-    const { value, title, className, imgSrc, label } = props.data
+    const { value, title, className, imgSrc, label, content } = props.data
     const { setPage } = props
 
     // ------------------- .exnav-btn 호버 이벤트 -------------------
@@ -17,15 +17,29 @@ const DetailedNavItem = (props) => {
         backgroundColor: isHovered ? "lightgray" : "transparent"
     }
 
+    // ------------------- 페이지 선택 클릭 이벤트 -------------------
     const changePageEvent = (pageName) => {
         setPage(pageName)
     }
 
     return (
-        <button className="exnav-btn" value={value} title={title} type="button" onMouseOver={exNavBtnHoverEvent} onMouseOut={exNavBtnHoverOutEvent} style={btnStyle} onClick={() => changePageEvent(value)}>
-            <img className={className} src={imgSrc} />
-            <div className="exnav-name"> {label} </div>
-        </button>
+        <>
+            {
+                content ?
+                (
+                    <div className = "footer-guide">
+                        {content}
+                    </div>
+                )
+                :
+                (
+                    <button className="exnav-btn" value={value} title={title} type="button" onMouseOver={exNavBtnHoverEvent} onMouseOut={exNavBtnHoverOutEvent} style={btnStyle} onClick={() => changePageEvent(value)}>
+                        <img className={className} src={imgSrc} />
+                        <div className="exnav-name"> {label} </div>
+                    </button>
+                )
+            }
+        </>
     )
 }
 
