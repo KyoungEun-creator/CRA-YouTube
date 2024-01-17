@@ -1,19 +1,22 @@
 import React from "react";
-import { useState } from "react";
+import { useDispatch } from "react-redux";  
+import { detailedNavState } from "../redux/action";
 import HeaderContainer from "./HeaderContainer";
 import DetailedNavContainer from "./DetailedNavContainer";
 
-const DefaultContainer = (props) => {
+const DefaultContainer = () => {
 
-    const { setPage } = props;
+    const dispatch = useDispatch();     // useDispatch: reducer를 호출할 때
 
     // ------------------- #navOpenBtn 클릭 이벤트 -------------------
-    const [isNavOpen, setIsNavOpen] = useState(false);
+    const detailedNavOpenEvent = () => {
+        dispatch(detailedNavState())
+    };
 
     return (
         <>
-            <HeaderContainer {...{isNavOpen, setIsNavOpen}} />
-            <DetailedNavContainer {...{isNavOpen, setPage}} />
+            <HeaderContainer event={detailedNavOpenEvent} />
+            <DetailedNavContainer />
         </>    
     )
 }

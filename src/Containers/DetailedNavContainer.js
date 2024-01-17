@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import DetailedNavItem from "../Components/DetailedNavItem";
 
-const DetailedNavContainer = (props) => {
+const DetailedNavContainer = () => {
 
-    const { isNavOpen } = props;
+    const detailedNavOpen = useSelector((state) => {    // useSelector: state를 가져와서 사용할 때
+        return (state.detailedNav)
+    });
 
     const DetailedNavBtnHomeData = [
         {
@@ -352,7 +355,7 @@ const DetailedNavContainer = (props) => {
     ];
 
     return (
-        <nav id="explicit-nav" style={{ display: isNavOpen ? "block" : "none" }}>
+        <nav id="explicit-nav" style={{ display: detailedNavOpen ? "block" : "none" }}>
             <section id="sections">
                 <div className="guide-section">
                     {

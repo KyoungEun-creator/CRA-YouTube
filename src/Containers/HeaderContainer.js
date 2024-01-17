@@ -4,7 +4,7 @@ import HeaderHoverAlertItem from "../Components/HeaderHoverAlertItem";
 
 const HeaderContainer = (props) => {
     
-    const { isNavOpen, setIsNavOpen } = props;
+    const { event } = props;
 
     const HeaderMiddleItemData = [
         {
@@ -53,15 +53,10 @@ const HeaderContainer = (props) => {
         }
     ];
 
-    // ------------------- #navOpenBtn 클릭 이벤트 -------------------
-    const navOpenEvent = () => {
-        setIsNavOpen(!isNavOpen)
-    };
-
     return (
         <header>
             <div id="headerLeft">
-                <button id="navOpenBtn" onClick={navOpenEvent}>
+                <button id="navOpenBtn" onClick={event}>
                     <img id="navOpenBtnImg" src="imgs/bars-solid.svg" alt="navigation 열기" />
                 </button>
                 <Link to="/home" title="youtube">

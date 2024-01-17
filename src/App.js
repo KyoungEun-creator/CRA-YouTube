@@ -14,7 +14,7 @@ const App = () => {
             <Routes>
                 <Route path="/home" element={<MainPage />} />
                 <Route path="/shorts" element={<ShortsPage />} />
-                <Route path="/watch/*" element={<WatchPage />} />
+                <Route path="/watch/:idx" element={<WatchPage />} />
                 <Route path="*" element={<EmptyPage />} />
             </Routes>
         </BrowserRouter>
