@@ -1,10 +1,10 @@
 import React from "react";
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import HeaderHoverAlertItem from "../Components/HeaderHoverAlertItem";
 
 const HeaderContainer = (props) => {
     
-    const { isNavOpen, setIsNavOpen } = props
+    const { isNavOpen, setIsNavOpen } = props;
 
     const HeaderMiddleItemData = [
         {
@@ -23,7 +23,7 @@ const HeaderContainer = (props) => {
             alt: "middleHeaderBtn",
             tagContent: "음성으로 검색"
         }
-    ]
+    ];
 
     const HeaderRightItemData = [
         {
@@ -51,12 +51,12 @@ const HeaderContainer = (props) => {
             imgSrc: "https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj",
             alt: "rightHeaderBtn",
         }
-    ]
+    ];
 
     // ------------------- #navOpenBtn 클릭 이벤트 -------------------
     const navOpenEvent = () => {
         setIsNavOpen(!isNavOpen)
-    }
+    };
 
     return (
         <header>
@@ -64,10 +64,10 @@ const HeaderContainer = (props) => {
                 <button id="navOpenBtn" onClick={navOpenEvent}>
                     <img id="navOpenBtnImg" src="imgs/bars-solid.svg" alt="navigation 열기" />
                 </button>
-                <a href="https://www.youtube.com/" title="youtube">
+                <Link to="/home" title="youtube">
                     <img id="youtubePremiumLogo" src="imgs/YouTube_Premium_logo.svg" alt="Youtube 홈" />
                     <span id="countryCode">KR</span>
-                </a>
+                </Link>
             </div>
             <div id="headerMiddle">
                 <span id="searchBar">

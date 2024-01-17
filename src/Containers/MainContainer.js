@@ -1,10 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import MainVideoItem from "../Components/MainVideoItem";
 
-const MainContainer = (props) => {
+const MainContainer = () => {
 
-    const { setPage } = props
-    
     const VideoListData = [
         {
             id: "video_1",
@@ -124,7 +123,11 @@ const MainContainer = (props) => {
         <article>
             {
                 VideoListData.map((elem) => {
-                    return <MainVideoItem key={elem.id} data={elem} setPage={setPage}/>
+                    return (
+                        <Link key={elem.id} to={`/watch/${elem.id}`}>
+                            <MainVideoItem key={elem.id} data={elem} />
+                        </Link>
+                    )
                 })
             }
         </article>

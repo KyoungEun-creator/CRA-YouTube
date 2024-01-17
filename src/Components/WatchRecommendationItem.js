@@ -3,15 +3,15 @@ import UploadMentionModule from "./UploadMentionModule";
 
 const WatchRecommendationItem = (props) => {
 
-    const { thumbnailImgSrc, runningTime, videoTitle, channelName, view } = props.data
+    const { thumbnailImgSrc, runningTime, videoTitle, channelName, view } = props.data;
     
     //  ------------------- 업로드 경과 시간 도출 -------------------
-    const uploadMention = UploadMentionModule({ data: props.data })
+    const uploadMention = UploadMentionModule({ data: props.data });
 
     return (
         <div id="recommendedVideoContainer">
                 <div className="recommendedVideoThumbnailBox">
-                    <img className="recommendedVideoThumbnail" src={thumbnailImgSrc}/>
+                    <img className="recommendedVideoThumbnail" src={thumbnailImgSrc} alt="추천영상" />
                     <div className="time-status"> {runningTime} </div>
                 </div>
             <div id="recommendedVideoDataContainer">

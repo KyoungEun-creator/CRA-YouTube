@@ -2,6 +2,7 @@ import React from "react";
 import useHover from "../Hooks/useHover";
 
 const ShortsBtnItem = (props) => {
+    
     const { imgClassName, imgSrc, alt, label, tagContent } = props.data;
 
     // ------------------- .hoverBtn 호버 이벤트 -------------------

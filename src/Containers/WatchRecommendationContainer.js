@@ -112,7 +112,7 @@ const WatchRecommendationContainer = () => {
             view: "192만회",
             upload: "2022. 7. 16."
         }
-    ]
+    ];
 
     return (
         <>

@@ -26,11 +26,12 @@ const WatchCommentsContainer = () => {
             commentContent: "나이스 샷",
         }
     ]
+    
     return (
         <div id="commentsContainer">
             <h1 id="commentsCount">댓글 {commentsListData.length}개</h1>
             <div id="addComment">
-                <img id="commentWriter" src="https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj" />
+                <img id="commentWriter" src="https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj" alt="작성자" />
                 <input id="writeComment" type="text" />
             </div>
             {

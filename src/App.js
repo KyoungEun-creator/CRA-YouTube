@@ -4,35 +4,21 @@ import DefaultContainer from "./Containers/DefaultContainer";
 import MainPage from "./Pages/MainPage";
 import ShortsPage from "./Pages/ShortsPage";
 import WatchPage from "./Pages/WatchPage";
+import EmptyPage from "./Pages/EmptyPage";
 
 const App = () => {
-    const [ page, setPage ] = React.useState("home")
 
     return (
-        <>
-            <DefaultContainer setPage={setPage} />
-            { 
-                page === "home" 
-                ? <MainPage setPage={setPage} /> 
-                : page === "shorts"  
-                    ? <ShortsPage setPage={setPage} /> 
-                    : page === "video_1"
-                        ? <WatchPage setPage={setPage} />
-                        : null
-            }
-        </>
+        <BrowserRouter>
+            <DefaultContainer />
+            <Routes>
+                <Route path="/home" element={<MainPage />} />
+                <Route path="/shorts" element={<ShortsPage />} />
+                <Route path="/watch/*" element={<WatchPage />} />
+                <Route path="*" element={<EmptyPage />} />
+            </Routes>
+        </BrowserRouter>
     )
-    // return (
-    //     <BrowserRouter>
-    //         <HeaderContainer />
-    //         <Routes>
-    //             <Route path="/" element={<Home />} />
-    //             <Route path="/shorts" element={<ShortsHome />} />
-    //             <Route path="/watch" element={<Watch />} />
-    //         </Routes>
-    //     </BrowserRouter>
-    // )
 }
 
 export default App
-

@@ -3,17 +3,19 @@ import UploadMentionModule from "./UploadMentionModule";
 
 const WatchVideoDataItem = (props) => {
 
-    const { videoTitle, channelName, view, channelProfileImgSrc, subscribers } = props.data
+    const { videoTitle, channelName, view, channelProfileUrl, channelProfileImgSrc, alt, subscribers } = props.data;
 
-    const uploadMention = UploadMentionModule({ data: props.data })
+    const IP = process.env.REACT_APP_IP_URL;
+
+    const uploadMention = UploadMentionModule({ data: props.data });
 
     return (
         <article id="videoData">
             <h1>{videoTitle}</h1>
             <div id="videoDataMiddle">
                 <div id="videoDataMiddleLeft">
-                    <a>
-                        <img id="videoDataUploaderProfileImg" src={channelProfileImgSrc} />
+                    <a href={channelProfileUrl}>
+                        <img id="videoDataUploaderProfileImg" src={channelProfileImgSrc} alt={alt} />
                     </a>
                     <div id="videoDataUploader">
                         <h3 id="videoDataChannelName">{channelName}</h3>
@@ -23,18 +25,18 @@ const WatchVideoDataItem = (props) => {
                 </div>
                 <div id="videoDataMiddleRight">
                     <button id="videoDataThumbUpBtn" className="videoDataBtns">
-                        <img className="videoDataMetaImg" src="imgs/thumb-up.png" />
+                        <img className="videoDataMetaImg" src={`${IP}/imgs/thumb-up.png`} alt="좋아요" />
                         2.1천
                     </button>
                     <button id="videoDataThumbDownBtn" className="videoDataBtns">
-                        <img className="videoDataMetaImg" src="imgs/thumb-down.png" />
+                        <img className="videoDataMetaImg" src={`${IP}/imgs/thumb-down.png`} alt="싫어요" />
                     </button>
                     <button id="videoDataShareBtn" className="videoDataBtns">
-                        <img className="videoDataMetaImg" src="imgs/share.png" />
+                        <img className="videoDataMetaImg" src={`${IP}/imgs/share.png`} alt="공유" />
                         공유
                     </button>
                     <button id="videoDataMoreBtn" className="videoDataBtns">
-                        <img className="videoDataMetaImg" src="imgs/more.png" />
+                        <img className="videoDataMetaImg" src={`${IP}/imgs/more.png`} alt="설정" />
                     </button>
                 </div>
             </div>

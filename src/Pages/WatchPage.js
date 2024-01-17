@@ -15,11 +15,13 @@ const Watch = () => {
             runningTime: "59:45",
             channelProfileUrl: "https://www.youtube.com/@Want_To_Be_VanGogh",
             channelProfileImgSrc: "https://yt3.ggpht.com/Lo23b_zLzkxOi2UyFCCWvRPp7jmVv7qLv3yMgEV1hi7iq2Bf9E4tRIDhhfDPeYdO2dNQAgaaAAQ=s88-c-k-c0x00ffffff-no-rj",
+            alt: "creatorProfile",
             view: "195만회",
             upload: "2023. 5. 5.",
             subscribers: "6.11만명"
         }
-    ]
+    ];
+
     return (
         <div id="watchVideoPage">
             <div>

@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import DetailedNavItem from "../Components/DetailedNavItem";
 
 const DetailedNavContainer = (props) => {
-    const { isNavOpen } = props
-    const { setPage } = props
+
+    const { isNavOpen } = props;
 
     const DetailedNavBtnHomeData = [
         {
@@ -53,7 +54,7 @@ const DetailedNavContainer = (props) => {
         },
         {
             id: "DetailedNavBtnHome_6",
-            value: "시청기록",
+            value: "record",
             title: "시청기록",
             className: "exnav-btn-img",
             imgSrc: "imgs/clock-rotate-left-solid.svg", 
@@ -62,7 +63,7 @@ const DetailedNavContainer = (props) => {
         },
         {
             id: "DetailedNavBtnHome_7",
-            value: "내 동영상",
+            value: "myVideos",
             title: "내 동영상",
             className: "exnav-btn-img",
             imgSrc: "imgs/square-caret-right-regular.svg", 
@@ -71,7 +72,7 @@ const DetailedNavContainer = (props) => {
         },
         {
             id: "DetailedNavBtnHome_8",
-            value: "내 영화",
+            value: "myMovies",
             title: "내 영화",
             className: "exnav-btn-img",
             imgSrc: "imgs/clapperboard-solid.svg", 
@@ -80,7 +81,7 @@ const DetailedNavContainer = (props) => {
         },
         {
             id: "DetailedNavBtnHome_9",
-            value: "나중에 볼 동영상",
+            value: "watchLater",
             title: "나중에 볼 동영상",
             className: "exnav-btn-img",
             imgSrc: "imgs/clock-regular.svg", 
@@ -89,7 +90,7 @@ const DetailedNavContainer = (props) => {
         },
         {
             id: "DetailedNavBtnHome_10",
-            value: "오프라인 저장 동영상",
+            value: "offlineSaved",
             title: "오프라인 저장 동영상",
             className: "exnav-btn-img",
             imgSrc: "imgs/download-solid.svg", 
@@ -98,14 +99,14 @@ const DetailedNavContainer = (props) => {
         },
         {
             id: "DetailedNavBtnHome_11",
-            value: "더보기",
+            value: "more",
             title: "더보기",
             className: "exnav-btn-img",
             imgSrc: "imgs/angle-down-solid.svg", 
             alt: "detailedNavBtn",
             label: "더보기", 
         }
-    ]
+    ];
 
     const DetailedNavBtnSubscribeData = [
         {
@@ -158,7 +159,7 @@ const DetailedNavContainer = (props) => {
             value: "YouTube Music",
             title: "YouTube Music",
             className: "subscribing-channel-img",
-            imgSrc: "https://yt3.ggpht.com/Xo80SrZKXQbOIf3vxV_rbspOArWwdODWrMyQaV_k-xhIKGvCv7h1uPqchD-m8ZDxm59Ix01xxA=s68-c-k-c0x00ffffff-no-rj", 
+            imgSrc: "https://yt3.ggpht.com/ayr7hPQ8q04Lms3TZpp9lkZosTjSo4euJ0l_pIyjsC9OhZkqXh7fo7AnHJwmErEiTWBbnoSE=s88-c-k-c0x00ffffff-no-rj", 
             alt: "detailedNavBtn",
             label: "재즈오빠 Jazzoppa", 
         },
@@ -189,7 +190,7 @@ const DetailedNavContainer = (props) => {
             alt: "detailedNavBtn",
             label: "376개 더보기", 
         }
-    ]
+    ];
 
     const DetailedNavBtnExploreData = [
         {
@@ -264,7 +265,7 @@ const DetailedNavContainer = (props) => {
             alt: "detailedNavBtn",
             label: "학습", 
         }
-    ]
+    ];
 
     const DetailedNavBtnExtraData = [
         {
@@ -294,7 +295,7 @@ const DetailedNavContainer = (props) => {
             alt: "detailedNavBtn",
             label: "YouTube Kids", 
         }
-    ]
+    ];
 
     const DetailedNavBtnSettingData = [
         {
@@ -333,7 +334,7 @@ const DetailedNavContainer = (props) => {
             alt: "detailedNavBtn",
             label: "의견 보내기", 
         }
-    ]
+    ];
     
     const FooterData = [
         {
@@ -348,7 +349,7 @@ const DetailedNavContainer = (props) => {
             id: "FooterData_3",
             content: "© 2023 Google LLC, Sundar Pichai, 1600 Amphitheatre Parkway, Mountain View CA 94043, USA, 0807-882-594 (무료), yt-support-solutions-kr@google.com, 호스팅: Google LLC, 사업자정보, 불법촬영물 신고 크리에이터들이 유튜브 상에 게시, 태그 또는 추천한 상품들은 판매자들의 약관에 따라 판매됩니다. 유튜브는 이러한 제품들을 판매하지 않으며, 그에 대한 책임을 지지 않습니다."
         }
-    ]
+    ];
 
     return (
         <nav id="explicit-nav" style={{ display: isNavOpen ? "block" : "none" }}>
@@ -356,35 +357,39 @@ const DetailedNavContainer = (props) => {
                 <div className="guide-section">
                     {
                         DetailedNavBtnHomeData.map((elem) => {
-                            return <DetailedNavItem key={elem.id} data={elem} setPage={setPage} />
+                            return (
+                                <Link key={elem.id} to={elem.value}>
+                                    <DetailedNavItem key={elem.id} data={elem} />       
+                                </Link>
+                            )
                         })
                     }
                 </div>
                 <div className="guide-section">
                     {
                         DetailedNavBtnSubscribeData.map((elem) => {
-                            return <DetailedNavItem key={elem.id} data={elem} setPage={setPage} />
+                            return <DetailedNavItem key={elem.id} data={elem} />
                         })
                     }
                 </div>
                 <div className="guide-section">
                     {
                         DetailedNavBtnExploreData.map((elem) => {
-                            return <DetailedNavItem key={elem.id} data={elem} setPage={setPage} />
+                            return <DetailedNavItem key={elem.id} data={elem} />
                         })
                     }
                 </div>
                 <div className="guide-section">
                     {
                         DetailedNavBtnExtraData.map((elem) => {
-                            return <DetailedNavItem key={elem.id} data={elem} setPage={setPage} />
+                            return <DetailedNavItem key={elem.id} data={elem} />
                         })
                     }
                 </div>
                 <div className="guide-section">
                     {
                         DetailedNavBtnSettingData.map((elem) => {
-                            return <DetailedNavItem key={elem.id} data={elem} setPage={setPage} />
+                            return <DetailedNavItem key={elem.id} data={elem} />
                         })
                     }
                 </div>

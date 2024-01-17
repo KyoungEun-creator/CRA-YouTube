@@ -1,8 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import NavBtnItem from "../Components/NavBtnItem";
 
-const NavContainer = (props) => {
-    const { setPage } = props
+const NavContainer = () => {
 
     const NavBtnData = [
         {
@@ -59,7 +59,11 @@ const NavContainer = (props) => {
         <nav id="implicit-nav">
             {
                 NavBtnData.map((elem) => {
-                    return <NavBtnItem key={elem.id} data={elem} setPage={setPage}/>
+                    return (
+                        <Link key={elem.id} to={`/${elem.value}`}>
+                            <NavBtnItem key={elem.id} data={elem}/> 
+                        </Link> 
+                    )
                 })   
             }
         </nav>
