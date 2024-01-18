@@ -2,13 +2,11 @@ import React from "react";
 import NavContainer from "../Containers/NavContainer";
 import ShortsBtnsContainer from "../Containers/ShortsBtnsContainer";
 
-const ShortsPage = (props) => {
-
-    const { setPage } = props;
+const ShortsPage = () => {
 
     return (
         <>
-            <NavContainer setPage={setPage}/>
+            <NavContainer />
             <article id="shortsArticle">
                 <img id="shortsVideo" src="imgs/shorts.jpeg" alt="쇼츠" />
                 <ShortsBtnsContainer />

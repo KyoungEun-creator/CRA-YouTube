@@ -1,16 +1,16 @@
 import React from "react";
-import { useDispatch } from "react-redux";  
-import { detailedNavState } from "../redux/action";
+import { useRecoilState } from "recoil";
+import { detailedNavAtom } from "../recoil/mainAtom";
 import HeaderContainer from "./HeaderContainer";
 import DetailedNavContainer from "./DetailedNavContainer";
 
 const DefaultContainer = () => {
 
-    const dispatch = useDispatch();     // useDispatch: reducer를 호출할 때
+    const [isOpen, setIsOpen] = useRecoilState(detailedNavAtom);
 
     // ------------------- #navOpenBtn 클릭 이벤트 -------------------
     const detailedNavOpenEvent = () => {
-        dispatch(detailedNavState())
+        setIsOpen(!isOpen)
     };
 
     return (

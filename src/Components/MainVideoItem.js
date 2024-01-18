@@ -7,10 +7,10 @@ const MainVideoItem = (props) => {
     const { thumbnailImgSrc, thumbnailVideoSrc, runningTime, channelProfileUrl, channelProfileImgSrc, alt, videoTitle, channelName, view } = props.data;
 
     // ------------------- .contents-row-item 호버 이벤트 -------------------
-    const [isVideoHovered, videoDisplayBlockEvent, videoDisplayNoneEvent] = useHover(false)
+    const [isVideoHovered, videoDisplayBlockEvent, videoDisplayNoneEvent] = useHover(false);
 
     //  ------------------- .contents-details 호버 이벤트 -------------------
-    const [isBtnHovered, detailBtnDisplayBlockEvent, detailBtnDisplayNoneEvent] = useHover(false)
+    const [isBtnHovered, detailBtnDisplayBlockEvent, detailBtnDisplayNoneEvent] = useHover(false);
 
     //  ------------------- 업로드 경과 시간 도출 -------------------
     const uploadMention = UploadMentionModule({ data: props.data });

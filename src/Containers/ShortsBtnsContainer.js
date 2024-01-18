@@ -44,7 +44,7 @@ const ShortsBtnsContainer = () => {
             alt: "shortBtn",
             tagContent: "오리지널 사운드"
         }
-    ]
+    ];
 
     // 나중에 각 버튼에 대한 이벤트가 추가될 경우 여기서
 

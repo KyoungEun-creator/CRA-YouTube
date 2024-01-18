@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useRecoilValue } from "recoil";  
+import { detailedNavAtom } from "../recoil/mainAtom";
 import DetailedNavItem from "../Components/DetailedNavItem";
 
 const DetailedNavContainer = () => {
 
-    const detailedNavOpen = useSelector((state) => {    // useSelector: state를 가져와서 사용할 때
-        return (state.detailedNav)
-    });
+    const detailedNavOpen = useRecoilValue(detailedNavAtom);
 
     const DetailedNavBtnHomeData = [
         {
