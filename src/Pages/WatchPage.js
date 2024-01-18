@@ -21,6 +21,7 @@ const Watch = () => {
             subscribers: "6.11만명"
         }
     ];
+    // 어차피 영상 하나 볼  건데 왜 굳이 리스트로 했는지? 선택해서 직접 아래에 넣어줄 것
 
     return (
         <div id="watchVideoPage">

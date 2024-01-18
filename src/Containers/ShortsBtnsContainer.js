@@ -8,7 +8,7 @@ const ShortsBtnsContainer = () => {
             id: "ShortsBtn_1",
             imgSrc: "imgs/thumb-up.png",
             alt: "shortBtn",
-            label: "11만",
+            label: "11만",     // 백엔드 통신될 값
             tagContent: "이 동영상이 마음에 듭니다."
         }, 
         {
@@ -22,7 +22,7 @@ const ShortsBtnsContainer = () => {
             id: "ShortsBtn_3",
             imgSrc: "imgs/comment.png",
             alt: "shortBtn",
-            label: "2.4천",
+            label: "2.4천",     // 백엔드 통신될 값
             tagContent: "댓글"
         }, 
         {

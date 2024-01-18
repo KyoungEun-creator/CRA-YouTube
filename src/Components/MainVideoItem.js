@@ -1,5 +1,5 @@
 import React from "react";
-import UploadMentionModule from "./UploadMentionModule";
+import UploadMentionModule from "../Modules/UploadMentionModule";
 import useHover from "../Hooks/useHover"
 
 const MainVideoItem = (props) => {

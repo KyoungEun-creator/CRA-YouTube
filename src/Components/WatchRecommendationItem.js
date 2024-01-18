@@ -1,5 +1,5 @@
 import React from "react";
-import UploadMentionModule from "./UploadMentionModule";
+import UploadMentionModule from "../Modules/UploadMentionModule";
 
 const WatchRecommendationItem = (props) => {
 

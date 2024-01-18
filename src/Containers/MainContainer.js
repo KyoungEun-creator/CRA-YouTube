@@ -118,6 +118,8 @@ const MainContainer = () => {
             upload: "2022. 7. 16."
         }
     ];
+    // 실제론 state에 저장해놓고 불러오는 방법을 취한다
+    // state에 어떻게 저장할지: 벤엔드 통신을 위한 전용 state가 필요함. (리덕스 쓸 건지, useState 쓸 건지)
 
     return (
         <article>
