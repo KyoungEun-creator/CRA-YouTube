@@ -1,5 +1,28 @@
 import React from "react";
+import { styled } from "styled-components";
 import useHover from "../Hooks/useHover";
+import { Button } from "../style/Button";
+
+const FooterGuide = styled.div`
+    padding: 10px 24px 0 24px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    height: fit-content;
+`
+const DetailedNavBtn = styled(Button)`
+    border-radius: 4px;
+    padding: 0 12px;
+`
+const DetailedNavName = styled.div`
+    width: 100%;
+    height: 20px;
+    font-size: 14px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+`
 
 const DetailedNavItem = (props) => {
     
@@ -17,16 +40,16 @@ const DetailedNavItem = (props) => {
             {
                 content ?
                 (
-                    <div className = "footer-guide">
+                    <FooterGuide className = "footer-guide">
                         {content}
-                    </div>
+                    </FooterGuide>
                 )
                 :
                 (
-                    <button className="exnav-btn" value={value} title={title} type="button" onMouseOver={exNavBtnHoverEvent} onMouseOut={exNavBtnHoverOutEvent} style={btnStyle}>
+                    <DetailedNavBtn value={value} title={title} width="190px" height="40px" flex="h_row_center" type="button" onMouseOver={exNavBtnHoverEvent} onMouseOut={exNavBtnHoverOutEvent} style={btnStyle}>
                         <img className={className} src={imgSrc} alt={alt}/>
-                        <div className="exnav-name"> {label} </div>
-                    </button>
+                        <DetailedNavName className="exnav-name"> {label} </DetailedNavName>
+                    </DetailedNavBtn>
                 )
             }
         </>

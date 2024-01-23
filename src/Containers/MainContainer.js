@@ -1,6 +1,15 @@
 import React from "react";
+import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import MainVideoItem from "../Components/MainVideoItem";
+
+const MainArticle = styled.article`
+  width: calc(100% - margin-left);
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 72px;
+  padding: 70px 30px 0 30px;
+`
 
 const MainContainer = () => {
 
@@ -122,7 +131,7 @@ const MainContainer = () => {
     // state에 어떻게 저장할지: 벤엔드 통신을 위한 전용 state가 필요함. (리덕스 쓸 건지, useState 쓸 건지)
 
     return (
-        <article>
+        <MainArticle>
             {
                 VideoListData.map((elem) => {
                     return (
@@ -132,7 +141,7 @@ const MainContainer = () => {
                     )
                 })
             }
-        </article>
+        </MainArticle>
     )
 }
 

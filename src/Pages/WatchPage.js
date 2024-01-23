@@ -1,8 +1,19 @@
 import React from "react";
+import { styled } from "styled-components";
 import WatchScreenItem from "../Components/WatchScreenItem";
 import WatchVideoDataItem from "../Components/WatchVideoDataItem";
 import WatchCommentsContainer from "../Containers/WatchCommentsContainer";
 import WatchRecommendationContainer from "../Containers/WatchRecommendationContainer";
+
+const WatchVideoPage = styled.div`
+  z-index: 0;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: row;
+`
+const RecommendationContainer = styled.div`
+  margin-top: 70px;
+`
 
 const Watch = () => {
 
@@ -21,10 +32,10 @@ const Watch = () => {
             subscribers: "6.11만명"
         }
     ];
-    // 어차피 영상 하나 볼  건데 왜 굳이 리스트로 했는지? 선택해서 직접 아래에 넣어줄 것
+    // 어차피 영상 하나 볼 건데 왜 굳이 리스트로 했는지? 선택해서 직접 아래에 넣어줄 것
 
     return (
-        <div id="watchVideoPage">
+        <WatchVideoPage>
             <div>
                 {
                     watchVideoData.map((elem) => {
@@ -38,10 +49,10 @@ const Watch = () => {
                 }
                 <WatchCommentsContainer />
             </div>
-            <div id="recommendationContainer">
+            <RecommendationContainer>
                 <WatchRecommendationContainer />
-            </div>
-        </div>     
+            </RecommendationContainer>
+        </WatchVideoPage>     
     )
 }
 

@@ -1,8 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { styled } from "styled-components";
 import { useRecoilValue } from "recoil";  
 import { detailedNavAtom } from "../recoil/mainAtom";
 import DetailedNavItem from "../Components/DetailedNavItem";
+
+const DetailedNav = styled.nav`
+  z-index: 100;
+  position: fixed;
+  margin-top: 56px;
+  padding: 0 4px;
+  background-color: white;
+  width: 224px;
+  height: 100vh;
+  padding: 0 12px;
+  overflow: scroll;
+`
+const DetailedNavGuideSection = styled.section`
+  /* width: 216px; */
+  height: fit-content;
+  padding: 12px;
+  border-bottom: 1px solid lightgray;
+  width: fit-content;
+  height: fit-content;
+`
+const DetailedNavFooter = styled.section`
+  height: fit-content;
+  padding-bottom: 20px;
+`
 
 const DetailedNavContainer = () => {
 
@@ -354,9 +379,9 @@ const DetailedNavContainer = () => {
     ];
 
     return (
-        <nav id="explicit-nav" style={{ display: detailedNavOpen ? "block" : "none" }}>
+        <DetailedNav id="explicit-nav" style={{ display: detailedNavOpen ? "block" : "none" }}>
             <section id="sections">
-                <div className="guide-section">
+                <DetailedNavGuideSection className="guide-section">
                     {
                         DetailedNavBtnHomeData.map((elem) => {
                             return (
@@ -366,44 +391,44 @@ const DetailedNavContainer = () => {
                             )
                         })
                     }
-                </div>
-                <div className="guide-section">
+                </DetailedNavGuideSection>
+                <DetailedNavGuideSection className="guide-section">
                     {
                         DetailedNavBtnSubscribeData.map((elem) => {
                             return <DetailedNavItem key={elem.id} data={elem} />
                         })
                     }
-                </div>
-                <div className="guide-section">
+                </DetailedNavGuideSection>
+                <DetailedNavGuideSection className="guide-section">
                     {
                         DetailedNavBtnExploreData.map((elem) => {
                             return <DetailedNavItem key={elem.id} data={elem} />
                         })
                     }
-                </div>
-                <div className="guide-section">
+                </DetailedNavGuideSection>
+                <DetailedNavGuideSection className="guide-section">
                     {
                         DetailedNavBtnExtraData.map((elem) => {
                             return <DetailedNavItem key={elem.id} data={elem} />
                         })
                     }
-                </div>
-                <div className="guide-section">
+                </DetailedNavGuideSection>
+                <DetailedNavGuideSection className="guide-section">
                     {
                         DetailedNavBtnSettingData.map((elem) => {
                             return <DetailedNavItem key={elem.id} data={elem} />
                         })
                     }
-                </div>
+                </DetailedNavGuideSection>
             </section>
-            <section id="footer">
+            <DetailedNavFooter id="footer">
                 {
                     FooterData.map((elem) => {
                         return <DetailedNavItem key={elem.id} data={elem} />
                     })
                 }
-            </section>
-        </nav>
+            </DetailedNavFooter>
+        </DetailedNav>
     )
 }
 

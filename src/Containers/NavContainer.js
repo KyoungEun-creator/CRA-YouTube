@@ -1,6 +1,16 @@
 import React from "react";
+import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 import NavBtnItem from "../Components/NavBtnItem";
+
+const Nav = styled.nav`
+  z-index: 0;
+  position: fixed;
+  height: 100vh;
+  top: 56px;
+  padding: 0 4px;
+  background-color: white;
+`
 
 const NavContainer = () => {
 
@@ -56,7 +66,7 @@ const NavContainer = () => {
     ];
 
     return (
-        <nav id="implicit-nav">
+        <Nav>
             {
                 NavBtnData.map((elem) => {
                     return (
@@ -66,7 +76,7 @@ const NavContainer = () => {
                     )
                 })   
             }
-        </nav>
+        </Nav>
     )
 }
 
