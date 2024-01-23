@@ -1,5 +1,30 @@
 import React from "react";
+import { styled } from "styled-components";
 import WatchCommentItem from "../Components/WatchCommentItem";
+
+const CommentsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+const CommentsCount = styled.h1`
+  font-size: 25px;
+  margin-bottom: 10px;
+`
+const AddComment = styled.div`
+  width: 930px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+`
+const CommentWriter = styled.img`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+`
+const WriteComment = styled.input`
+  flex-grow: 1;
+`
 
 const WatchCommentsContainer = () => {
 
@@ -28,18 +53,18 @@ const WatchCommentsContainer = () => {
     ]
     
     return (
-        <div id="commentsContainer">
-            <h1 id="commentsCount">댓글 {commentsListData.length}개</h1>
-            <div id="addComment">
-                <img id="commentWriter" src="https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj" alt="작성자" />
-                <input id="writeComment" type="text" />
-            </div>
+        <CommentsContainer id="commentsContainer">
+            <CommentsCount id="commentsCount">댓글 {commentsListData.length}개</CommentsCount>
+            <AddComment id="addComment">
+                <CommentWriter id="commentWriter" src="https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj" alt="작성자" />
+                <WriteComment id="writeComment" type="text" />
+            </AddComment>
             {
                 commentsListData.map((elem) => {
                     return <WatchCommentItem key={elem.id} data={elem} />
                 })
             }
-        </div>
+        </CommentsContainer>
     )
 }
 

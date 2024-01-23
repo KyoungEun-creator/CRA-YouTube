@@ -1,9 +1,95 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { styled } from "styled-components";
+import { Button } from "../style/Button";
 import HeaderHoverAlertItem from "../Components/HeaderHoverAlertItem";
 
+const Header = styled.header`
+  top: 0;
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 56px;
+  padding: 0 16px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  z-index: 100;
+`
+const HeaderLeft = styled.div`
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: flex-start;
+`
+const NavOpenBtn = styled(Button)`
+    border-radius: 50%;
+`
+const NavOpenBtnImg = styled.img`
+  width: 24px;
+  height: 24px;
+  padding: 5px;
+`
+const YoutubePremiumLogo = styled.img`
+  width: 97px;
+  height: 20px;
+  padding: 8px 14px 8px 16px;
+  position: relative;
+`
+const CountryCode = styled.span`  
+    font-size: 10px;
+    color: #606060;
+    margin: 12px 0 0 -10px;
+    position: absolute;
+    top: 1px;
+`
+const HeaderMiddle = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  margin: 10px 10px;
+  justify-content: center;
+`
+const SearchBar = styled.span`
+  margin: 0 0 0 40px;
+  padding: 0 4px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
+const SearchText = styled.div`
+  position: relative;
+`
+const SearchInput = styled.input`
+  border: 1px solid lightgray;
+  border-radius: 20px 0 0 20px;
+  width: 536px;
+  height: 40px;
+  padding: 0 4px 0 16px;
+  margin: 0 0 0 32px;
+  flex: 1;
+`
+const SearchTypingBtn = styled.button`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+`
+const SearchKeyboard = styled.img`
+  width: 19px;
+  height: 11px;
+`
+const HeaderRight = styled.div`
+  display: flex;
+  width: 156px;
+  height: 40px;
+  padding: 0 50px;
+  align-items: right;
+  justify-content: flex-end;
+`
+
 const HeaderContainer = (props) => {
-    
     const { event } = props;
 
     const HeaderMiddleItemData = [
@@ -54,39 +140,39 @@ const HeaderContainer = (props) => {
     ];
 
     return (
-        <header>
-            <div id="headerLeft">
-                <button id="navOpenBtn" onClick={event}>
-                    <img id="navOpenBtnImg" src="imgs/bars-solid.svg" alt="navigation 열기" />
-                </button>
+        <Header>
+            <HeaderLeft id="headerLeft">
+                <NavOpenBtn id="navOpenBtn" onClick={event} width="40px" height="40px" setFlex="h_row_center" setBorder="none">
+                    <NavOpenBtnImg id="navOpenBtnImg" src="imgs/bars-solid.svg" alt="navigation 열기" />
+                </NavOpenBtn>
                 <Link to="/home" title="youtube">
-                    <img id="youtubePremiumLogo" src="imgs/YouTube_Premium_logo.svg" alt="Youtube 홈" />
-                    <span id="countryCode">KR</span>
+                    <YoutubePremiumLogo id="youtubePremiumLogo" src="imgs/YouTube_Premium_logo.svg" alt="Youtube 홈" />
+                    <CountryCode id="countryCode">KR</CountryCode>
                 </Link>
-            </div>
-            <div id="headerMiddle">
-                <span id="searchBar">
-                    <div id="searchText">
-                        <input id="searchInput" type="text" placeholder="검색" />
-                        <button id="searchTypingBtn" type="button">
-                            <img id="searchKeyboard" src="https://www.gstatic.com/inputtools/images/tia.png" alt="검색하기"/>
-                        </button>
-                    </div>
+            </HeaderLeft>
+            <HeaderMiddle id="headerMiddle">
+                <SearchBar id="searchBar">
+                    <SearchText id="searchText">
+                        <SearchInput id="searchInput" type="text" placeholder="검색" />
+                        <SearchTypingBtn id="searchTypingBtn" type="button">
+                            <SearchKeyboard id="searchKeyboard" src="https://www.gstatic.com/inputtools/images/tia.png" alt="검색하기"/>
+                        </SearchTypingBtn>
+                    </SearchText>
                     {
                         HeaderMiddleItemData.map((elem) => {
                             return <HeaderHoverAlertItem key={elem.id} data={elem}/>
                         })
                     }
-                </span> 
-            </div>
-            <div id="headerRight">
+                </SearchBar> 
+            </HeaderMiddle>
+            <HeaderRight id="headerRight">
                 {
                     HeaderRightItemData.map((elem) => {
                         return <HeaderHoverAlertItem key={elem.id} data={elem} isHover/>
                     })
                 }
-            </div>
-        </header>
+            </HeaderRight>
+        </Header>
     )
 }
 

@@ -1,16 +1,33 @@
 import React from "react";
+import { styled } from "styled-components";
 import NavContainer from "../Containers/NavContainer";
 import ShortsBtnsContainer from "../Containers/ShortsBtnsContainer";
+
+const ShortsArticle = styled.article`
+  width: calc(100% - margin-left);
+  height: 626px;
+  justify-content: center;
+  margin-left: 72px;
+  padding: 70px 30px 0 30px;
+  display: flex;
+  flex-direction: row;
+`
+const ShortsVideo = styled.img`
+  width: 352px;
+  height: 100%;
+  margin-right: 15px;
+  border-radius: 10px;
+`
 
 const ShortsPage = () => {
 
     return (
         <>
             <NavContainer />
-            <article id="shortsArticle">
-                <img id="shortsVideo" src="imgs/shorts.jpeg" alt="쇼츠" />
+            <ShortsArticle id="shortsArticle">
+                <ShortsVideo id="shortsVideo" src="imgs/shorts.jpeg" alt="쇼츠" />
                 <ShortsBtnsContainer />
-            </article>
+            </ShortsArticle>
         </>
     )
 }
