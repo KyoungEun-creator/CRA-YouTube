@@ -1,6 +1,9 @@
 import React from "react";
 import { styled } from "styled-components";
+<<<<<<< HEAD
 import { Div } from "../style/Div";
+=======
+>>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
 import UploadMentionModule from "../Modules/UploadMentionModule";
 
 const RecommendedVideoContainer = styled.div`

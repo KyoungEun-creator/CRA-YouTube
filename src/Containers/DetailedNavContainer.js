@@ -17,6 +17,10 @@ const DetailedNav = styled.nav`
   overflow: scroll;
 `
 const DetailedNavGuideSection = styled.section`
+<<<<<<< HEAD
+=======
+  /* width: 216px; */
+>>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
   height: fit-content;
   padding: 12px;
   border-bottom: 1px solid lightgray;

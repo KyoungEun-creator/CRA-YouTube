@@ -1,7 +1,10 @@
 import React from "react";
 import { styled } from "styled-components";
+<<<<<<< HEAD
 import { Div } from "../style/Div";
 import { Button } from "../style/Button";
+=======
+>>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
 import UploadMentionModule from "../Modules/UploadMentionModule";
 import useHover from "../Hooks/useHover";
 
@@ -32,7 +35,11 @@ const TimeStatus = styled.div`
   position: absolute;
   background-color: black;
   opacity: 0.8;
+<<<<<<< HEAD
   display: inline-block; 
+=======
+  display: inline-block; /* 내용에 맞는 width 길이 갖도록 */
+>>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
   height: 12px;
   padding: 3px 4px;
   border-radius: 4px;
@@ -42,7 +49,16 @@ const TimeStatus = styled.div`
   font-size: 12px;
   font-weight: 800;
 `
+<<<<<<< HEAD
 const ContentDetails = styled(Div)`
+=======
+const ContentDetails = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100px; /* 고정 */
+  justify-content: space-between;
+>>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
 `
 const ChannelProfileImg = styled.img`
   width: 36px;
@@ -67,15 +83,22 @@ const ContentTitle = styled.h3`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 `
+<<<<<<< HEAD
 const DetailBtn = styled(Button)`
+=======
+const DetailBtn = styled.button`
+>>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
   border-radius: 50%;
   width: 40px;
   height: 40px;
   padding: 0;
   right: 0;
+<<<<<<< HEAD
   &:hover {
     display: block;
   }
+=======
+>>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
 `
 const DetailBtnImg = styled.img`
   width: 24px;
@@ -96,6 +119,7 @@ const MainVideoItem = (props) => {
     const uploadMention = UploadMentionModule({ data: props.data });
 
     return (
+<<<<<<< HEAD
         <ContentItem onMouseOver={videoDisplayBlockEvent} onMouseOut={videoDisplayNoneEvent}>
             <ThumbnailBox>
                 <Thumbnail src={thumbnailImgSrc} style={{display: isVideoHovered ? "none" : "block"}} alt="thumbnail" />
@@ -108,6 +132,20 @@ const MainVideoItem = (props) => {
                 </a>
                 <ContentMetaData>
                     <ContentTitle> {videoTitle} </ContentTitle>
+=======
+        <ContentItem className="contents-row-item" onMouseOver={videoDisplayBlockEvent} onMouseOut={videoDisplayNoneEvent}>
+            <ThumbnailBox className="thumbnail-box">
+                <Thumbnail className="thumbnail" src={thumbnailImgSrc} style={{display: isVideoHovered ? "none" : "block"}} alt="thumbnail" />
+                <ThumbnailVideo className="thumbnail-video" style={{display: isVideoHovered ? "block" : "none"}} src={thumbnailVideoSrc} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></ThumbnailVideo>
+                <TimeStatus className="time-status"> {runningTime} </TimeStatus>
+            </ThumbnailBox>
+            <ContentDetails className="contents-details" onMouseOver={detailBtnDisplayBlockEvent} onMouseOut={detailBtnDisplayNoneEvent}>
+                <a href={channelProfileUrl}>
+                    <ChannelProfileImg className="avatar" src={channelProfileImgSrc} alt={alt}/>
+                </a>
+                <ContentMetaData className="meta">
+                    <ContentTitle className="title"> {videoTitle} </ContentTitle>
+>>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
                     <div>
                         <a href={channelProfileUrl} className="metadatas">
                             <span className="metadatas">{channelName}</span> 
@@ -115,8 +153,13 @@ const MainVideoItem = (props) => {
                         <div className="metadatas"> 조회수 {view} ∙ {uploadMention} </div>
                     </div>
                 </ContentMetaData>
+<<<<<<< HEAD
                 <DetailBtn value="세부사항 설정" style={{display: isBtnHovered ? "block" : "none"}} deco="none">
                     <DetailBtnImg src="imgs/ellipsis-vertical-solid.svg" alt={alt}/>
+=======
+                <DetailBtn className="detail-btn a-detail" value="세부사항 설정" style={{display: isBtnHovered ? "block" : "none"}} type="button">
+                    <DetailBtnImg className="details" src="imgs/ellipsis-vertical-solid.svg" alt={alt}/>
+>>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
                 </DetailBtn>
             </ContentDetails>
         </ContentItem> 
