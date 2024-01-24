@@ -1,12 +1,9 @@
 import React from "react";
 import { styled } from "styled-components";
+import { Div } from "../style/Div";
 import ShortsBtnItem from "../Components/ShortsBtnItem";
 
-const ShortsBtnsBundle = styled.div`
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
+const ShortsBtnsBundle = styled(Div)`
 `
 
 const ShortsBtnsContainer = () => {
@@ -57,7 +54,7 @@ const ShortsBtnsContainer = () => {
     // 나중에 각 버튼에 대한 이벤트가 추가될 경우 여기서
 
     return (
-        <ShortsBtnsBundle>
+        <ShortsBtnsBundle height="100%" flex="v_row_end">
             {
                 ShortsBtnData.map((elem) => {
                     return <ShortsBtnItem key={elem.id} data={elem}/>

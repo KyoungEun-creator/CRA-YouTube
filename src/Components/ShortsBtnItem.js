@@ -1,36 +1,36 @@
 import React from "react";
 import { styled } from "styled-components";
+import { Div } from "../style/Div";
+import { Button } from "../style/Button";
 import useHover from "../Hooks/useHover";
 
-const ShortsBtn = styled.div`
+const ShortsBtn = styled(Div)`
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin-top: 15px;
+`
+const ShortsProfileBtn = styled(Button)`
+    border-radius: 5px;
 `
 const ShortsProfileBtnImg = styled.img`
   width: 48px;
   height: 48px;
   border-radius: 5px;
 `
-const ShortsEtcBtn = styled.button`
+const ShortsEtcBtn = styled(Button)`
   width: 48px;
   height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 50%;
   background-color: #efefef;
+  &:hover {
+    background-color: lightgray;
+  }
 `
 const ShortsBtnImg = styled.img`
   width: 24px;
   height: 24px;
   padding: 9px;
 `
-const ShortsBtnhoverDetails = styled.div`
-  width: fit-content;
+const ShortsBtnhoverDetails = styled(Div)`
   position: absolute;
   padding: 10px;
   background: rgb(44, 44, 44);
@@ -56,21 +56,20 @@ const ShortsBtnItem = (props) => {
     const [isHovered, hoverDetailsDisplayBlockEvent, hoverDetailsDisplayNoneEvent] = useHover(false);
 
     return (
-        <ShortsBtn className="shortsBtn" onMouseOver={hoverDetailsDisplayBlockEvent} onMouseOut={hoverDetailsDisplayNoneEvent}>
+        <ShortsBtn onMouseOver={hoverDetailsDisplayBlockEvent} onMouseOut={hoverDetailsDisplayNoneEvent} flex="v_row_center">
             {imgClassName 
-                ? (<button className={imgClassName} type="button">
-                    <ShortsProfileBtnImg src={imgSrc} className="shortsProfileBtnImg" alt={alt} />
-                </button>)
-                : (<ShortsEtcBtn className="shortsBtnItem" type="button">
-                    <ShortsBtnImg src={imgSrc} className="shortsBtnImg" alt={alt} />
+                ? (<ShortsProfileBtn className={imgClassName}>
+                    <ShortsProfileBtnImg src={imgSrc} alt={alt} />
+                </ShortsProfileBtn>)
+                : (<ShortsEtcBtn className="shortsBtnItem" flex="h_row_center">
+                    <ShortsBtnImg src={imgSrc} alt={alt} />
                 </ShortsEtcBtn>)
             }
-
             {
-                tagContent && <ShortsBtnhoverDetails className="shortsBtnhoverDetails" style={{display: isHovered ? "block" : "none"}}> {tagContent} </ShortsBtnhoverDetails>
+                tagContent && <ShortsBtnhoverDetails style={{display: isHovered ? "block" : "none"}}> {tagContent} </ShortsBtnhoverDetails>
             }
             {
-                label && <ShortsBtnLabel className="shortsBtnLabel"> {label} </ShortsBtnLabel>
+                label && <ShortsBtnLabel> {label} </ShortsBtnLabel>
             }
         </ShortsBtn>
     )

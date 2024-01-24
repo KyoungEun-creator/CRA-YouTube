@@ -67,30 +67,10 @@ const setFlex = (value) => {
     }
 }
 
-const setDeco = (value) => {
-    if (value === "none") {
-        return `
-            background-color: transparent;
-            color: black;
-        `
-    }
-    else if (value === "black") {
-        return `
-            border: 1px solid black;
-            background-color: black;
-            color: white;
-        `
-    }
-}
-
-export const Button = styled.button`
-    type: ${ props => props.type || "button" };
+export const Div = styled.div`
     width: ${ props => props.width || "fit-content" };
     height: ${ props => props.height || "fit-content" };
     box-sizing: ${ props => props.boxSizing || "border-box" };
-    padding: ${ props => props.padding || "3px 3px 3px 3px" };
-    border: ${ props => props.border || "none" };
-    ${ props => setDeco(props.deco) };
+    font-size: ${ props => props.fontSize };
     ${ props => setFlex(props.flex) };
-    cursor: pointer;
 `

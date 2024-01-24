@@ -1,11 +1,13 @@
 import React from "react";
 import useHover from "../Hooks/useHover";
 import { styled } from "styled-components";
+import { Span } from "../style/Span";
+import { Button } from "../style/Button";
 
-const AlarmBadge = styled.div`
+const HoverBtn = styled(Button)`
+`
+const AlarmBadge = styled(Span)`
   position: absolute;
-  display: flex;
-  align-items: center;
   background-color: #c00;
   color: white;
   width: 13.547px;
@@ -17,7 +19,7 @@ const AlarmBadge = styled.div`
   font-size: 12px;
   padding: 0 4px;
 `
-const HoverDetails = styled.div`
+const HoverDetails = styled(Span)`
   position: absolute;
   top: 55px;
   padding: 10px;
@@ -29,7 +31,6 @@ const HoverDetails = styled.div`
   font-weight: 200;
   border-radius: 5px;
   z-index: 100;
-  align-items: center;
 `
 
 const HeaderHoverAlertItem = (props) => {
@@ -41,18 +42,18 @@ const HeaderHoverAlertItem = (props) => {
     const [isHovered, hoverDetailsDisplayBlockEvent, hoverDetailsDisplayNoneEvent] = useHover(false);
 
     return (
-        <button id={idName} className={isHover && "headerRightBtns"} onMouseOver={hoverDetailsDisplayBlockEvent} onMouseOut={hoverDetailsDisplayNoneEvent} type="button">
+        <HoverBtn id={idName} className={isHover && "headerRightBtns"} onMouseOver={hoverDetailsDisplayBlockEvent} onMouseOut={hoverDetailsDisplayNoneEvent} deco="none">
             { imgId
                 ? <img id={imgId} className={imgClassName} src={imgSrc} alt={alt} />
                 : <img className={imgClassName} src={imgSrc} alt={alt} />
             }
             {
-                alarmNum && <AlarmBadge> {alarmNum} </AlarmBadge> 
+                alarmNum && <AlarmBadge flex="h_row_center"> {alarmNum} </AlarmBadge> 
             }
             {
-                tagContent && <HoverDetails style={{display: isHovered ? "block" : "none"}}> {tagContent} </HoverDetails>
+                tagContent && <HoverDetails style={{display: isHovered ? "block" : "none"}} flex="h_row_center"> {tagContent} </HoverDetails>
             }
-        </button>
+        </HoverBtn>
     )
 }
 

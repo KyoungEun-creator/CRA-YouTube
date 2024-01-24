@@ -1,37 +1,28 @@
 import React from "react";
 import { styled } from "styled-components";
+import { Div } from "../style/Div";
+import { Button } from "../style/Button";
 
-const ScreenContainer = styled.div`
+const ScreenContainer = styled(Div)`
   position: relative;
   width: 930px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0 20px 0 0px;
   margin-top: 70px;
 `
 const ScreenImg = styled.img`
   width: 100%;
   height: 100%;
 `
-const VideoControlContainer = styled.div`
+const VideoControlContainer = styled(Div)`
   position: absolute;
   bottom: 0;
   width: 930px;
   height: 48px;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
   padding: 5px 0 5px 0;
   box-sizing: border-box;
 `
-const VideoControlPart = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+const VideoControlPart = styled(Div)`
 `
-const VideoControlBtns = styled.button`
+const VideoControlBtns = styled(Button)`
   width: 20px;
   height: 20px;
   margin: 0 10px 0 10px;
@@ -41,7 +32,6 @@ const VideoControlBtnImgs = styled.img`
   height: 20px;
 `
 
-
 const WatchScreenItem = (props) => {
 
     const { thumbnailImgSrc, runningTime } = props.data;
@@ -49,36 +39,36 @@ const WatchScreenItem = (props) => {
     const IP = process.env.REACT_APP_IP_URL;
 
     return (
-        <ScreenContainer id="screenContainer">
-            <ScreenImg id="screenImg" src={thumbnailImgSrc} alt="영상" />
-            <VideoControlContainer id="videoControlContainer">
-                <VideoControlPart id="videoControlLeft">
-                    <VideoControlBtns className="videoControlBtns">
-                        <VideoControlBtnImgs className="videoControlBtnImgs" src={`${IP}/imgs/play-solid.svg`} alt="재생" />
+        <ScreenContainer flex="v_row_end">
+            <ScreenImg src={thumbnailImgSrc} alt="영상" />
+            <VideoControlContainer flex="h_row_between">
+                <VideoControlPart flex="h_row_center">
+                    <VideoControlBtns deco="none">
+                        <VideoControlBtnImgs src={`${IP}/imgs/play-solid.svg`} alt="재생" />
                     </VideoControlBtns>
-                    <VideoControlBtns className="videoControlBtns">
-                        <VideoControlBtnImgs className="videoControlBtnImgs" src={`${IP}/imgs/next.png`} alt="다음" />
+                    <VideoControlBtns deco="none">
+                        <VideoControlBtnImgs src={`${IP}/imgs/next.png`} alt="다음" />
                     </VideoControlBtns>
-                    <VideoControlBtns className="videoControlBtns">
-                        <VideoControlBtnImgs className="videoControlBtnImgs" src={`${IP}/imgs/volume.png`} alt="볼륨" />
+                    <VideoControlBtns deco="none">
+                        <VideoControlBtnImgs src={`${IP}/imgs/volume.png`} alt="볼륨" />
                     </VideoControlBtns>
                     <span>0:00/{runningTime}</span>
                 </VideoControlPart>
-                <VideoControlPart id="videoControlRight">
-                    <VideoControlBtns className="videoControlBtns">
-                        <VideoControlBtnImgs className="videoControlBtnImgs" src={`${IP}/imgs/switch.png`} alt="스위치" />
+                <VideoControlPart flex="h_row_center">
+                    <VideoControlBtns deco="none">
+                        <VideoControlBtnImgs src={`${IP}/imgs/switch.png`} alt="스위치" />
                     </VideoControlBtns>
-                    <VideoControlBtns className="videoControlBtns">
-                        <VideoControlBtnImgs className="videoControlBtnImgs" src={`${IP}/imgs/subtitle.png`} alt="자막" />
+                    <VideoControlBtns deco="none">
+                        <VideoControlBtnImgs src={`${IP}/imgs/subtitle.png`} alt="자막" />
                     </VideoControlBtns>
-                    <VideoControlBtns className="videoControlBtns">
-                        <VideoControlBtnImgs className="videoControlBtnImgs" src={`${IP}/imgs/settings.png`} alt="설정" />
+                    <VideoControlBtns deco="none">
+                        <VideoControlBtnImgs src={`${IP}/imgs/settings.png`} alt="설정" />
                     </VideoControlBtns>
-                    <VideoControlBtns className="videoControlBtns">
-                        <VideoControlBtnImgs className="videoControlBtnImgs" src={`${IP}/imgs/rectangle.png`} alt="영화관모드" />
+                    <VideoControlBtns deco="none">
+                        <VideoControlBtnImgs src={`${IP}/imgs/rectangle.png`} alt="영화관모드" />
                     </VideoControlBtns>
-                    <VideoControlBtns className="videoControlBtns">
-                        <VideoControlBtnImgs className="videoControlBtnImgs" src={`${IP}/imgs/expand.png`} alt="전체보기" />
+                    <VideoControlBtns deco="none">
+                        <VideoControlBtnImgs src={`${IP}/imgs/expand.png`} alt="전체보기" />
                     </VideoControlBtns>
                 </VideoControlPart>
             </VideoControlContainer>

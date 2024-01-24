@@ -1,11 +1,10 @@
 * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 /* ==================== header ==================== */
-#navOpenBtn:hover {
-  background-color: lightgray;
-}
+
 #magnifyingGlassBtn {
   background-color: #f8f8f8;
   width: 64px;
@@ -69,8 +68,6 @@
   border-radius: 50%;
 }
 
-/* ==================== implicit nav ==================== */
-
 /* ==================== explicit nav ==================== */
 
 .exnav-btn-img {
@@ -102,42 +99,10 @@
   margin-bottom: 60px;
 }
 
-/* ==================== article ==================== */
+/* ==================== MainVideoItem ==================== */
 .metadatas {
   color: #606060;
   font-size: 14px;
   width: fit-content;
   height: 20px;
 }
-.detail-btn:hover {
-  display: block;
-}
-/* ==================== shorts article ==================== */
-.shortsBtnItem:hover {
-  background-color: lightgray;
-}
-.shortsProfileBtnItem {
-  border-radius: 5px;
-}
-
-/* ==================== Screen ==================== */
-
-/* ==================== VideoData ==================== */
-
-.videoDataBtns:hover {
-  background-color: lightgray;
-}
-
-/* ==================== RecommendedVideo ==================== */
-
-/* ==================== Comment ==================== */
-
-.commentThumbBtn:hover {
-  background-color: lightgray;
-}
-#sendReplyBtn:hover {
-  background-color: lightgray;
-}
-/* ==================== CommentsContainer ==================== */
-
-/* ==================== Watch ==================== */

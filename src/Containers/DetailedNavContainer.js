@@ -17,7 +17,6 @@ const DetailedNav = styled.nav`
   overflow: scroll;
 `
 const DetailedNavGuideSection = styled.section`
-  /* width: 216px; */
   height: fit-content;
   padding: 12px;
   border-bottom: 1px solid lightgray;
