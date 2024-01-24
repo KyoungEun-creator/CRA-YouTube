@@ -1,5 +1,11 @@
 import React from "react";
+import { styled } from "styled-components";
+import { Div } from "../style/Div";
 import WatchRecommendationItem from "../Components/WatchRecommendationItem";
+
+const RecommendationContainer = styled(Div)`
+    margin-top: 70px;
+`
 
 const WatchRecommendationContainer = () => {
 
@@ -115,13 +121,13 @@ const WatchRecommendationContainer = () => {
     ];
 
     return (
-        <>
+        <RecommendationContainer flex="v_center">
             {
                 RecommendationVideosData.map((elem) => {
                     return <WatchRecommendationItem key={elem.id} data={elem} />
                 })
             }
-        </>
+        </RecommendationContainer>
     )
 }
 

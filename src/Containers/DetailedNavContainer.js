@@ -17,10 +17,6 @@ const DetailedNav = styled.nav`
   overflow: scroll;
 `
 const DetailedNavGuideSection = styled.section`
-<<<<<<< HEAD
-=======
-  /* width: 216px; */
->>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
   height: fit-content;
   padding: 12px;
   border-bottom: 1px solid lightgray;
@@ -30,6 +26,7 @@ const DetailedNavGuideSection = styled.section`
 const DetailedNavFooter = styled.section`
   height: fit-content;
   padding-bottom: 20px;
+  margin-bottom: 60px;
 `
 
 const DetailedNavContainer = () => {
@@ -382,9 +379,9 @@ const DetailedNavContainer = () => {
     ];
 
     return (
-        <DetailedNav id="explicit-nav" style={{ display: detailedNavOpen ? "block" : "none" }}>
-            <section id="sections">
-                <DetailedNavGuideSection className="guide-section">
+        <DetailedNav style={{ display: detailedNavOpen ? "block" : "none" }}>
+            <section >
+                <DetailedNavGuideSection>
                     {
                         DetailedNavBtnHomeData.map((elem) => {
                             return (
@@ -395,28 +392,28 @@ const DetailedNavContainer = () => {
                         })
                     }
                 </DetailedNavGuideSection>
-                <DetailedNavGuideSection className="guide-section">
+                <DetailedNavGuideSection>
                     {
                         DetailedNavBtnSubscribeData.map((elem) => {
                             return <DetailedNavItem key={elem.id} data={elem} />
                         })
                     }
                 </DetailedNavGuideSection>
-                <DetailedNavGuideSection className="guide-section">
+                <DetailedNavGuideSection>
                     {
                         DetailedNavBtnExploreData.map((elem) => {
                             return <DetailedNavItem key={elem.id} data={elem} />
                         })
                     }
                 </DetailedNavGuideSection>
-                <DetailedNavGuideSection className="guide-section">
+                <DetailedNavGuideSection>
                     {
                         DetailedNavBtnExtraData.map((elem) => {
                             return <DetailedNavItem key={elem.id} data={elem} />
                         })
                     }
                 </DetailedNavGuideSection>
-                <DetailedNavGuideSection className="guide-section">
+                <DetailedNavGuideSection>
                     {
                         DetailedNavBtnSettingData.map((elem) => {
                             return <DetailedNavItem key={elem.id} data={elem} />
@@ -424,7 +421,7 @@ const DetailedNavContainer = () => {
                     }
                 </DetailedNavGuideSection>
             </section>
-            <DetailedNavFooter id="footer">
+            <DetailedNavFooter>
                 {
                     FooterData.map((elem) => {
                         return <DetailedNavItem key={elem.id} data={elem} />

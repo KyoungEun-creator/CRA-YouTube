@@ -1,21 +1,14 @@
 import React from "react";
 import useHover from "../Hooks/useHover";
 import { styled } from "styled-components";
-<<<<<<< HEAD
 import { Span } from "../style/Span";
 import { Button } from "../style/Button";
 
 const HoverBtn = styled(Button)`
+    padding: 6px 6px 6px 6px;
 `
 const AlarmBadge = styled(Span)`
   position: absolute;
-=======
-
-const AlarmBadge = styled.div`
-  position: absolute;
-  display: flex;
-  align-items: center;
->>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
   background-color: #c00;
   color: white;
   width: 13.547px;
@@ -27,11 +20,7 @@ const AlarmBadge = styled.div`
   font-size: 12px;
   padding: 0 4px;
 `
-<<<<<<< HEAD
 const HoverDetails = styled(Span)`
-=======
-const HoverDetails = styled.div`
->>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
   position: absolute;
   top: 55px;
   padding: 10px;
@@ -43,10 +32,6 @@ const HoverDetails = styled.div`
   font-weight: 200;
   border-radius: 5px;
   z-index: 100;
-<<<<<<< HEAD
-=======
-  align-items: center;
->>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
 `
 
 const HeaderHoverAlertItem = (props) => {
@@ -64,17 +49,10 @@ const HeaderHoverAlertItem = (props) => {
                 : <img className={imgClassName} src={imgSrc} alt={alt} />
             }
             {
-<<<<<<< HEAD
-                alarmNum && <AlarmBadge flex="h_row_center"> {alarmNum} </AlarmBadge> 
+                alarmNum && <AlarmBadge flex="h_center"> {alarmNum} </AlarmBadge> 
             }
             {
-                tagContent && <HoverDetails style={{display: isHovered ? "block" : "none"}} flex="h_row_center"> {tagContent} </HoverDetails>
-=======
-                alarmNum && <AlarmBadge> {alarmNum} </AlarmBadge> 
-            }
-            {
-                tagContent && <HoverDetails style={{display: isHovered ? "block" : "none"}}> {tagContent} </HoverDetails>
->>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
+                tagContent && <HoverDetails style={{display: isHovered ? "block" : "none"}} flex="h_center"> {tagContent} </HoverDetails>
             }
         </HoverBtn>
     )

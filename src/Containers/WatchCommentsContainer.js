@@ -1,29 +1,29 @@
 import React from "react";
 import { styled } from "styled-components";
+import { Div } from "../style/Div";
+import { Input } from "../style/Input";
 import WatchCommentItem from "../Components/WatchCommentItem";
 
-const CommentsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+const CommentsContainer = styled(Div)`
 `
 const CommentsCount = styled.h1`
-  font-size: 25px;
-  margin-bottom: 10px;
+    width: 100%;
+    font-size: 25px;
+    margin-bottom: 10px;
 `
-const AddComment = styled.div`
-  width: 930px;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 30px;
+const AddComment = styled(Div)`
+    width: 100%;
+    margin-bottom: 30px;
 `
 const CommentWriter = styled.img`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
 `
-const WriteComment = styled.input`
-  flex-grow: 1;
+const WriteComment = styled(Input)`
+    height: 40px;
+    flex-grow: 1;
 `
 
 const WatchCommentsContainer = () => {
@@ -53,11 +53,11 @@ const WatchCommentsContainer = () => {
     ]
     
     return (
-        <CommentsContainer id="commentsContainer">
-            <CommentsCount id="commentsCount">댓글 {commentsListData.length}개</CommentsCount>
-            <AddComment id="addComment">
-                <CommentWriter id="commentWriter" src="https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj" alt="작성자" />
-                <WriteComment id="writeComment" type="text" />
+        <CommentsContainer flex="v_start">
+            <CommentsCount> 댓글 {commentsListData.length}개 </CommentsCount>
+            <AddComment flex="h_between">
+                <CommentWriter src="https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj" alt="작성자" />
+                <WriteComment border="1px solid black" />
             </AddComment>
             {
                 commentsListData.map((elem) => {

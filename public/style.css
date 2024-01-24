@@ -1,18 +1,10 @@
 * {
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
   text-decoration: none;
 }
 /* ==================== header ==================== */
 
-=======
-}
-/* ==================== header ==================== */
-#navOpenBtn:hover {
-  background-color: lightgray;
-}
->>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
 #magnifyingGlassBtn {
   background-color: #f8f8f8;
   width: 64px;
@@ -76,13 +68,7 @@
   border-radius: 50%;
 }
 
-<<<<<<< HEAD
-=======
-/* ==================== implicit nav ==================== */
-
->>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
 /* ==================== explicit nav ==================== */
-
 .exnav-btn-img {
   width: 18px;
   height: 18px;
@@ -90,13 +76,6 @@
   display: flex;
   justify-content: left;
   align-items: center;
-}
-#inner-guide-section {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid lightgray;
-  width: fit-content;
-  height: fit-content;
 }
 .subscribing-channel-img {
   width: 24px;
@@ -108,53 +87,10 @@
   justify-content: left;
   align-items: center;
 }
-.footer-guide:nth-child(3) {
-  margin-bottom: 60px;
-}
-
-<<<<<<< HEAD
 /* ==================== MainVideoItem ==================== */
-=======
-/* ==================== article ==================== */
->>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
 .metadatas {
   color: #606060;
   font-size: 14px;
   width: fit-content;
   height: 20px;
 }
-<<<<<<< HEAD
-=======
-.detail-btn:hover {
-  display: block;
-}
-/* ==================== shorts article ==================== */
-.shortsBtnItem:hover {
-  background-color: lightgray;
-}
-.shortsProfileBtnItem {
-  border-radius: 5px;
-}
-
-/* ==================== Screen ==================== */
-
-/* ==================== VideoData ==================== */
-
-.videoDataBtns:hover {
-  background-color: lightgray;
-}
-
-/* ==================== RecommendedVideo ==================== */
-
-/* ==================== Comment ==================== */
-
-.commentThumbBtn:hover {
-  background-color: lightgray;
-}
-#sendReplyBtn:hover {
-  background-color: lightgray;
-}
-/* ==================== CommentsContainer ==================== */
-
-/* ==================== Watch ==================== */
->>>>>>> ca7d02137f3facfb2d172109ced24f4044d0f249
