@@ -33,6 +33,14 @@ const setFlex = (value) => {
             align-items: center;
         `
     }
+    else if (value === "h_between_left") {
+        return `
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: left;
+        `
+    }
     else if (value === "v_center") {
         return `
             display: flex;

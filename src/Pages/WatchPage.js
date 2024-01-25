@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import { Div } from "../style/Div";
-import WatchScreenItem from "../Components/WatchScreenItem";
+import WatchScreenContainer from "../Containers/WatchScreenContainer";
 import WatchVideoDataItem from "../Components/WatchVideoDataItem";
 import WatchCommentsContainer from "../Containers/WatchCommentsContainer";
 import WatchRecommendationContainer from "../Containers/WatchRecommendationContainer";
@@ -20,25 +20,25 @@ const WatchPage = () => {
     const watchVideoData = [
         {
             id: "watchVideoData_1",
-            videoTitle: "[Playlist] 비오는 뉴욕 대학교 감성",
-            thumbnailImgSrc: "https://i.ytimg.com/vi/BshkGKR5iL8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCrF7trszfVd--AeD22kDbqfHrcKg",
-            channelName: "반고흐가 되고싶어 Playlist",
-            runningTime: "59:45",
-            channelProfileUrl: "https://www.youtube.com/@Want_To_Be_VanGogh",
-            channelProfileImgSrc: "https://yt3.ggpht.com/Lo23b_zLzkxOi2UyFCCWvRPp7jmVv7qLv3yMgEV1hi7iq2Bf9E4tRIDhhfDPeYdO2dNQAgaaAAQ=s88-c-k-c0x00ffffff-no-rj",
+            videoTitle: "𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 질리도록 듣는 히트곡엔 그 이유가 있다𝐅𝐞𝐚𝐭. 𝐋𝐚𝐮𝐯, 𝐋𝐚𝐧𝐲, 𝐇𝐨𝐧𝐧𝐞, 𝐤𝐞𝐬𝐡𝐢, 𝐏𝐞𝐝𝐞𝐫 𝐄𝐥𝐢𝐚𝐬, 𝐓𝐫𝐨𝐲𝐞 𝐒𝐢𝐯𝐚𝐧, 𝐂𝐡𝐚𝐫𝐥𝐢𝐞 𝐏𝐮𝐭𝐡",
+            thumbnailImgSrc: "https://i.ytimg.com/vi/x6i3_LfeTjY/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLAqeEw2oAWSEkbU9yzkeWa-Kg21SQ",
+            channelName: "때껄룩ᴛᴀᴋᴇ ᴀ ʟᴏᴏᴋ",
+            runningTime: "4:00:00",
+            channelProfileUrl: "https://www.youtube.com/@takealook.",
+            channelProfileImgSrc: "https://yt3.ggpht.com/aW-CCbaQ2rbDrEvmpjf630Xhh4wiXEAYs_vZuhX7t3T7tqohQGYl1YzpWNORdJwPin6SMtstyw=s68-c-k-c0x00ffffff-no-rj",
             alt: "creatorProfile",
-            view: "195만회",
-            upload: "2023. 5. 5.",
-            subscribers: "6.11만명"
+            view: "621만회",
+            upload: "2023. 6. 9.",
+            subscribers: "162만명"
         }
     ]
 
     return (
-        <WatchVideoPage flex="h_between">
+        <WatchVideoPage flex="h_between_left">
             <WatchVideoLeftContainer>
                  {
                     watchVideoData.map((elem) => {
-                        return <WatchScreenItem key={elem.id} data={elem} />
+                        return <WatchScreenContainer key={elem.id} data={elem} />
                     })
                 }
                 {

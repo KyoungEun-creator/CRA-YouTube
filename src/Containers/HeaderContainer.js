@@ -6,7 +6,7 @@ import { Div } from "../style/Div";
 import { Input } from "../style/Input";
 import { Span } from "../style/Span";
 import { Img } from "../style/Img";
-import HeaderHoverAlertItem from "../Components/HeaderHoverAlertItem";
+import HoverAlertBtnItem from "../Components/HoverAlertBtnItem";
 
 const Header = styled.header`
   top: 0;
@@ -84,6 +84,7 @@ const HeaderRight = styled(Div)`
 `
 
 const HeaderContainer = (props) => {
+
     const { event } = props;
 
     const HeaderMiddleItemData = [
@@ -156,7 +157,7 @@ const HeaderContainer = (props) => {
 
                     {
                         HeaderMiddleItemData.map((elem) => {
-                            return <HeaderHoverAlertItem key={elem.id} data={elem}/>
+                            return <HoverAlertBtnItem key={elem.id} data={elem}/>
                         })
                     }
                 </SearchBar> 
@@ -165,7 +166,7 @@ const HeaderContainer = (props) => {
             <HeaderRight flex="h_end">
                 {
                     HeaderRightItemData.map((elem) => {
-                        return <HeaderHoverAlertItem key={elem.id} data={elem} isHover/>
+                        return <HoverAlertBtnItem key={elem.id} data={elem} isHover/>
                     })
                 }
             </HeaderRight>

@@ -34,7 +34,7 @@ const HoverDetails = styled(Span)`
   z-index: 100;
 `
 
-const HeaderHoverAlertItem = (props) => {
+const HoverAlertBtnItem = (props) => {
     
     const { idName, imgId, imgClassName, imgSrc, alt, tagContent, alarmNum } = props.data;
     const { isHover } = props;
@@ -58,4 +58,4 @@ const HeaderHoverAlertItem = (props) => {
     )
 }
 
-export default HeaderHoverAlertItem
+export default HoverAlertBtnItem
