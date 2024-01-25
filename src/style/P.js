@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 const setFlex = (value) => {
-    if (value === "h_row_between") {
+    if (value === "h_between") {
         return `
             display: flex;
             flex-direction: row;
@@ -9,7 +9,7 @@ const setFlex = (value) => {
             align-items: center;
         `
     }
-    else if (value === "h_row_start") {
+    else if (value === "h_start") {
         return `
             display: flex;
             flex-direction: row;
@@ -17,7 +17,7 @@ const setFlex = (value) => {
             align-items: center;
         `
     }
-    else if (value === "v_row_between") {
+    else if (value === "v_between") {
         return `
             display: flex;
             flex-direction: column;
@@ -25,7 +25,7 @@ const setFlex = (value) => {
             align-items: center;
         `
     }
-    else if (value === "v_row_start") {
+    else if (value === "v_start") {
         return `
             display: flex;
             flex-direction: column;
@@ -36,14 +36,11 @@ const setFlex = (value) => {
 }
 
 const setColor = (value) => {
-    if (value === "major") {
+    if (value === "red") {
+        return "red"
+    }
+    else if (value === "blue") {
         return "blue"
-    }
-    else if (value === "minor") {
-        return "yellow"
-    }
-    else if (value === "main") {
-        return "black"
     }
 }
 
@@ -52,9 +49,5 @@ export const P = styled.p`
     height: ${ props => props.height || "fit-content" };
     font-size: ${ props => props.fontSize || "16px" };
     color: ${ props => setColor(props.color) || "black" };
-    ${
-        (props) => {
-            return setFlex(props.flex)
-        }
-    }
+    ${ props => setFlex(props.flex) };
 `

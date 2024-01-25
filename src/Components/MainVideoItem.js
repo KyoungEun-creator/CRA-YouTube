@@ -2,6 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import { Div } from "../style/Div";
 import { Button } from "../style/Button";
+import { Img } from "../style/Img";
 import UploadMentionModule from "../Modules/UploadMentionModule";
 import useHover from "../Hooks/useHover";
 
@@ -18,7 +19,7 @@ const ThumbnailBox = styled.div`
   position: relative;
   z-index: -1;
 `
-const Thumbnail = styled.img`
+const Thumbnail = styled(Img)`
   object-fit: cover;
   width: 100%;
   aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
@@ -43,8 +44,10 @@ const TimeStatus = styled.div`
   font-weight: 800;
 `
 const ContentDetails = styled(Div)`
+    width: 100%;
+    height: 100px;
 `
-const ChannelProfileImg = styled.img`
+const ChannelProfileImg = styled(Img)`
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -77,7 +80,7 @@ const DetailBtn = styled(Button)`
     display: block;
   }
 `
-const DetailBtnImg = styled.img`
+const DetailBtnImg = styled(Img)`
   width: 24px;
   height: 24px;
 `
@@ -99,13 +102,15 @@ const MainVideoItem = (props) => {
         <ContentItem onMouseOver={videoDisplayBlockEvent} onMouseOut={videoDisplayNoneEvent}>
             <ThumbnailBox>
                 <Thumbnail src={thumbnailImgSrc} style={{display: isVideoHovered ? "none" : "block"}} alt="thumbnail" />
-                <ThumbnailVideo style={{display: isVideoHovered ? "block" : "none"}} src={thumbnailVideoSrc} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></ThumbnailVideo>
+                <ThumbnailVideo style={{display: isVideoHovered ? "block" : "none"}} src={thumbnailVideoSrc} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
                 <TimeStatus> {runningTime} </TimeStatus>
             </ThumbnailBox>
-            <ContentDetails onMouseOver={detailBtnDisplayBlockEvent} onMouseOut={detailBtnDisplayNoneEvent} width="100%" height="100px" flex="h_between">
+
+            <ContentDetails onMouseOver={detailBtnDisplayBlockEvent} onMouseOut={detailBtnDisplayNoneEvent} flex="h_between">
                 <a href={channelProfileUrl}>
                     <ChannelProfileImg src={channelProfileImgSrc} alt={alt}/>
                 </a>
+
                 <ContentMetaData>
                     <ContentTitle> {videoTitle} </ContentTitle>
                     <div>
@@ -115,6 +120,7 @@ const MainVideoItem = (props) => {
                         <div className="metadatas"> 조회수 {view} ∙ {uploadMention} </div>
                     </div>
                 </ContentMetaData>
+
                 <DetailBtn value="세부사항 설정" style={{display: isBtnHovered ? "block" : "none"}} deco="none">
                     <DetailBtnImg src="imgs/ellipsis-vertical-solid.svg" alt={alt}/>
                 </DetailBtn>

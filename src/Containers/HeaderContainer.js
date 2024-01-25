@@ -5,6 +5,7 @@ import { Button } from "../style/Button";
 import { Div } from "../style/Div";
 import { Input } from "../style/Input";
 import { Span } from "../style/Span";
+import { Img } from "../style/Img";
 import HeaderHoverAlertItem from "../Components/HeaderHoverAlertItem";
 
 const Header = styled.header`
@@ -22,17 +23,19 @@ const Header = styled.header`
 const HeaderLeft = styled(Div)`
 `
 const NavOpenBtn = styled(Button)`
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     &:hover {
         background-color: lightgray;
     }
 `
-const NavOpenBtnImg = styled.img`
+const NavOpenBtnImg = styled(Img)`
     width: 24px;
     height: 24px;
     padding: 5px;
 `
-const YoutubePremiumLogo = styled.img`
+const YoutubePremiumLogo = styled(Img)`
     width: 97px;
     height: 20px;
     padding: 8px 14px 8px 16px;
@@ -57,6 +60,9 @@ const SearchText = styled(Div)`
     position: relative;
 `
 const SearchInput = styled(Input)`
+    width: 536px;
+    height: 40px;
+    padding: 0 4px 0 16px;
     border-radius: 20px 0 0 20px;
     margin: 0 0 0 32px;
     flex: 1;
@@ -67,11 +73,13 @@ const SearchTypingBtn = styled(Button)`
     bottom: 0;
     right: 5px;
 `
-const SearchKeyboard = styled.img`
+const SearchKeyboard = styled(Img)`
     width: 19px;
     height: 11px;
 `
 const HeaderRight = styled(Div)`
+    width: 156px;
+    height: 40px;
     padding: 0 50px;
 `
 
@@ -128,7 +136,7 @@ const HeaderContainer = (props) => {
     return (
         <Header>
             <HeaderLeft flex="h_start">
-                <NavOpenBtn onClick={event} width="40px" height="40px" flex="h_center" deco="none">
+                <NavOpenBtn onClick={event} flex="h_center" deco="none">
                     <NavOpenBtnImg src="imgs/bars-solid.svg" alt="navigation 열기" />
                 </NavOpenBtn>
                 <Link to="/home" title="youtube">
@@ -140,7 +148,7 @@ const HeaderContainer = (props) => {
             <HeaderMiddle flex="h_center">
                 <SearchBar flex="h_center">
                     <SearchText>
-                        <SearchInput placeholder="검색" width="536px" height="40px" padding="0 4px 0 16px" />
+                        <SearchInput placeholder="검색" />
                         <SearchTypingBtn deco="none">
                             <SearchKeyboard src="https://www.gstatic.com/inputtools/images/tia.png" alt="검색하기"/>
                         </SearchTypingBtn>
@@ -154,7 +162,7 @@ const HeaderContainer = (props) => {
                 </SearchBar> 
             </HeaderMiddle>
 
-            <HeaderRight width="156px" height="40px" flex="h_end">
+            <HeaderRight flex="h_end">
                 {
                     HeaderRightItemData.map((elem) => {
                         return <HeaderHoverAlertItem key={elem.id} data={elem} isHover/>

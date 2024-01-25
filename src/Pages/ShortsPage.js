@@ -1,5 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
+import { Img } from "../style/Img";
 import NavContainer from "../Containers/NavContainer";
 import ShortsBtnsContainer from "../Containers/ShortsBtnsContainer";
 
@@ -12,9 +13,8 @@ const ShortsArticle = styled.article`
   display: flex;
   flex-direction: row;
 `
-const ShortsVideo = styled.img`
+const ShortsVideo = styled(Img)`
   width: 352px;
-  height: 100%;
   margin-right: 15px;
   border-radius: 10px;
 `

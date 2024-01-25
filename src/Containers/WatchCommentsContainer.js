@@ -2,6 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import { Div } from "../style/Div";
 import { Input } from "../style/Input";
+import { Img } from "../style/Img";
 import WatchCommentItem from "../Components/WatchCommentItem";
 
 const CommentsContainer = styled(Div)`
@@ -15,7 +16,7 @@ const AddComment = styled(Div)`
     width: 100%;
     margin-bottom: 30px;
 `
-const CommentWriter = styled.img`
+const CommentWriter = styled(Img)`
     width: 40px;
     height: 40px;
     border-radius: 50%;

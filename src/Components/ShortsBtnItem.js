@@ -2,6 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import { Div } from "../style/Div";
 import { Button } from "../style/Button";
+import { Img } from "../style/Img";
 import useHover from "../Hooks/useHover";
 
 const ShortsBtn = styled(Div)`
@@ -11,7 +12,7 @@ const ShortsBtn = styled(Div)`
 const ShortsProfileBtn = styled(Button)`
     border-radius: 5px;
 `
-const ShortsProfileBtnImg = styled.img`
+const ShortsProfileBtnImg = styled(Img)`
   width: 48px;
   height: 48px;
   border-radius: 5px;
@@ -25,7 +26,7 @@ const ShortsEtcBtn = styled(Button)`
     background-color: lightgray;
   }
 `
-const ShortsBtnImg = styled.img`
+const ShortsBtnImg = styled(Img)`
   width: 24px;
   height: 24px;
   padding: 9px;

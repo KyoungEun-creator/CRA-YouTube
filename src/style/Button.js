@@ -76,7 +76,6 @@ const setDeco = (value) => {
     }
     else if (value === "black") {
         return `
-            border: 1px solid black;
             background-color: black;
             color: white;
         `

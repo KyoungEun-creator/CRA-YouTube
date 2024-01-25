@@ -2,6 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import { Div } from "../style/Div";
 import { Span } from "../style/Span";
+import { Img } from "../style/Img";
 import { Button } from "../style/Button";
 
 const CommentForm = styled(Div)`
@@ -9,7 +10,7 @@ const CommentForm = styled(Div)`
     width: 930px;
     height: 100%;
 `
-const VideoDataUploaderProfileImg = styled.img`
+const VideoDataUploaderProfileImg = styled(Img)`
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -53,7 +54,7 @@ const CommentThumbUpBtn = styled(Span)`
         background-color: lightgray;
     }
 `
-const CommentThumbImg = styled.img`
+const CommentThumbImg = styled(Img)`
     width: 20px;
     height: 20px;
 `

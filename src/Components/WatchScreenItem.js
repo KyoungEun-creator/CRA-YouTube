@@ -1,15 +1,14 @@
 import React from "react";
 import { styled } from "styled-components";
 import { Div } from "../style/Div";
+import { Img } from "../style/Img";
 import { Button } from "../style/Button";
 
 const ScreenContainer = styled(Div)`
   position: relative;
   width: 930px;
 `
-const ScreenImg = styled.img`
-  width: 100%;
-  height: 100%;
+const ScreenImg = styled(Img)`
 `
 const VideoControlContainer = styled(Div)`
   position: absolute;
@@ -26,7 +25,7 @@ const VideoControlBtns = styled(Button)`
   height: 20px;
   margin: 0 10px 0 10px;
 `
-const VideoControlBtnImgs = styled.img`
+const VideoControlBtnImgs = styled(Img)`
   width: 20px;
   height: 20px;
 `

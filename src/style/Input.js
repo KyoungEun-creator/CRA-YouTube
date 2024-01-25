@@ -1,6 +1,5 @@
 import { styled } from "styled-components";
 
-
 export const Input = styled.input`
     type: ${ props => props.type || "text" };
     width: ${ props => props.width  || "fit-content" };

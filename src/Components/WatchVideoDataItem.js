@@ -2,6 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import { Div } from "../style/Div";
 import { Button } from "../style/Button";
+import { Img } from "../style/Img";
 import UploadMentionModule from "../Modules/UploadMentionModule";
 
 const VideoData = styled(Div)`
@@ -19,7 +20,7 @@ const VideoDataMiddle = styled(Div)`
 `
 const VideoDataMiddleLeft = styled(Div)`
 `
-const VideoDataUploaderProfileImg = styled.img`
+const VideoDataUploaderProfileImg = styled(Img)`
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -77,7 +78,7 @@ const VideoDataMoreBtn = styled(Button)`
         background-color: lightgray;
     }
 `
-const VideoDataMetaImg = styled.img`
+const VideoDataMetaImg = styled(Img)`
     width: 20px;
     height: 20px;
     margin: 3px 3px 3px 3px;
@@ -115,7 +116,7 @@ const WatchVideoDataItem = (props) => {
                         <h3> {channelName} </h3>
                         <h6> 구독자 {subscribers} </h6>
                     </VideoDataUploader>
-                    <SubscribeBtn deco="none">구독</SubscribeBtn>
+                    <SubscribeBtn deco="none"> 구독 </SubscribeBtn>
                 </VideoDataMiddleLeft>
 
                 <VideoDataMiddleRight flex="h_center">

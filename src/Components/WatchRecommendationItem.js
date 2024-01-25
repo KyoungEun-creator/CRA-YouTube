@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import { Div } from "../style/Div";
+import { Img } from "../style/Img";
 import UploadMentionModule from "../Modules/UploadMentionModule";
 
 const RecommendedVideoContainer = styled(Div)`
@@ -14,7 +15,7 @@ const RecommendedVideoThumbnailBox = styled(Div)`
     z-index: -1;
     margin-right: 10px;
 `
-const RecommendedVideoThumbnail = styled.img`
+const RecommendedVideoThumbnail = styled(Img)`
     object-fit: cover;
     height: 90px;
     aspect-ratio: 16 / 9;
