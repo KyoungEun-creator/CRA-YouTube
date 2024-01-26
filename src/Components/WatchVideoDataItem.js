@@ -8,8 +8,6 @@ import UploadMentionModule from "../Modules/UploadMentionModule";
 const VideoData = styled(Div)`
   margin: 10px 0 10px 0;
   width: 930px;
-  display: flex;
-  flex-direction: column;
   padding: 0;
 `
 const WatchVideoTitle = styled.h1`
@@ -104,7 +102,7 @@ const WatchVideoDataItem = (props) => {
     const uploadMention = UploadMentionModule({ data: props.data });
 
     return (
-        <VideoData>
+        <VideoData flex="v_start">
             <WatchVideoTitle>{videoTitle}</WatchVideoTitle>
 
             <VideoDataMiddle flex="h_between">

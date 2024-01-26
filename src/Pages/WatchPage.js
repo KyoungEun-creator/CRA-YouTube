@@ -35,7 +35,7 @@ const WatchPage = () => {
 
     return (
         <WatchVideoPage flex="h_between_left">
-            <WatchVideoLeftContainer>
+            <WatchVideoLeftContainer flex="v_start"> 
                  {
                     watchVideoData.map((elem) => {
                         return <WatchScreenContainer key={elem.id} data={elem} />

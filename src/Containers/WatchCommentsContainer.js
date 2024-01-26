@@ -22,7 +22,7 @@ const CommentWriter = styled(Img)`
     border-radius: 50%;
     margin-right: 10px;
 `
-const WriteComment = styled(Input)`
+const WriteCommentInput = styled(Input)`
     height: 40px;
     flex-grow: 1;
 `
@@ -58,7 +58,7 @@ const WatchCommentsContainer = () => {
             <CommentsCount> 댓글 {commentsListData.length}개 </CommentsCount>
             <AddComment flex="h_between">
                 <CommentWriter src="https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj" alt="작성자" />
-                <WriteComment border="1px solid black" />
+                <WriteCommentInput border="1px solid black" />
             </AddComment>
             {
                 commentsListData.map((elem) => {

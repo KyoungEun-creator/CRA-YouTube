@@ -93,7 +93,9 @@ const WatchCommentItem = (props) => {
                     <CommentUploadDate> {commentUpload} </CommentUploadDate>
                 </CommentMetaData>
 
-                <CommentContent> {commentContent} </CommentContent>
+                <CommentContent flex="h_start"> 
+                    <>{commentContent}</> 
+                </CommentContent>
     
                 <AboutComment flex="h_start">
                     <CommentThumbUp flex="h_center">
