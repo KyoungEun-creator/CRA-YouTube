@@ -7,82 +7,80 @@ import UploadMentionModule from "../Modules/UploadMentionModule";
 import useHover from "../Hooks/useHover";
 
 const ContentItem = styled.section`
-  width: 313px;
-  object-fit: cover; /* 비율 고정 */
-  margin: 0 7px 40px 7px;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 310px;
-  cursor: pointer;
+    width: 313px;
+    object-fit: cover; /* 비율 고정 */
+    margin: 0 7px 40px 7px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 310px;
+    cursor: pointer;
 `
 const ThumbnailBox = styled.div`
-  position: relative;
-  z-index: -1;
+    position: relative;
+    z-index: -1;
 `
 const Thumbnail = styled(Img)`
-  object-fit: cover;
-  width: 100%;
-  aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
-  border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
+    border-radius: 10px;
 `
 const ThumbnailVideo = styled.iframe`
-  width: 100%;
-  aspect-ratio: 16 / 9;
+    width: 100%;
+    aspect-ratio: 16 / 9;
 `
-const TimeStatus = styled.div`
-  position: absolute;
-  background-color: black;
-  opacity: 0.8;
-  display: inline-block; 
-  height: 12px;
-  padding: 3px 4px;
-  border-radius: 4px;
-  bottom: 8px;
-  right: 3px;
-  color: white;
-  font-size: 12px;
-  font-weight: 800;
+const TimeStatus = styled(Div)`
+    position: absolute;
+    opacity: 0.8;
+    display: inline-block; 
+    height: 17px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    bottom: 8px;
+    right: 3px;
+    font-size: 12px;
+    font-weight: 800;
 `
 const ContentDetails = styled(Div)`
     width: 100%;
     height: 100px;
 `
 const ChannelProfileImg = styled(Img)`
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  margin: 12px 12px 0 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin: 12px 12px 0 0;
 `
 const ContentMetaData = styled.div`
-  display: inline-block;
-  width: 100%;
-  height: 100px;
+    display: inline-block;
+    width: 100%;
+    height: 100px;
 `
 const ContentTitle = styled.h3`
-  color: black;
-  font-size: 16px;
-  width: 241.73px;
-  height: fit-content;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 12px 0 4px 0;
-  display: -webkit-box; /* 두 줄부터 말줄임표 */
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+    color: black;
+    font-size: 16px;
+    width: 241.73px;
+    height: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 12px 0 4px 0;
+    display: -webkit-box; /* 두 줄부터 말줄임표 */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 `
 const DetailBtn = styled(Button)`
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  right: 0;
-  &:hover {
-    display: block;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    right: 0;
+    &:hover {
+        display: block;
   }
 `
 const DetailBtnImg = styled(Img)`
-  width: 24px;
-  height: 24px;
+    width: 24px;
+    height: 24px;
 `
 
 const MainVideoItem = (props) => {
@@ -103,7 +101,7 @@ const MainVideoItem = (props) => {
             <ThumbnailBox>
                 <Thumbnail src={thumbnailImgSrc} style={{display: isVideoHovered ? "none" : "block"}} alt="thumbnail" />
                 <ThumbnailVideo style={{display: isVideoHovered ? "block" : "none"}} src={thumbnailVideoSrc} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-                <TimeStatus> {runningTime} </TimeStatus>
+                <TimeStatus deco="black" flex="h_center"> {runningTime} </TimeStatus>
             </ThumbnailBox>
 
             <ContentDetails onMouseOver={detailBtnDisplayBlockEvent} onMouseOut={detailBtnDisplayNoneEvent} flex="h_between">

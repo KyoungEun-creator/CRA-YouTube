@@ -21,17 +21,15 @@ const RecommendedVideoThumbnail = styled(Img)`
     aspect-ratio: 16 / 9;
     border-radius: 10px;
 `
-const RecommendedVideoTimeStatus = styled.div`
+const RecommendedVideoTimeStatus = styled(Div)`
     position: absolute;
-    background-color: black;
     opacity: 0.8;
     display: inline-block; 
-    height: 12px;
-    padding: 3px 4px;
+    height: 17px;
+    padding: 2px 4px;
     border-radius: 4px;
     bottom: 8px;
     right: 3px;
-    color: white;
     font-size: 12px;
     font-weight: 800;
 `
@@ -70,7 +68,7 @@ const WatchRecommendationItem = (props) => {
         <RecommendedVideoContainer flex="h_center">
                 <RecommendedVideoThumbnailBox>
                     <RecommendedVideoThumbnail src={thumbnailImgSrc} alt="추천영상" />
-                    <RecommendedVideoTimeStatus> {runningTime} </RecommendedVideoTimeStatus>
+                    <RecommendedVideoTimeStatus deco="black"> {runningTime} </RecommendedVideoTimeStatus>
                 </RecommendedVideoThumbnailBox>
             <RecommendedVideoDataContainer flex="v_between">
                     <RecommendedVideoTitle> {videoTitle} </RecommendedVideoTitle>

@@ -89,7 +89,7 @@ export const Button = styled.button`
     box-sizing: ${ props => props.boxSizing || "border-box" };
     padding: ${ props => props.padding || "3px 3px 3px 3px" };
     border: ${ props => props.border || "none" };
-    ${ props => setDeco(props.deco) };
-    ${ props => setFlex(props.flex) };
+    ${ props => setFlex(props.flex || "h_center") };
+    ${ props => setDeco(props.deco || "none") };
     cursor: pointer;
 `

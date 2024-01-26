@@ -83,10 +83,25 @@ const setFlex = (value) => {
     }
 }
 
+const setDeco = (value) => {
+    if (value === "none") {
+        return `
+            background-color: transparent;
+            color: black;
+        `
+    }
+    else if (value === "black") {
+        return `
+            background-color: black;
+            color: white;
+        `
+    }
+}
+
 export const Div = styled.div`
     width: ${ props => props.width || "fit-content" };
     height: ${ props => props.height || "fit-content" };
     box-sizing: ${ props => props.boxSizing || "border-box" };
-    font-size: ${ props => props.fontSize };
-    ${ props => setFlex(props.flex) };
+    ${ props => setFlex(props.flex || "h_center") };
+    ${ props => setDeco(props.deco || "none") };
 `
