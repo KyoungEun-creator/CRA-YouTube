@@ -66,17 +66,17 @@ const WatchRecommendationItem = (props) => {
 
     return (
         <RecommendedVideoContainer flex="h_center">
-                <RecommendedVideoThumbnailBox>
-                    <RecommendedVideoThumbnail src={thumbnailImgSrc} alt="추천영상" />
-                    <RecommendedVideoTimeStatus deco="black"> {runningTime} </RecommendedVideoTimeStatus>
-                </RecommendedVideoThumbnailBox>
+            <RecommendedVideoThumbnailBox>
+                <RecommendedVideoThumbnail src={thumbnailImgSrc} alt="추천영상" />
+                <RecommendedVideoTimeStatus deco="black"> {runningTime} </RecommendedVideoTimeStatus>
+            </RecommendedVideoThumbnailBox>
             <RecommendedVideoDataContainer flex="v_between">
-                    <RecommendedVideoTitle> {videoTitle} </RecommendedVideoTitle>
-                    <RecommendedVideoMetaDatasBox flex="v_start">
-                        <RecommendedVideoMetaDatas className="metadatas"> {channelName} </RecommendedVideoMetaDatas>
-                        <RecommendedVideoMetaDatas className="metadatas"> 조회수 {view} ∙ {uploadMention} </RecommendedVideoMetaDatas>
-                    </RecommendedVideoMetaDatasBox>
-                </RecommendedVideoDataContainer>
+                <RecommendedVideoTitle> {videoTitle} </RecommendedVideoTitle>
+                <RecommendedVideoMetaDatasBox flex="v_end">
+                    <RecommendedVideoMetaDatas className="metadatas" flex="v_start"> {channelName} </RecommendedVideoMetaDatas>
+                    <RecommendedVideoMetaDatas className="metadatas" flex="v_start"> 조회수 {view} ∙ {uploadMention} </RecommendedVideoMetaDatas>
+                </RecommendedVideoMetaDatasBox>
+            </RecommendedVideoDataContainer>
         </RecommendedVideoContainer>
     )
 }
