@@ -5,11 +5,13 @@ import MainPage from "./Pages/MainPage";
 import ShortsPage from "./Pages/ShortsPage";
 import WatchPage from "./Pages/WatchPage";
 import EmptyPage from "./Pages/EmptyPage";
+import GlobalStyle from "./style/GlobalStyle";
 
 const App = () => {
 
     return (
         <BrowserRouter>
+            <GlobalStyle />
             <DefaultContainer />
             <Routes>
                 <Route path="/home" element={<MainPage />} />
