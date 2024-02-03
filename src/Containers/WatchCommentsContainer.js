@@ -13,17 +13,11 @@ const CommentsCount = styled.h1`
     margin-bottom: 10px;
 `
 const AddComment = styled(Div)`
-    width: 100%;
-    margin-bottom: 30px;
 `
 const CommentWriter = styled(Img)`
-    width: 40px;
-    height: 40px;
     border-radius: 50%;
-    margin-right: 10px;
 `
 const WriteCommentInput = styled(Input)`
-    height: 40px;
     flex-grow: 1;
 `
 
@@ -56,9 +50,11 @@ const WatchCommentsContainer = () => {
     return (
         <CommentsContainer flex="v_start">
             <CommentsCount> 댓글 {commentsListData.length}개 </CommentsCount>
-            <AddComment flex="h_between">
-                <CommentWriter src="https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj" alt="작성자" />
-                <WriteCommentInput border="1px solid black" />
+            <AddComment 
+                width="100%" margin="0 0 30px 0" flex="h_between">
+                <CommentWriter src="https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj" alt="작성자"
+                    width="40px" height="40px" margin="0 10px 0 0" />
+                <WriteCommentInput height="40px" border="1px solid black" />
             </AddComment>
             {
                 commentsListData.map((elem) => {

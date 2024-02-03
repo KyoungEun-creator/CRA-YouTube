@@ -104,4 +104,7 @@ export const Div = styled.div`
     box-sizing: ${ props => props.boxSizing || "border-box" };
     ${ props => setFlex(props.flex || "h_center") };
     ${ props => setDeco(props.deco || "none") };
+    border: ${ props => props.height || "fit-content" };
+    padding: ${ props => props.padding || "0" };
+    margin: ${ props => props.margin || "0" };
 `

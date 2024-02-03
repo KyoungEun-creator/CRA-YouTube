@@ -14,8 +14,6 @@ const ShortsArticle = styled.article`
   flex-direction: row;
 `
 const ShortsVideo = styled(Img)`
-  width: 352px;
-  margin-right: 15px;
   border-radius: 10px;
 `
 
@@ -25,7 +23,8 @@ const ShortsPage = () => {
         <>
             <NavContainer />
             <ShortsArticle id="shortsArticle">
-                <ShortsVideo id="shortsVideo" src="imgs/shorts.jpeg" alt="쇼츠" />
+                <ShortsVideo id="shortsVideo" src="imgs/shorts.jpeg" alt="쇼츠"  
+                width="352px" margin="0 15px 0 0" />
                 <ShortsBtnsContainer />
             </ShortsArticle>
         </>

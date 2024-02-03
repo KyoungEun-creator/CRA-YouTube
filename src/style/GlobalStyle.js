@@ -90,14 +90,6 @@ const GlobalStyle = createGlobalStyle`
     justify-content: left;
     align-items: center;
     }
-
-    /* ==================== MainVideoItem ==================== */
-    .metadatas {
-    color: #606060;
-    font-size: 14px;
-    width: fit-content;
-    height: 20px;
-    }
 `
 
 export default GlobalStyle;

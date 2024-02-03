@@ -11,24 +11,17 @@ const AlarmBadge = styled(Span)`
   position: absolute;
   background-color: #c00;
   color: white;
-  width: 13.547px;
-  height: 16px;
   top: 2px;
   left: 21px;
   border: 2px solid #fff;
   border-radius: 22px;
-  font-size: 12px;
-  padding: 0 4px;
 `
 const HoverDetails = styled(Span)`
   position: absolute;
   top: 55px;
-  padding: 10px;
-  height: 15px;
   background: rgb(44, 44, 44);
   opacity: 0.8;
   color: white;
-  font-size: 12px;
   font-weight: 200;
   border-radius: 5px;
   z-index: 100;
@@ -43,16 +36,19 @@ const HoverAlertBtnItem = (props) => {
     const [isHovered, hoverDetailsDisplayBlockEvent, hoverDetailsDisplayNoneEvent] = useHover(false);
 
     return (
-        <HoverBtn id={idName} className={isHover && "headerRightBtns"} onMouseOver={hoverDetailsDisplayBlockEvent} onMouseOut={hoverDetailsDisplayNoneEvent} deco="none">
+        <HoverBtn id={idName} className={isHover && "headerRightBtns"} onMouseOver={hoverDetailsDisplayBlockEvent} onMouseOut={hoverDetailsDisplayNoneEvent} 
+            deco="none">
             { imgId
                 ? <img id={imgId} className={imgClassName} src={imgSrc} alt={alt} />
                 : <img className={imgClassName} src={imgSrc} alt={alt} />
             }
             {
-                alarmNum && <AlarmBadge flex="h_center"> {alarmNum} </AlarmBadge> 
+                alarmNum && <AlarmBadge   
+                    width="13px" height="16px" fontSize="12px" padding="0 4px" flex="h_center"> {alarmNum} </AlarmBadge> 
             }
             {
-                tagContent && <HoverDetails style={{display: isHovered ? "block" : "none"}} flex="h_center"> {tagContent} </HoverDetails>
+                tagContent && <HoverDetails style={{display: isHovered ? "block" : "none"}} 
+                    height="15px" fontSize="12px" padding="10px" flex="h_center"> {tagContent} </HoverDetails>
             }
         </HoverBtn>
     )

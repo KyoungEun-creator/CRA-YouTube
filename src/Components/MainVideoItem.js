@@ -1,6 +1,9 @@
 import React from "react";
 import { styled } from "styled-components";
+// import { Div, Section  } from "../style/LayoutStyle"
 import { Div } from "../style/Div";
+import { P } from "../style/P";
+import { Span } from "../style/Span";
 import { Button } from "../style/Button";
 import { Img } from "../style/Img";
 import UploadMentionModule from "../Modules/UploadMentionModule";
@@ -21,7 +24,6 @@ const ThumbnailBox = styled.div`
 `
 const Thumbnail = styled(Img)`
     object-fit: cover;
-    width: 100%;
     aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
     border-radius: 10px;
 `
@@ -29,32 +31,22 @@ const ThumbnailVideo = styled.iframe`
     width: 100%;
     aspect-ratio: 16 / 9;
 `
-const TimeStatus = styled(Div)`
+const TimeStatus = styled(Span)`
     position: absolute;
     opacity: 0.8;
     display: inline-block; 
-    height: 17px;
-    padding: 2px 4px;
     border-radius: 4px;
     bottom: 8px;
     right: 3px;
-    font-size: 12px;
     font-weight: 800;
 `
 const ContentDetails = styled(Div)`
-    width: 100%;
-    height: 100px;
 `
 const ChannelProfileImg = styled(Img)`
-    width: 36px;
-    height: 36px;
     border-radius: 50%;
-    margin: 12px 12px 0 0;
 `
-const ContentMetaData = styled.div`
+const ContentMetaData = styled(Div)`
     display: inline-block;
-    width: 100%;
-    height: 100px;
 `
 const ContentTitle = styled.h3`
     color: black;
@@ -68,19 +60,17 @@ const ContentTitle = styled.h3`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 `
+const MainMetaDatas = styled(P)`
+    color: #606060;
+`
 const DetailBtn = styled(Button)`
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    padding: 0;
     right: 0;
     &:hover {
         display: block;
   }
 `
 const DetailBtnImg = styled(Img)`
-    width: 24px;
-    height: 24px;
 `
 
 const MainVideoItem = (props) => {
@@ -101,26 +91,32 @@ const MainVideoItem = (props) => {
             <ThumbnailBox>
                 <Thumbnail src={thumbnailImgSrc} style={{display: isVideoHovered ? "none" : "block"}} alt="thumbnail" />
                 <ThumbnailVideo style={{display: isVideoHovered ? "block" : "none"}} src={thumbnailVideoSrc} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-                <TimeStatus deco="black" flex="h_center"> {runningTime} </TimeStatus>
+                <TimeStatus 
+                    padding="2px 4px" fontSize="12px" deco="black" flex="h_center"> {runningTime} </TimeStatus>
             </ThumbnailBox>
 
-            <ContentDetails onMouseOver={detailBtnDisplayBlockEvent} onMouseOut={detailBtnDisplayNoneEvent} flex="h_between">
+            <ContentDetails onMouseOver={detailBtnDisplayBlockEvent} onMouseOut={detailBtnDisplayNoneEvent} 
+                width="100%" height="100px" flex="h_between">
                 <a href={channelProfileUrl}>
-                    <ChannelProfileImg src={channelProfileImgSrc} alt={alt}/>
+                    <ChannelProfileImg src={channelProfileImgSrc} alt={alt}
+                        width="36px" height="36px" margin="12px 12px 0 0" />
                 </a>
 
-                <ContentMetaData>
+                <ContentMetaData
+                    width="100%" height="100px">
                     <ContentTitle> {videoTitle} </ContentTitle>
                     <div>
-                        <a href={channelProfileUrl} className="metadatas">
-                            <span className="metadatas"> {channelName} </span> 
+                        <a href={channelProfileUrl}>
+                            <MainMetaDatas> {channelName} </MainMetaDatas> 
                         </a>
-                        <div className="metadatas"> 조회수 {view} ∙ {uploadMention} </div>
+                        <MainMetaDatas> 조회수 {view} ∙ {uploadMention} </MainMetaDatas>
                     </div>
                 </ContentMetaData>
 
-                <DetailBtn value="세부사항 설정" style={{display: isBtnHovered ? "block" : "none"}} deco="none">
-                    <DetailBtnImg src="imgs/ellipsis-vertical-solid.svg" alt={alt}/>
+                <DetailBtn value="세부사항 설정" style={{display: isBtnHovered ? "block" : "none"}} 
+                    width="40px" height="40px" padding="0" deco="none">
+                    <DetailBtnImg src="imgs/ellipsis-vertical-solid.svg" alt={alt}
+                        width="24px" height="24px" />
                 </DetailBtn>
             </ContentDetails>
         </ContentItem> 

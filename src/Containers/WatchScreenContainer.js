@@ -6,17 +6,12 @@ import HoverAlertBtnItem from "../Components/HoverAlertBtnItem";
 
 const ScreenContainer = styled(Div)`
   position: relative;
-  width: 930px;
 `
 const ScreenImg = styled(Img)`
 `
 const VideoControlContainer = styled(Div)`
   position: absolute;
   bottom: 0;
-  width: 930px;
-  height: 48px;
-  padding: 5px 0 5px 0;
-  box-sizing: border-box;
 `
 const VideoControlPart = styled(Div)`
 `
@@ -97,9 +92,11 @@ const WatchScreenContainer = (props) => {
     ]
 
     return (
-        <ScreenContainer flex="v_end">
+        <ScreenContainer 
+            width="930px" flex="v_end">
             <ScreenImg src={thumbnailImgSrc} alt="영상" />
-            <VideoControlContainer flex="h_between">
+            <VideoControlContainer 
+              width="930px" height="48px" padding="5px 0 5px 0" flex="h_between">
                 <VideoControlPart flex="h_center">
                     {
                         WatchScreenLeftBtnsData.map((elem) => {

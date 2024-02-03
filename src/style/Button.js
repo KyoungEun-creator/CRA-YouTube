@@ -80,14 +80,20 @@ const setDeco = (value) => {
             color: white;
         `
     }
+    else if (value === "caution") {
+        return `
+            background-color: red;
+            color: white;
+        `
+    }
 }
 
 export const Button = styled.button`
-    type: ${ props => props.type || "button" };
     width: ${ props => props.width || "fit-content" };
     height: ${ props => props.height || "fit-content" };
     box-sizing: ${ props => props.boxSizing || "border-box" };
-    padding: ${ props => props.padding || "3px 3px 3px 3px" };
+    padding: ${ props => props.padding || "3px" };
+    margin: ${ props => props.margin || "0" };
     border: ${ props => props.border || "none" };
     ${ props => setFlex(props.flex || "h_center") };
     ${ props => setDeco(props.deco || "none") };

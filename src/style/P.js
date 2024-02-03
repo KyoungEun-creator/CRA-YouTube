@@ -45,9 +45,19 @@ const setColor = (value) => {
 }
 
 export const P = styled.p`
+    width: 
+            ${ (props) => {
+                return props.width
+            }};
+
+    color: 
+            ${ (props) => {
+                return setColor(props.color)
+            }}
+
     width: ${ props => props.width || "fit-content" };
     height: ${ props => props.height || "fit-content" };
-    font-size: ${ props => props.fontSize || "16px" };
+    font-size: ${ props => props.fontSize || "14px" };
     color: ${ props => setColor(props.color) || "black" };
     ${ props => setFlex(props.flex) };
 `

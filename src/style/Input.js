@@ -1,5 +1,7 @@
 import { styled } from "styled-components";
 
+// input type에 따라 꾸며주기
+
 export const Input = styled.input`
     type: ${ props => props.type || "text" };
     width: ${ props => props.width  || "fit-content" };

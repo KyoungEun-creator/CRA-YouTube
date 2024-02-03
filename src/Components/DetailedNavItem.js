@@ -2,23 +2,14 @@ import React from "react";
 import { styled } from "styled-components";
 import useHover from "../Hooks/useHover";
 import { Button } from "../style/Button";
-import { Div } from "../style/Div";
+import { Span } from "../style/Span";
 
-const FooterGuide = styled(Div)`
-    padding: 10px 24px 0 24px;
-    margin-bottom: 10px;
-    font-size: 14px;
+const FooterGuide = styled(Span)`
 `
 const DetailedNavBtn = styled(Button)`
     border-radius: 4px;
-    padding: 0 12px;
-    width: 190px;
-    height: 40px;
 `
-const DetailedNavName = styled(Div)`
-    width: 100%;
-    height: 20px;
-    font-size: 14px;
+const DetailedNavName = styled(Span)`
     overflow: hidden;
     white-space: nowrap;
 `
@@ -39,13 +30,20 @@ const DetailedNavItem = (props) => {
             {
                 content ?
                 (
-                    <FooterGuide> {content} </FooterGuide>
+                    <FooterGuide    
+                        padding="10px 24px 0 24px" margin="0 0 10px 0"> 
+                        {content} 
+                    </FooterGuide>
                 )
                 :
                 (
-                    <DetailedNavBtn value={value} title={title} flex="h_center" onMouseOver={exNavBtnHoverEvent} onMouseOut={exNavBtnHoverOutEvent} style={btnStyle}>
+                    <DetailedNavBtn value={value} title={title} onMouseOver={exNavBtnHoverEvent} onMouseOut={exNavBtnHoverOutEvent} style={btnStyle}
+                        width="190px" height="40px" padding="0 12px" flex="h_center">
                         <img className={className} src={imgSrc} alt={alt} />
-                        <DetailedNavName flex="h_start"> {label} </DetailedNavName>
+                        <DetailedNavName 
+                            width="100%" height="20px" flex="h_start"> 
+                            {label} 
+                        </DetailedNavName>
                     </DetailedNavBtn>
                 )
             }

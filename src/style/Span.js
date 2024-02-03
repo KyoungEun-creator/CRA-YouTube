@@ -66,9 +66,27 @@ const setFlex = (value) => {
         `
     }
 }
+const setDeco = (value) => {
+    if (value === "none") {
+        return `
+            background-color: transparent;
+            color: black;
+        `
+    }
+    else if (value === "black") {
+        return `
+            background-color: black;
+            color: white;
+        `
+    }
+}
 
 export const Span = styled.span`
     width: ${ props => props.width  || "fit-content" };
     height: ${ props => props.height || "fit-content" };
     ${ props => setFlex(props.flex) };
+    ${ props => setDeco(props.deco || "none") };
+    font-size: ${ props => props.fontSize || "14px" };
+    padding: ${ props => props.padding || "0" };
+    margin: ${ props => props.margin || "0" };
 `

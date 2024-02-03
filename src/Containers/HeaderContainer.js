@@ -2,69 +2,53 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import { Button } from "../style/Button";
+// import { Header, Div } from "../style/LayoutStyle";
 import { Div } from "../style/Div";
 import { Input } from "../style/Input";
 import { Span } from "../style/Span";
 import { Img } from "../style/Img";
 import HoverAlertBtnItem from "../Components/HoverAlertBtnItem";
 
-const Header = styled.header`
+const DefaultHeader = styled.header`
   top: 0;
   position: fixed;
   width: 100vw;
   height: 56px;
   padding: 0 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: white;
   z-index: 100;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `
 const HeaderLeft = styled(Div)`
 `
 const NavOpenBtn = styled(Button)`
-    width: 40px;
-    height: 40px;
     border-radius: 50%;
     &:hover {
         background-color: lightgray;
     }
 `
 const NavOpenBtnImg = styled(Img)`
-    width: 24px;
-    height: 24px;
-    padding: 5px;
 `
 const YoutubePremiumLogo = styled(Img)`
-    width: 97px;
-    height: 20px;
-    padding: 8px 14px 8px 16px;
     position: relative;
 `
-const CountryCode = styled.span`  
-    font-size: 10px;
+const CountryCode = styled(Span)`  
     color: #606060;
-    margin: 12px 0 0 -10px;
     position: absolute;
     top: 1px;
 `
 const HeaderMiddle = styled(Div)`
-    margin: 10px 10px;
 `
 const SearchBar = styled(Span)`
-    margin: 0 0 0 40px;
-    padding: 0 4px;
-    width: 100%;
 `
 const SearchText = styled(Div)`
     position: relative;
 `
 const SearchInput = styled(Input)`
-    width: 536px;
-    height: 40px;
-    padding: 0 4px 0 16px;
     border-radius: 20px 0 0 20px;
-    margin: 0 0 0 32px;
     flex: 1;
 `
 const SearchTypingBtn = styled(Button)`
@@ -74,13 +58,8 @@ const SearchTypingBtn = styled(Button)`
     right: 5px;
 `
 const SearchKeyboard = styled(Img)`
-    width: 19px;
-    height: 11px;
 `
 const HeaderRight = styled(Div)`
-    width: 156px;
-    height: 40px;
-    padding: 0 50px;
 `
 
 const HeaderContainer = (props) => {
@@ -135,23 +114,31 @@ const HeaderContainer = (props) => {
     ];
 
     return (
-        <Header>
+        <DefaultHeader>
             <HeaderLeft flex="h_start">
-                <NavOpenBtn onClick={event} flex="h_center" deco="none">
-                    <NavOpenBtnImg src="imgs/bars-solid.svg" alt="navigation 열기" />
+                <NavOpenBtn onClick={event} 
+                    width="40px" height="40px" flex="h_center" deco="none">
+                    <NavOpenBtnImg src="imgs/bars-solid.svg" alt="navigation 열기" 
+                        width="24px" height="24px" padding="5px" />
                 </NavOpenBtn>
                 <Link to="/home" title="youtube">
-                    <YoutubePremiumLogo src="imgs/YouTube_Premium_logo.svg" alt="Youtube 홈" />
-                    <CountryCode>KR</CountryCode>
+                    <YoutubePremiumLogo src="imgs/YouTube_Premium_logo.svg" alt="Youtube 홈" 
+                        width="97px" height="20px" padding="8px 14px 8px 16px" />
+                    <CountryCode
+                        fontSize="10px" margin="12px 0 0 -10px">KR</CountryCode>
                 </Link>
             </HeaderLeft>
 
-            <HeaderMiddle flex="h_center">
-                <SearchBar flex="h_center">
+            <HeaderMiddle 
+                margin="10px" flex="h_center">
+                <SearchBar 
+                    width="100%" padding="0 4px" margin="0 0 0 40px" flex="h_center">
                     <SearchText>
-                        <SearchInput placeholder="검색" />
+                        <SearchInput placeholder="검색" 
+                            width="536px" height="40px" padding="0 4px 0 16px" margin="0 0 0 32px" />
                         <SearchTypingBtn deco="none">
-                            <SearchKeyboard src="https://www.gstatic.com/inputtools/images/tia.png" alt="검색하기"/>
+                            <SearchKeyboard src="https://www.gstatic.com/inputtools/images/tia.png" alt="검색하기"
+                                width="19px" height="11px" />
                         </SearchTypingBtn>
                     </SearchText>
 
@@ -163,14 +150,15 @@ const HeaderContainer = (props) => {
                 </SearchBar> 
             </HeaderMiddle>
 
-            <HeaderRight flex="h_end">
+            <HeaderRight 
+                flex="h_end" width="156px" height="40px" padding="0 50px">
                 {
                     HeaderRightItemData.map((elem) => {
                         return <HoverAlertBtnItem key={elem.id} data={elem} isHover/>
                     })
                 }
             </HeaderRight>
-        </Header>
+        </DefaultHeader>
     )
 }
 

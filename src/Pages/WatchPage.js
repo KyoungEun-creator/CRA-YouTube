@@ -8,11 +8,8 @@ import WatchRecommendationContainer from "../Containers/WatchRecommendationConta
 
 const WatchVideoPage = styled(Div)`
     z-index: 0;
-    margin-left: 40px;
 `
 const WatchVideoLeftContainer = styled(Div)`
-    margin-top: 70px;
-    padding-right: 20px;
 `
 
 const WatchPage = () => {
@@ -34,8 +31,10 @@ const WatchPage = () => {
     ]
 
     return (
-        <WatchVideoPage flex="h_between_left">
-            <WatchVideoLeftContainer flex="v_start"> 
+        <WatchVideoPage 
+            margin="0 0 0 40px" flex="h_between_left">
+            <WatchVideoLeftContainer 
+                margin="70px 0 0 0" padding="0 20px 0 0" flex="v_start"> 
                  {
                     watchVideoData.map((elem) => {
                         return <WatchScreenContainer key={elem.id} data={elem} />
