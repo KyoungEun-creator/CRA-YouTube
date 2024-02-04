@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
-import { Div } from "../style/Div";
+import { Div, Section } from "../style/LayoutStyle";
 import WatchScreenContainer from "../Containers/WatchScreenContainer";
 import WatchVideoDataItem from "../Components/WatchVideoDataItem";
 import WatchCommentsContainer from "../Containers/WatchCommentsContainer";
@@ -9,7 +9,7 @@ import WatchRecommendationContainer from "../Containers/WatchRecommendationConta
 const WatchVideoPage = styled(Div)`
     z-index: 0;
 `
-const WatchVideoLeftContainer = styled(Div)`
+const WatchVideoLeftContainer = styled(Section)`
 `
 
 const WatchPage = () => {

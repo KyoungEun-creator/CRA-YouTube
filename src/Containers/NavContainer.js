@@ -1,14 +1,13 @@
 import React from "react";
 import { styled } from "styled-components";
+import { Nav } from "../style/LayoutStyle";
 import { Link } from "react-router-dom";
 import NavBtnItem from "../Components/NavBtnItem";
 
-const Nav = styled.nav`
+const SimpleNav = styled(Nav)`
   z-index: 0;
   position: fixed;
-  height: 100vh;
   top: 56px;
-  padding: 0 4px;
   background-color: white;
 `
 
@@ -66,7 +65,8 @@ const NavContainer = () => {
     ];
 
     return (
-        <Nav>
+        <SimpleNav
+            height="100vh" padding="0 4px">
             {
                 NavBtnData.map((elem) => {
                     return (
@@ -76,8 +76,8 @@ const NavContainer = () => {
                     )
                 })   
             }
-        </Nav>
+        </SimpleNav>
     )
 }
 
-export default NavContainer
+export default NavContainer;

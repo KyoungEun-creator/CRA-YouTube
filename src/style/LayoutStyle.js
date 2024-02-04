@@ -1,141 +1,84 @@
-// import { styled } from "styled-components";
+import { styled } from "styled-components";
+import setFlex from "./SetFlex";
+import setDeco from "./SetDeco";
 
-// const setFlex = (value) => {
-//     if (value === "h_center") {
-//         return `
-//             display: flex;
-//             flex-direction: row;
-//             justify-content: center;
-//             align-items: center;
-//         `
-//     }
-//     else if (value === "h_start") {
-//         return `
-//             display: flex;
-//             flex-direction: row;
-//             justify-content: flex-start;
-//             align-items: center;
-//         `
-//     }
-//     else if (value === "h_end") {
-//         return `
-//             display: flex;
-//             flex-direction: row;
-//             justify-content: flex-end;
-//             align-items: center;
-//         `
-//     }
-//     else if (value === "h_between") {
-//         return `
-//             display: flex;
-//             flex-direction: row;
-//             justify-content: space-between;
-//             align-items: center;
-//         `
-//     }
-//     else if (value === "h_between_left") {
-//         return `
-//             display: flex;
-//             flex-direction: row;
-//             justify-content: space-between;
-//             align-items: left;
-//         `
-//     }
-//     else if (value === "v_center") {
-//         return `
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: center;
-//             align-items: center;
-//         `
-//     }
-//     else if (value === "v_start") {
-//         return `
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: flex-start;
-//             align-items: center;
-//         `
-//     }
-//     else if (value === "v_end") {
-//         return `
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: flex-end;
-//             align-items: center;
-//         `
-//     }
-//     else if (value === "v_between") {
-//         return `
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: space-between;
-//             align-items: center;
-//         `
-//     }
-//     else if (value === "v_start_left") {
-//         return `
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: flex-start;
-//             align-items: flex-start;
-//         `
-//     }
-// }
-
-// const setDeco = (value) => {
-//     if (value === "none") {
-//         return `
-//             background-color: transparent;
-//             color: black;
-//         `
-//     }
-//     else if (value === "black") {
-//         return `
-//             background-color: black;
-//             color: white;
-//         `
-//     }
-// }
-
-// const divStyle = ( ) => `
-//     width: ${ props => props.width || "fit-content" };
-//     height: ${ props => props.height || "fit-content" };
-//     box-sizing: ${ props => props.boxSizing || "border-box" };
-//     ${ props => setFlex(props.flex || "h_center") };
-//     ${ props => setDeco(props.deco || "none") };
-//     border: ${ props => props.height || "fit-content" };
-// `
-// const headerStyle = () => `
-//     width: ${ props => props.width || "fit-content" };
-//     height: ${ props => props.height || "fit-content" };
-//     box-sizing: ${ props => props.boxSizing || "border-box" };
-//     ${ props => setFlex(props.flex || "h_center") };
-//     ${ props => setDeco(props.deco || "none") };
-//     border: ${ props => props.height || "fit-content" };
-// `
-
-// export const Div = styled.div`
-//     ${(props) => {
-//         return divStyle(props)
-//     }}
-// `
-// export const Article = styled.article`
-//     ${(props) => {
-//         return articleStyle(props)
-//     }}
-// `
-// export const Section = styled.section`
-//     ${(props) => {
-//         return sectionStyle(props)
-//     }}
-// `
-// export const Header = styled.header`
-//     ${(props) => {
-//         return headerStyle(props)
-//     }}
-// `// export const Nav = styled.nav`
-//     ${(props) => {
-//         return navStyle(props)
-//     }}
-// `
+export const Div = styled.div`
+    width: ${ props => props.width || "fit-content" };
+    height: ${ props => props.height || "fit-content" };
+    box-sizing: ${ props => props.boxSizing || "border-box" };
+    ${ props => setFlex(props.flex || "h_center") };
+    ${ props => setDeco(props.deco || "none") };
+    border: ${ props => props.border || "none" };
+    padding: ${ props => props.padding || "0" };
+    margin: ${ props => props.margin || "0" };
+`
+export const Article = styled.article`
+    width: ${ props => props.width || "fit-content" };
+    height: ${ props => props.height || "fit-content" };
+    box-sizing: ${ props => props.boxSizing || "border-box" };
+    ${ props => setFlex(props.flex) };
+    ${ props => setDeco(props.deco) };
+    border: ${ props => props.border || "none" };
+    padding: ${ props => props.padding || "0" };
+    margin: ${ props => props.margin || "0" };
+`
+export const Section = styled.section`
+    width: ${ props => props.width || "fit-content" };
+    height: ${ props => props.height || "fit-content" };
+    box-sizing: ${ props => props.boxSizing || "border-box" };
+    ${ props => setFlex(props.flex) };
+    ${ props => setDeco(props.deco || "none") };
+    border: ${ props => props.border || "none" };
+    padding: ${ props => props.padding || "0" };
+    margin: ${ props => props.margin || "0" };
+`
+export const Main = styled.main`
+    width: ${ props => props.width || "fit-content" };
+    height: ${ props => props.height || "fit-content" };
+    box-sizing: ${ props => props.boxSizing || "border-box" };
+    ${ props => setFlex(props.flex || "h_center") };
+    ${ props => setDeco(props.deco || "none") };
+    border: ${ props => props.border || "none" }; 
+    padding: ${ props => props.padding || "0" };
+    margin: ${ props => props.margin || "0" };
+   
+`
+export const Header = styled.header`
+    width: ${ props => props.width || "100vw" };
+    height: ${ props => props.height || "fit-content" };
+    box-sizing: ${ props => props.boxSizing || "border-box" };
+    ${ props => setFlex(props.flex || "h_center") };
+    ${ props => setDeco(props.deco || "none") };
+    border: ${ props => props.border || "none" }; 
+    padding: ${ props => props.padding || "0" };
+    margin: ${ props => props.margin || "0" };
+   
+`
+export const Nav = styled.nav`
+    width: ${ props => props.width || "fit-content" };
+    height: ${ props => props.height || "fit-content" };
+    box-sizing: ${ props => props.boxSizing || "border-box" };
+    border: ${ props => props.border || "none" };     
+    padding: ${ props => props.padding || "0" };
+    margin: ${ props => props.margin || "0" };
+   
+`
+export const Footer = styled.footer`
+    width: ${ props => props.width || "fit-content" };
+    height: ${ props => props.height || "fit-content" };
+    box-sizing: ${ props => props.boxSizing || "border-box" };
+    ${ props => setFlex(props.flex || "h_center") };
+    ${ props => setDeco(props.deco || "none") };
+    border: ${ props => props.border || "none" };     
+    padding: ${ props => props.padding || "0" };
+    margin: ${ props => props.margin || "0" };
+   
+`
+export const Aside = styled.aside`
+    width: ${ props => props.width || "fit-content" };
+    height: ${ props => props.height || "fit-content" };
+    box-sizing: ${ props => props.boxSizing || "border-box" };
+    ${ props => setFlex(props.flex || "h_center") };
+    ${ props => setDeco(props.deco || "none") };
+    border: ${ props => props.border || "none" };
+`

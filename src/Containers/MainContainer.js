@@ -1,14 +1,14 @@
 import React from "react";
 import { styled } from "styled-components";
+import { Article } from "../style/LayoutStyle";
 import { Link } from "react-router-dom";
 import MainVideoItem from "../Components/MainVideoItem";
 
-const MainArticle = styled.article`
+const MainArticle = styled(Article)`
   width: calc(100% - margin-left);
+  margin-left: 72px;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 72px;
-  padding: 70px 30px 0 30px;
 `
 
 const MainContainer = () => {
@@ -128,10 +128,11 @@ const MainContainer = () => {
         }
     ];
     // 실제론 state에 저장해놓고 불러오는 방법을 취한다
-    // state에 어떻게 저장할지: 벤엔드 통신을 위한 전용 state가 필요함. (리덕스 쓸 건지, useState 쓸 건지)
+    // state에 어떻게 저장할지: 백엔드 통신을 위한 전용 state가 필요함. (리덕스 쓸 건지, useState 쓸 건지)
 
     return (
-        <MainArticle>
+        <MainArticle 
+            padding="70px 30px 0 30px">
             {
                 VideoListData.map((elem) => {
                     return (

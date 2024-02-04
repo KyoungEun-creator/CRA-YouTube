@@ -1,6 +1,5 @@
-import { styled } from "styled-components";
-
 const setFlex = (value) => {
+    
     if (value === "h_center") {
         return `
             display: flex;
@@ -31,6 +30,14 @@ const setFlex = (value) => {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+        `
+    }
+    else if (value === "h_between_left") {
+        return `
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: left;
         `
     }
     else if (value === "v_center") {
@@ -65,28 +72,14 @@ const setFlex = (value) => {
             align-items: center;
         `
     }
-}
-const setDeco = (value) => {
-    if (value === "none") {
+    else if (value === "v_start_left") {
         return `
-            background-color: transparent;
-            color: black;
-        `
-    }
-    else if (value === "black") {
-        return `
-            background-color: black;
-            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
         `
     }
 }
 
-export const Span = styled.span`
-    width: ${ props => props.width  || "fit-content" };
-    height: ${ props => props.height || "fit-content" };
-    ${ props => setFlex(props.flex) };
-    ${ props => setDeco(props.deco || "none") };
-    font-size: ${ props => props.fontSize || "14px" };
-    padding: ${ props => props.padding || "0" };
-    margin: ${ props => props.margin || "0" };
-`
+export default setFlex;

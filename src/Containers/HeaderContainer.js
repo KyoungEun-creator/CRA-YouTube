@@ -2,25 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import { Button } from "../style/Button";
-// import { Header, Div } from "../style/LayoutStyle";
-import { Div } from "../style/Div";
+import { Header, Div } from "../style/LayoutStyle";
 import { Input } from "../style/Input";
-import { Span } from "../style/Span";
+import { Span } from "../style/TextStyle";
 import { Img } from "../style/Img";
 import HoverAlertBtnItem from "../Components/HoverAlertBtnItem";
 
-const DefaultHeader = styled.header`
+const DefaultHeader = styled(Header)`
   top: 0;
   position: fixed;
-  width: 100vw;
-  height: 56px;
-  padding: 0 16px;
   background-color: white;
   z-index: 100;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
 `
 const HeaderLeft = styled(Div)`
 `
@@ -114,7 +106,8 @@ const HeaderContainer = (props) => {
     ];
 
     return (
-        <DefaultHeader>
+        <DefaultHeader 
+            height="56px" padding="0 16px" flex="h_between">
             <HeaderLeft flex="h_start">
                 <NavOpenBtn onClick={event} 
                     width="40px" height="40px" flex="h_center" deco="none">

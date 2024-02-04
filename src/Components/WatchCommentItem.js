@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
-import { Div } from "../style/Div";
-import { Span } from "../style/Span";
+import { Div } from "../style/LayoutStyle";
+import { Span } from "../style/TextStyle";
 import { Img } from "../style/Img";
 import { Button } from "../style/Button";
 

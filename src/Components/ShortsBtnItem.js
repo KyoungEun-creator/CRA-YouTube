@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
-import { Div } from "../style/Div";
-import { Span } from "../style/Span";
+import { Div } from "../style/LayoutStyle";
+import { Span } from "../style/TextStyle";
 import { Button } from "../style/Button";
 import { Img } from "../style/Img";
 import useHover from "../Hooks/useHover";
@@ -65,7 +65,7 @@ const ShortsBtnItem = (props) => {
             }
             {
                 label && <ShortsBtnLabel     
-                    font-size="15px"> {label} </ShortsBtnLabel>
+                    fontSize="15px"> {label} </ShortsBtnLabel>
             }
         </ShortsBtn>
     )

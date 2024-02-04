@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
-import { Div } from "../style/Div";
+import { Div } from "../style/LayoutStyle";
 import ShortsBtnItem from "../Components/ShortsBtnItem";
 
 const ShortsBtnsBundle = styled(Div)`

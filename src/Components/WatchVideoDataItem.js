@@ -1,14 +1,14 @@
 import React from "react";
 import { styled } from "styled-components";
-import { Div } from "../style/Div";
+import { Div } from "../style/LayoutStyle";
+import { H1 } from "../style/TextStyle";
 import { Button } from "../style/Button";
 import { Img } from "../style/Img";
 import UploadMentionModule from "../Modules/UploadMentionModule";
 
 const VideoData = styled(Div)`
 `
-const WatchVideoTitle = styled.h1`
-    margin-top: 10px;
+const WatchVideoTitle = styled(H1)`
 `
 const VideoDataMiddle = styled(Div)`
 `
@@ -76,7 +76,8 @@ const WatchVideoDataItem = (props) => {
     return (
         <VideoData 
             margin="10px 0 10px 0" width="930px" padding="0" flex="v_start">
-            <WatchVideoTitle>{videoTitle}</WatchVideoTitle>
+            <WatchVideoTitle
+                margin="10px 0 0 0" > {videoTitle} </WatchVideoTitle>
 
             <VideoDataMiddle 
                 width="100%" flex="h_between">
@@ -87,7 +88,7 @@ const WatchVideoDataItem = (props) => {
                             width="40px" height="40px" margin="0 12px 0 0" />
                     </a>
                     <VideoDataUploader
-                        margin="0 12px 0 0" flex="v_start">
+                        margin="0 12px 0 0" flex="v_start_left">
                         <h3> {channelName} </h3>
                         <h6> 구독자 {subscribers} </h6>
                     </VideoDataUploader>

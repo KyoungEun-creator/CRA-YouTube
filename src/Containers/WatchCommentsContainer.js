@@ -1,16 +1,14 @@
 import React from "react";
 import { styled } from "styled-components";
-import { Div } from "../style/Div";
+import { Div } from "../style/LayoutStyle";
+import { H1 } from "../style/TextStyle";
 import { Input } from "../style/Input";
 import { Img } from "../style/Img";
 import WatchCommentItem from "../Components/WatchCommentItem";
 
 const CommentsContainer = styled(Div)`
 `
-const CommentsCount = styled.h1`
-    width: 100%;
-    font-size: 25px;
-    margin-bottom: 10px;
+const CommentsCount = styled(H1)`
 `
 const AddComment = styled(Div)`
 `
@@ -49,7 +47,8 @@ const WatchCommentsContainer = () => {
     
     return (
         <CommentsContainer flex="v_start">
-            <CommentsCount> 댓글 {commentsListData.length}개 </CommentsCount>
+            <CommentsCount
+                width="100%" margin="0 0 10px 0"> 댓글 {commentsListData.length}개 </CommentsCount>
             <AddComment 
                 width="100%" margin="0 0 30px 0" flex="h_between">
                 <CommentWriter src="https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj" alt="작성자"

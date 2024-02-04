@@ -2,7 +2,7 @@ import React from "react";
 import useHover from "../Hooks/useHover";
 import { styled } from "styled-components";
 import { Button } from "../style/Button";
-import { Span } from "../style/Span";
+import { Span } from "../style/TextStyle";
 import { Img } from "../style/Img";
 
 const NavBtn = styled(Button)`

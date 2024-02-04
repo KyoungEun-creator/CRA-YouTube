@@ -1,32 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
+import { Section, Nav } from "../style/LayoutStyle";
 import { useRecoilValue } from "recoil";  
 import { detailedNavAtom } from "../recoil/mainAtom";
 import DetailedNavItem from "../Components/DetailedNavItem";
 
-const DetailedNav = styled.nav`
+const DetailedNav = styled(Nav)`
   z-index: 100;
   position: fixed;
-  margin-top: 56px;
-  padding: 0 4px;
   background-color: white;
-  width: 224px;
-  height: 100vh;
-  padding: 0 12px;
   overflow: scroll;
 `
-const DetailedNavGuideSection = styled.section`
-  height: fit-content;
+const DetailedNavGuideSection = styled(Section)`
   padding: 12px;
   border-bottom: 1px solid lightgray;
-  width: fit-content;
-  height: fit-content;
 `
-const DetailedNavFooter = styled.section`
-  height: fit-content;
-  padding-bottom: 20px;
-  margin-bottom: 60px;
+const DetailedNavFooter = styled(Section)`
 `
 
 const DetailedNavContainer = () => {
@@ -379,7 +369,8 @@ const DetailedNavContainer = () => {
     ];
 
     return (
-        <DetailedNav style={{ display: detailedNavOpen ? "block" : "none" }}>
+        <DetailedNav style={{ display: detailedNavOpen ? "block" : "none" }}
+            width="224px" height="100vh" padding="0 12px" margin="56px 0 0 0" >
             <section >
                 <DetailedNavGuideSection>
                     {
@@ -421,7 +412,8 @@ const DetailedNavContainer = () => {
                     }
                 </DetailedNavGuideSection>
             </section>
-            <DetailedNavFooter>
+            <DetailedNavFooter
+                margin="20px 0 60px 0">
                 {
                     FooterData.map((elem) => {
                         return <DetailedNavItem key={elem.id} data={elem} />

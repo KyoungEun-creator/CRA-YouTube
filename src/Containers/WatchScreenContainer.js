@@ -1,6 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
-import { Div } from "../style/Div";
+import { Div } from "../style/LayoutStyle";
 import { Img } from "../style/Img";
 import HoverAlertBtnItem from "../Components/HoverAlertBtnItem";
 

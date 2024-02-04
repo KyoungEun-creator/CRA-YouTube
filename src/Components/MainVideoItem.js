@@ -1,18 +1,14 @@
 import React from "react";
 import { styled } from "styled-components";
-// import { Div, Section  } from "../style/LayoutStyle"
-import { Div } from "../style/Div";
-import { P } from "../style/P";
-import { Span } from "../style/Span";
+import { Div, Section  } from "../style/LayoutStyle"
+import { P, Span, H3 } from "../style/TextStyle";
 import { Button } from "../style/Button";
 import { Img } from "../style/Img";
 import UploadMentionModule from "../Modules/UploadMentionModule";
 import useHover from "../Hooks/useHover";
 
-const ContentItem = styled.section`
-    width: 313px;
+const ContentItem = styled(Section)`
     object-fit: cover; /* 비율 고정 */
-    margin: 0 7px 40px 7px;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 310px;
@@ -48,14 +44,10 @@ const ChannelProfileImg = styled(Img)`
 const ContentMetaData = styled(Div)`
     display: inline-block;
 `
-const ContentTitle = styled.h3`
-    color: black;
-    font-size: 16px;
+const ContentTitle = styled(H3)`
     width: 241.73px;
-    height: fit-content;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: 12px 0 4px 0;
     display: -webkit-box; /* 두 줄부터 말줄임표 */
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -87,7 +79,8 @@ const MainVideoItem = (props) => {
     const uploadMention = UploadMentionModule({ data: props.data });
 
     return (
-        <ContentItem onMouseOver={videoDisplayBlockEvent} onMouseOut={videoDisplayNoneEvent}>
+        <ContentItem onMouseOver={videoDisplayBlockEvent} onMouseOut={videoDisplayNoneEvent}
+            width="313px" margin="0 7px 40px 7px">
             <ThumbnailBox>
                 <Thumbnail src={thumbnailImgSrc} style={{display: isVideoHovered ? "none" : "block"}} alt="thumbnail" />
                 <ThumbnailVideo style={{display: isVideoHovered ? "block" : "none"}} src={thumbnailVideoSrc} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
@@ -104,7 +97,8 @@ const MainVideoItem = (props) => {
 
                 <ContentMetaData
                     width="100%" height="100px">
-                    <ContentTitle> {videoTitle} </ContentTitle>
+                    <ContentTitle
+                        margin="12px 0 4px 0"> {videoTitle} </ContentTitle>
                     <div>
                         <a href={channelProfileUrl}>
                             <MainMetaDatas> {channelName} </MainMetaDatas> 

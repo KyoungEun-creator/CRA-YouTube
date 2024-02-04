@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import useHover from "../Hooks/useHover";
 import { Button } from "../style/Button";
-import { Span } from "../style/Span";
+import { Span } from "../style/TextStyle";
 
 const FooterGuide = styled(Span)`
 `
@@ -31,7 +31,7 @@ const DetailedNavItem = (props) => {
                 content ?
                 (
                     <FooterGuide    
-                        padding="10px 24px 0 24px" margin="0 0 10px 0"> 
+                        padding="10px 24px 0 24px" margin="0 0 10px 0" flex="h_start"> 
                         {content} 
                     </FooterGuide>
                 )

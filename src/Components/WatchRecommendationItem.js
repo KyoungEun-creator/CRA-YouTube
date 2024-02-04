@@ -1,15 +1,13 @@
 import React from "react";
 import { styled } from "styled-components";
-import { Div } from "../style/Div";
-import { Span } from "../style/Span";
+import { Div } from "../style/LayoutStyle";
+import { Span, H3 } from "../style/TextStyle";
 import { Img } from "../style/Img";
 import UploadMentionModule from "../Modules/UploadMentionModule";
 
 const RecommendedVideoContainer = styled(Div)`
 `
 const RecommendedVideoThumbnailBox = styled(Div)`
-    /* display: flex;
-    align-items: center; */
     position: relative;
     z-index: -1;
 `
@@ -29,11 +27,7 @@ const RecommendedVideoTimeStatus = styled(Span)`
 `
 const RecommendedVideoDataContainer = styled(Div)`
 `
-const RecommendedVideoTitle = styled.h3`
-    color: black;
-    font-size: 16px;
-    width: 241.73px;
-    height: fit-content;
+const RecommendedVideoTitle = styled(H3)`
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box; 
@@ -65,7 +59,8 @@ const WatchRecommendationItem = (props) => {
             </RecommendedVideoThumbnailBox>
             <RecommendedVideoDataContainer 
                 height="100%" flex="v_between">
-                <RecommendedVideoTitle> {videoTitle} </RecommendedVideoTitle>
+                <RecommendedVideoTitle
+                    width="242px"> {videoTitle} </RecommendedVideoTitle>
                 <RecommendedVideoMetaDatasBox 
                     width="100%" flex="v_start">
                     <RecommendedVideoMetaDatas className="metadatas" 
