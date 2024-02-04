@@ -13,6 +13,7 @@ export const A = styled.a`
     height: ${ props => props.height || "fit-content" };
     font-size: ${ props => props.fontSize || "14px" };
     ${ props => setFlex(props.flex) };
+    cursor: pointer;
 `
 export const Span = styled.span`
     width: ${ props => props.width  || "fit-content" };
@@ -46,4 +47,4 @@ export const H3 = styled.h3`
     color: ${ props => props.color || "black" };
     padding: ${ props => props.padding || "0" };
     margin: ${ props => props.margin || "0" };
-`
+`     

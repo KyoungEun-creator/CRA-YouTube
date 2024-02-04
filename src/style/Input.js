@@ -1,12 +1,33 @@
 import { styled } from "styled-components";
 
-// input type에 따라 꾸며주기
+const setType = (value) => {
+
+    if (value === "text" || "password") {
+        return`
+            border: 1px solid lightgray;
+        `
+
+    }
+
+    else if (value === "button") {
+        return `
+            borer: none;
+            font-size: 20px;
+            font-weight: bold;
+        `
+    }
+}
+
 
 export const Input = styled.input`
-    type: ${ props => props.type || "text" };
+    ${ props => setType(props.type) };  
     width: ${ props => props.width  || "fit-content" };
     height: ${ props => props.height || "fit-content" };
     box-sizing: ${ props => props.boxSizing || "border-box" };
-    padding: ${ props => props.padding || "3px 3px 3px 3px" };
-    border: ${ props => props.border || "1px solid lightgray" };
+    background-color: ${ props => props.bgColor || "transparent" };
+    color: ${ props => props.color || "black" };
+    font-size: ${ props => props.fontSize || "14px" };
+    padding: ${ props => props.padding || "3px" };
+    margin: ${ props => props.margin || "0" };
+    cursor: pointer;
 `

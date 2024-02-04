@@ -18,6 +18,7 @@ const ShortsPage = () => {
     return (
         <>
             <NavContainer />
+
             <ShortsContainer
                 margin="0 0 0 72px" width="calc(100vw - 72px)" flex="h_center">
                 <ShortsArticle 
@@ -26,8 +27,7 @@ const ShortsPage = () => {
                         width="352px" margin="0 15px 0 0" />
                     <ShortsBtnsContainer />
                 </ShortsArticle>
-            </ShortsContainer>
-            
+            </ShortsContainer> 
         </>
     )
 }
