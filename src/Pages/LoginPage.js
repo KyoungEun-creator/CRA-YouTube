@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import { Article, Section, Div } from "../style/LayoutStyle";
 import { H1, H3, Span } from "../style/TextStyle";
@@ -32,8 +33,6 @@ const LoginBtn = styled(Input)`
 `
 const AccountService = styled(Div)`
 `
-const GoSignUp = styled(Span)`
-`
 const GoFindID = styled(Span)`
 `
 const GoFindPW = styled(Span)`
@@ -41,7 +40,7 @@ const GoFindPW = styled(Span)`
 const loginEvent = async () => {
     const BACKEND = process.env.RBACKEND_IP_URL;
 
-    const response = await fetch(`${BACKEND}`, {
+    const response = await fetch(`${BACKEND}/auth`, {
         "method": "POST",
         "headers": {
             "Content-Type": "application/json"
@@ -81,11 +80,11 @@ const LoginPage = () => {
                             </InputContainer>
                         </InputSection>
                         
-                        <LoginBtn type="button" value="로그인하기" onClick="loginEvent()"
-                            width="400px" height="50px" bgColor="red" color="white" margin="0 0 10px 0"></LoginBtn>
+                        <LoginBtn type="button" value="로그인하기" onClick={loginEvent}
+                            width="400px" height="50px" bgcolor="red" color="white" margin="0 0 10px 0"></LoginBtn>
                         <AccountService 
                             width="100%" flex="h_between">
-                            <GoSignUp>계정이 없으세요? 회원가입</GoSignUp>
+                            <Link to="./signUp" color="black">계정이 없으세요? 회원가입</Link>
                             <GoFindID>아이디 찾기</GoFindID>
                             <GoFindPW>비밀번호 찾기</GoFindPW>
                         </AccountService>
