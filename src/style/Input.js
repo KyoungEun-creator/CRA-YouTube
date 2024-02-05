@@ -18,7 +18,6 @@ const setType = (value) => {
     }
 }
 
-
 export const Input = styled.input`
     ${ props => setType(props.type) };  
     width: ${ props => props.width  || "fit-content" };

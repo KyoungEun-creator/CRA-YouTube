@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { profileModalAtom } from "../recoil/mainAtom";
+import { uploadModalAtom } from "../recoil/mainAtom";
 import { styled } from "styled-components";
 import { Button } from "../style/Button";
 import { Header, Div } from "../style/LayoutStyle";
@@ -58,6 +61,18 @@ const HeaderContainer = (props) => {
 
     const { event } = props;
 
+    const [isProfileModalOpen, setIsProfileModalOpen] = useRecoilState(profileModalAtom);
+    const [isUploadModalOpen, setIsUploadModalOpen] = useRecoilState(uploadModalAtom);
+
+    // 프로필 이미지 모달창 이벤트
+    const profileModalOpenEvent = () => {
+        setIsProfileModalOpen(!isProfileModalOpen)
+    }
+    // 동영상 업로드 모달창 이벤트
+    const uploadModalOpenEvent = () => {
+        setIsUploadModalOpen(!isUploadModalOpen)
+    }
+
     const HeaderMiddleItemData = [
         {
             id: "HeaderMiddleItem_1",
@@ -79,16 +94,17 @@ const HeaderContainer = (props) => {
 
     const HeaderRightItemData = [
         {
-            id: "HeaderRightItem_1",
-            idName: "uploadBtn",
+            // id: "HeaderRightItem_1",
+            idName: "upload",
             imgClassName: "headerRightIcons",
             imgSrc: "imgs/video-solid.svg",
             alt: "rightHeaderBtn",
             tagContent: "만들기",
+            clickEvent: uploadModalOpenEvent,
         },
         {
-            id: "HeaderRightItem_2",
-            idName: "alarmBtn",
+            // id: "HeaderRightItem_2",
+            idName: "alarm",
             imgClassName: "headerRightIcons",
             imgSrc: "imgs/bell-regular.svg",
             alt: "rightHeaderBtn",
@@ -96,12 +112,13 @@ const HeaderContainer = (props) => {
             alarmNum: "9+"
         },
         {
-            id: "HeaderRightItem_3",
-            idName: "profileBtn",
+            // id: "HeaderRightItem_3",
+            idName: "profile",
             imgId: "profileImg",
             imgClassName: "headerRightIcons",
             imgSrc: "https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj",
             alt: "rightHeaderBtn",
+            clickEvent: profileModalOpenEvent
         }
     ];
 
@@ -137,20 +154,26 @@ const HeaderContainer = (props) => {
 
                     {
                         HeaderMiddleItemData.map((elem) => {
-                            return <HoverAlertBtnItem key={elem.id} data={elem}/>
+                            return <HoverAlertBtnItem key={elem.id} data={elem} />
                         })
                     }
                 </SearchBar> 
             </HeaderMiddle>
 
             <HeaderRight 
-                flex="h_end" width="156px" height="40px" padding="0 50px">
+                flex="h_end" width="156px" height="40px">
                 {
                     HeaderRightItemData.map((elem) => {
-                        return <HoverAlertBtnItem key={elem.id} data={elem} isHover/>
+                        // return <HoverAlertBtnItem key={elem.id} data={elem} isHover event={profileModalOpenEvent} secEvent={uploadModalOpenEvent} /> 
+                        return <HoverAlertBtnItem data={elem} isRight/> 
                     })
                 }
             </HeaderRight>
+            {/* 
+            {
+                isModalState && <ChangeProfileModal />
+            } 
+            */}
         </DefaultHeader>
     )
 }

@@ -4,6 +4,7 @@ import { styled } from "styled-components";
 import { Article, Section, Div } from "../style/LayoutStyle";
 import { H1, H3, Span } from "../style/TextStyle";
 import { Input } from "../style/Input";
+// import { useCookies } from "react-cookie";
 
 const LoginArticle = styled(Article)`
 `
@@ -12,15 +13,12 @@ const LoginContainer = styled(Section)`
 const WidthFixer = styled(Div)`
 `
 const ContainerName = styled(H1)`
-
 `
 const InputSection = styled(Section)`
-
 `
 const InputContainer = styled(Div)`
 `
 const InputName = styled(H3)`
-
 `
 const InfoInput = styled(Input)`
     width: 400px;
@@ -46,14 +44,16 @@ const loginEvent = async () => {
             "Content-Type": "application/json"
         },
         "body": JSON.stringify({
-            "id": document.getElementById("idValue"),
-            "pw": document.getElementById("pwValue")
+            "id": document.getElementById("idValue").value,
+            "pw": document.getElementById("pwValue").value
         })
     })
 
-    const result = await response.JSON;
+    const result = await response.json();
 
     if (result.success) {
+        // 토큰을 저장하는 방법(리액트 쿠키에 저장)
+        // 페이지 이동, 리액트 라우터 돔 이용
         console.log("login success!")
     }
     else {

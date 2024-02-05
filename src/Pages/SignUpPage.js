@@ -73,13 +73,13 @@ const signupEvent = async () => {
                 "Content-Type": "application/json"
             },
             "body": JSON.stringify({
-                "id": document.getElementById("idValue"),
-                "pw": document.getElementById("pwValue"),
-                "nickname": document.getElementById("nicknameValue"),
+                "id": document.getElementById("idValue").value,
+                "pw": document.getElementById("pwValue").value,
+                "nickname": document.getElementById("nicknameValue").value,
             })
         })
     
-        const result = await response.JSON;
+        const result = await response.json();
     
         if (result.success) {
             console.log("signup success!")
@@ -102,8 +102,7 @@ const SignUpPage = () => {
                     <InputSection padding="50px 0 50px 0">
                         <InputContainer flex="v_between_start" margin="0 0 20px 0">
                             <InputName margin="0 10px 0 0">ID</InputName>
-                            <InfoInput id="idValue" type="text" placeholder="6 ~ 16 글자로 입력해주세요" position="relative"></InfoInput>
-                            <button position="absolute">중복확인</button>
+                            <InfoInput id="idValue" type="text" placeholder="6 ~ 16 글자로 입력해주세요"></InfoInput>
                         </InputContainer>
                         <InputContainer flex="v_between_start" margin="0 0 20px 0">
                             <InputName margin="0 10px 0 0">PW</InputName>

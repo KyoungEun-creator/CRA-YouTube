@@ -67,35 +67,72 @@ const setFlex = (value) => {
     }
 }
 
-const setDeco = (value) => {
-    if (value === "none") {
-        return `
-            background-color: transparent;
-            color: black;
-        `
+// const setDeco = (value) => {
+//     if (value === "none") {
+//         return `
+//             background-color: transparent;
+//             color: black;
+//         `
+//     }
+//     else if (value === "black") {
+//         return `
+//             background-color: black;
+//             color: white;
+//         `
+//     }
+//     else if (value === "caution") {
+//         return `
+//             background-color: red;
+//             color: white;
+//         `
+//     }
+// }
+
+const setColor = (value) => {
+
+    const template = {
+        "black": "#000000",
+        "white": "#ffffff",
+        "major": "#",
+        "none": "#00000000"
     }
-    else if (value === "black") {
-        return `
-            background-color: black;
-            color: white;
-        `
+
+    return template[value]
+    // template.black
+}
+
+const setSize = (value) => {
+
+    const template= {
+        "small": "12px",
+        "medium": "16px",
+        "large": "30px"
     }
-    else if (value === "caution") {
-        return `
-            background-color: red;
-            color: white;
-        `
-    }
+
+    return template[value]
 }
 
 export const Button = styled.button`
+
+    /* 이 태그의 기본 설정 내용 */
+
+    cursor: pointer;
+    box-sizing: "border-box";
+
+    /* 이 태그의 props별 설정 내용 */
+
     width: ${ props => props.width || "fit-content" };
     height: ${ props => props.height || "fit-content" };
-    box-sizing: ${ props => props.boxSizing || "border-box" };
+    /* box-sizing: ${ props => props.boxSizing || "border-box" }; */
+
     padding: ${ props => props.padding || "3px" };
     margin: ${ props => props.margin || "0" };
-    border: ${ props => props.border || "none" };
+
+    background-color: ${ props => setColor(props.bgColor || "none")};  /* 배경색 */
+    color: ${ props => setColor(props.color || "none")};   /* 글자색 */
+    font-size: ${ props => setSize(props.size || "medium")};
+    border: 1px solid ${ props => setColor(props.border || "none") };
     ${ props => setFlex(props.flex || "h_center") };
-    ${ props => setDeco(props.deco || "none") };
-    cursor: pointer;
+
+    /* ${ props => setDeco(props.deco || "none") }; */
 `

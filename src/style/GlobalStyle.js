@@ -1,5 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
+
+// css in js 에서 이러한 글로벌 스타일이 필요없는 이유
+// 1. 차라리 컴포넌트 분리를 통해서, 얘랑 같은 기능을 사용할 수 있음
+// 2. 결론적으로 스타일링을 하는 방법이 2가지가 되어버림 ( 통일성이 무너짐 )
+
 const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
