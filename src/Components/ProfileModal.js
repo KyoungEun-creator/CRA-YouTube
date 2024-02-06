@@ -9,15 +9,12 @@ const Modal = styled(Div)`
     right: 50px;
     position: absolute;
     background-color: gray;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px 10px 20px 10px;
 `
 
 const ProfileModal = () => {
     return (
-        <Modal>
+        <Modal
+            flex="v_start" padding="20px 10px 20px 10px">
             <H3>프로필 이미지 변경</H3>
             <input type="file" />
         </Modal>

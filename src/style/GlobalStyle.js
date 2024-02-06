@@ -14,66 +14,66 @@ const GlobalStyle = createGlobalStyle`
     
     /* ==================== header ==================== */
     #magnifyingGlassBtn {
-    background-color: #f8f8f8;
-    width: 64px;
-    height: 42px;
-    border: 1px solid lightgray;
-    border-radius: 0 20px 20px 0;
-    padding: 1px 6px;
-    margin-right: 10px;
+        background-color: #f8f8f8;
+        width: 64px;
+        height: 42px;
+        border: 1px solid lightgray;
+        border-radius: 0 20px 20px 0;
+        padding: 1px 6px;
+        margin-right: 10px;
     }
     #magnifyingGlassBtn:hover {
-    background-color: lightgray;
-    border: 1px solid gray;
-    box-shadow: 0.5px 0.5px #f8f8f8;
+        background-color: lightgray;
+        border: 1px solid gray;
+        box-shadow: 0.5px 0.5px #f8f8f8;
     }
     .magnifyingGlassBtnImg {
-    width: 24px;
-    height: 24px;
+        width: 24px;
+        height: 24px;
     }
     #magnifyingGlassBtnSmallScreen {
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    background-color: transparent;
-    display: none;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: transparent;
+        display: none;
     }
     #microphoneBtn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
     }
     #microphoneBtn:hover {
-    background-color: lightgray;
+        background-color: lightgray;
     }
     .microphone {
-    width: 24px;
-    height: 24px;
+        width: 24px;
+        height: 24px;
     }
     .headerRightBtns {
-    width: 40px;
-    height: 40px;
-    padding: 8px;
-    border-radius: 50%;
-    margin-right: 8px;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        border-radius: 50%;
+        margin-right: 8px;
     }
     .headerRightBtns:hover {
-    background-color: lightgray;
+        background-color: lightgray;
     }
     .headerRightIcons {
-    width: 24px;
-    height: 24px;
+        width: 24px;
+        height: 24px;
     }
     #alarmBtn {
-    position: relative;
+        position: relative;
     }
     #profileImg {
-    width: 24px;
-    height: 24px;
-    border: none;
-    border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        border: none;
+        border-radius: 50%;
     }
 
     /* ==================== explicit nav ==================== */

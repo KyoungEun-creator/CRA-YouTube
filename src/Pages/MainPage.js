@@ -11,9 +11,6 @@ const MainPage = () => {
     const profileModalOpen = useRecoilValue(profileModalAtom);
     const uploadModalOpen = useRecoilValue(uploadModalAtom);
 
-    // console.log(profileModalOpen)
-    // console.log(uploadModalOpen)
-
     return (
         <>
             <NavContainer />
@@ -26,8 +23,6 @@ const MainPage = () => {
                 uploadModalOpen &&
                 <UploadModal />
             }
-            {/* <ProfileModal style={{ display: profileModalOpen ? "block" : "none" }} /> */}
-            {/* <UploadModal style={{ display: uploadModalOpen ? "block" : "none" }} /> */}
         </>
     )
 }

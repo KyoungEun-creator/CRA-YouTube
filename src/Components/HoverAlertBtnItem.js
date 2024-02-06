@@ -30,55 +30,31 @@ const HoverDetails = styled(Span)`
 const HoverAlertBtnItem = (props) => {
     
     const { idName, imgId, imgClassName, imgSrc, alt, tagContent, alarmNum, clickEvent } = props.data;
-    // const { isHover } = props;
-    // const { event } = props;
-    // const { secEvent } = props;
+    const { isRight } = props;
 
     // ------------------- .hoverBtn 호버 이벤트 -------------------
     const [isHovered, hoverDetailsDisplayBlockEvent, hoverDetailsDisplayNoneEvent] = useHover(false);
 
     return (
         <>
-            {/* {
-                modal ? (
-                    modal === "upload" ? (
-                        <HoverBtn id={idName} className={isHover && "headerRightBtns"} onMouseOver={hoverDetailsDisplayBlockEvent} onMouseOut={hoverDetailsDisplayNoneEvent} onClick={event}>
-                            {
-                                tagContent && <HoverDetails style={{ display: isHovered ? "block" : "none" }} 
-                                height="15px" fontSize="12px" padding="10px" flex="h_center"> {tagContent} </HoverDetails>
-                            }
-                        </HoverBtn>
-                    )  
-                    : (
-                        <HoverBtn id={idName} className={isHover && "headerRightBtns"} onMouseOver={hoverDetailsDisplayBlockEvent} onMouseOut={hoverDetailsDisplayNoneEvent} onClick={secEvent}>
-                            {
-                                tagContent && <HoverDetails style={{ display: isHovered ? "block" : "none" }} 
-                                height="15px" fontSize="12px" padding="10px" flex="h_center"> {tagContent} </HoverDetails>
-                            }
-                        </HoverBtn>
-                    )
-                )
-                : ( */}
-                    <HoverBtn id={idName} className={isHover && "headerRightBtns"} onMouseOver={hoverDetailsDisplayBlockEvent} onMouseOut={hoverDetailsDisplayNoneEvent} onClick={clickEvent}
-                        deco="none">
-                        {/* { imgId 
-                            ? <img id={imgId} className={imgClassName} src={imgSrc} alt={alt} />
-                            : <img className={imgClassName} src={imgSrc} alt={alt} />
-                        } */}
-                        <img id={imgId ? imgId : null} className={imgClassName} src={imgSrc} alt={alt} />
-                        {
-                            alarmNum && 
-                            <AlarmBadge width="13px" height="16px" fontSize="12px" padding="0 4px" flex="h_center"> {alarmNum} </AlarmBadge> 
-                        }
-                        {
-                            tagContent && 
-                            // isHovered &&
-                            // <HoverDetails style={{ display: isHovered ? "block" : "none" }} height="15px" fontSize="12px" padding="10px" flex="h_center"> {tagContent} </HoverDetails>
-                            <HoverDetails height="15px" fontSize="12px" padding="10px" flex="h_center"> {tagContent} </HoverDetails>
-                        }
-                    </HoverBtn>
-                {/* ) */}
-            {/* } */}
+            <HoverBtn id={idName} className={isRight && "headerRightBtns"} onMouseOver={hoverDetailsDisplayBlockEvent} onMouseOut={hoverDetailsDisplayNoneEvent} onClick={clickEvent}
+                deco="none">
+                {/* { imgId 
+                    ? <img id={imgId} className={imgClassName} src={imgSrc} alt={alt} />
+                    : <img className={imgClassName} src={imgSrc} alt={alt} />
+                } */}
+                <img id={imgId ? imgId : null} className={imgClassName} src={imgSrc} alt={alt} />
+                {
+                    alarmNum && 
+                    <AlarmBadge width="13px" height="16px" fontSize="12px" padding="0 4px" flex="h_center"> {alarmNum} </AlarmBadge> 
+                }
+                {
+                    tagContent && 
+                    isHovered &&
+                    // <HoverDetails style={{ display: isHovered ? "block" : "none" }} height="15px" fontSize="12px" padding="10px" flex="h_center"> {tagContent} </HoverDetails>
+                    <HoverDetails height="15px" fontSize="12px" padding="10px" flex="h_center"> {tagContent} </HoverDetails>
+                }
+            </HoverBtn>
         </>
     )
 }

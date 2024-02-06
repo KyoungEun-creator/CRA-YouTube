@@ -94,7 +94,7 @@ const HeaderContainer = (props) => {
 
     const HeaderRightItemData = [
         {
-            // id: "HeaderRightItem_1",
+            id: "HeaderRightItem_1",
             idName: "upload",
             imgClassName: "headerRightIcons",
             imgSrc: "imgs/video-solid.svg",
@@ -103,7 +103,7 @@ const HeaderContainer = (props) => {
             clickEvent: uploadModalOpenEvent,
         },
         {
-            // id: "HeaderRightItem_2",
+            id: "HeaderRightItem_2",
             idName: "alarm",
             imgClassName: "headerRightIcons",
             imgSrc: "imgs/bell-regular.svg",
@@ -112,7 +112,7 @@ const HeaderContainer = (props) => {
             alarmNum: "9+"
         },
         {
-            // id: "HeaderRightItem_3",
+            id: "HeaderRightItem_3",
             idName: "profile",
             imgId: "profileImg",
             imgClassName: "headerRightIcons",
@@ -124,7 +124,7 @@ const HeaderContainer = (props) => {
 
     return (
         <DefaultHeader 
-            height="56px" padding="0 16px" flex="h_between">
+            width="100%" height="56px" padding="0 16px" flex="h_between">
             <HeaderLeft flex="h_start">
                 <NavOpenBtn onClick={event} 
                     width="40px" height="40px" flex="h_center" deco="none">
@@ -164,16 +164,10 @@ const HeaderContainer = (props) => {
                 flex="h_end" width="156px" height="40px">
                 {
                     HeaderRightItemData.map((elem) => {
-                        // return <HoverAlertBtnItem key={elem.id} data={elem} isHover event={profileModalOpenEvent} secEvent={uploadModalOpenEvent} /> 
-                        return <HoverAlertBtnItem data={elem} isRight/> 
+                        return <HoverAlertBtnItem key={elem.id} data={elem} isRight/> 
                     })
                 }
             </HeaderRight>
-            {/* 
-            {
-                isModalState && <ChangeProfileModal />
-            } 
-            */}
         </DefaultHeader>
     )
 }
