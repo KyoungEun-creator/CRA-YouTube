@@ -14,7 +14,6 @@ import HoverAlertBtnItem from "../Components/HoverAlertBtnItem";
 const DefaultHeader = styled(Header)`
   top: 0;
   position: fixed;
-  background-color: white;
   z-index: 100;
 `
 const HeaderLeft = styled(Div)`
@@ -124,7 +123,7 @@ const HeaderContainer = (props) => {
 
     return (
         <DefaultHeader 
-            width="100%" height="56px" padding="0 16px" flex="h_between">
+            width="100vw" height="56px" padding="0 16px" bgColor="white" flex="h_between">
             <HeaderLeft flex="h_start">
                 <NavOpenBtn onClick={event} 
                     width="40px" height="40px" flex="h_center" deco="none">

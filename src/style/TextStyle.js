@@ -29,15 +29,15 @@ const setSize = (value) => {
     return template[value]
 }
 
-const template = () => {
+const template = (props) => {
     return `
-        width: ${ props => props.width || "fit-content" };
-        height: ${ props => props.height || "fit-content" };
-        ${ props => setFlex(props.flex || "h_center") };
-        padding: ${ props => props.padding || "0" };
-        margin: ${ props => props.margin || "0" };
-        color: ${ props => setColor(props.color || "black") };
-        font-weight: ${ props => setWeight(props.fontWeight || "normal") };
+        width: ${ props.width || "fit-content" };
+        height: ${ props.height || "fit-content" };
+        ${ setFlex(props.flex || "h_center") };
+        padding: ${ props.padding || "0" };
+        margin: ${ props.margin || "0" };
+        color: ${ setColor(props.color || "black") };
+        font-weight: ${ setWeight(props.fontWeight || "normal") };
     `
 }
 

@@ -11,17 +11,17 @@ const setColor = (value) => {
     return template[value]
 }
 
-const template = () => {
+const template = (props) => {
     return `
         box-sizing: border-box;
-        width: ${ props => props.width || "fit-content" };
-        height: ${ props => props.height || "fit-content" };
-        border: ${ props => props.border || "none" };
-        padding: ${ props => props.padding || "0" };
-        margin: ${ props => props.margin || "0" };
-        ${ props => setFlex(props.flex || "h_center") };
-        background-color: ${ props => setColor(props.bgColor || "none") };
-        color: ${ props => setColor(props.color || "black") };
+        width: ${ props.width || "fit-content" };
+        height: ${ props.height || "fit-content" };
+        border: ${ props.border || "none" };
+        padding: ${ props.padding || "0" };
+        margin: ${ props.margin || "0" };
+        ${ setFlex(props.flex || "h_center") };
+        background-color: ${ setColor(props.bgColor || "none") };
+        color: ${ setColor(props.color || "black") };
     `
 }
 

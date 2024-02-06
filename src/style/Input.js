@@ -36,7 +36,7 @@ const setType = (type, color) => {
         `
     }
 
-    else if (value === "button") {
+    else if (type === "button") {
         return `
             borer: none
             ${setFlex("h_center")}
