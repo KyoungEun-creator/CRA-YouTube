@@ -47,5 +47,4 @@ export const Button = styled.button`
     font-weight: ${ props => setWeight(props.fontWeight || "bold")};
     border: 1px solid ${ props => setColor(props.border || "none") };
     ${ props => setFlex(props.flex || "h_center") };
-
 `

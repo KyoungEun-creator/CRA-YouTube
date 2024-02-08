@@ -6,7 +6,8 @@ const setColor = (value) => {
         "black": "#000000",
         "white": "#ffffff",
         "major": "#",
-        "none": "#00000000"
+        "none": "#00000000",
+        "red": "#FF0000",
     }
     return template[value]
 }
@@ -37,6 +38,7 @@ const template = (props) => {
         padding: ${ props.padding || "0" };
         margin: ${ props.margin || "0" };
         color: ${ setColor(props.color || "black") };
+        background-color: ${ setColor(props.bgColor || "none") };
         font-weight: ${ setWeight(props.fontWeight || "normal") };
     `
 }

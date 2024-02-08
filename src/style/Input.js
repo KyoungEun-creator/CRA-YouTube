@@ -29,13 +29,25 @@ const setWeight = (value) => {
     return template[value]
 }
 
-const setType = (type, color) => {
+// const setType = (type, color) => {
+//     if (type === "text" || "password") {
+//         return`
+//             border: 1px solid ${setColor(color || "black") }
+//         `
+//     }
+//     else if (type === "button") {
+//         return `
+//             borer: none
+//             ${setFlex("h_center")}
+//         `
+//     }
+// }
+const setType = (type) => {
     if (type === "text" || "password") {
         return`
-            border: 1px solid ${setColor(color || "black") }
+            border: 1px solid black
         `
     }
-
     else if (type === "button") {
         return `
             borer: none

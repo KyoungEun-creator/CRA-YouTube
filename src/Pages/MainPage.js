@@ -27,4 +27,4 @@ const MainPage = () => {
     )
 }
 
-export default MainPage
+export default MainPage;

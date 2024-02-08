@@ -14,7 +14,7 @@ const ContentItem = styled(Section)`
     flex-basis: 310px;
     cursor: pointer;
 `
-const ThumbnailBox = styled.div`
+const ThumbnailBox = styled(Div)`
     position: relative;
     z-index: -1;
 `
@@ -34,7 +34,6 @@ const TimeStatus = styled(Span)`
     border-radius: 4px;
     bottom: 8px;
     right: 3px;
-    font-weight: 800;
 `
 const ContentDetails = styled(Div)`
 `
@@ -45,7 +44,6 @@ const ContentMetaData = styled(Div)`
     display: inline-block;
 `
 const ContentTitle = styled(H3)`
-    width: 241.73px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box; /* 두 줄부터 말줄임표 */
@@ -80,12 +78,18 @@ const MainVideoItem = (props) => {
 
     return (
         <ContentItem onMouseOver={videoDisplayBlockEvent} onMouseOut={videoDisplayNoneEvent}
-            width="313px" margin="0 7px 40px 7px">
-            <ThumbnailBox>
-                <Thumbnail src={thumbnailImgSrc} style={{display: isVideoHovered ? "none" : "block"}} alt="thumbnail" />
-                <ThumbnailVideo style={{display: isVideoHovered ? "block" : "none"}} src={thumbnailVideoSrc} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+            width="313px" margin="0 7px 40px 7px" flex="v_start">
+            <ThumbnailBox width="100%">
+                {
+                    isVideoHovered ?
+                        <ThumbnailVideo src={thumbnailVideoSrc} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                        :
+                        <Thumbnail src={thumbnailImgSrc} alt="thumbnail" />
+                }
+                
+                
                 <TimeStatus 
-                    padding="2px 4px" fontSize="12px" deco="black" flex="h_center"> {runningTime} </TimeStatus>
+                    padding="2px 4px" fontSize="small" fontWeight="bold" color="white" bgColor="black" flex="h_center"> {runningTime} </TimeStatus>
             </ThumbnailBox>
 
             <ContentDetails onMouseOver={detailBtnDisplayBlockEvent} onMouseOut={detailBtnDisplayNoneEvent} 
@@ -107,14 +111,18 @@ const MainVideoItem = (props) => {
                     </div>
                 </ContentMetaData>
 
-                <DetailBtn value="세부사항 설정" style={{display: isBtnHovered ? "block" : "none"}} 
-                    width="40px" height="40px" padding="0" deco="none">
-                    <DetailBtnImg src="imgs/ellipsis-vertical-solid.svg" alt={alt}
-                        width="24px" height="24px" />
-                </DetailBtn>
+                {
+                    isBtnHovered && (
+                        <DetailBtn value="세부사항 설정"
+                            width="40px" height="40px" padding="0">
+                            <DetailBtnImg src="imgs/ellipsis-vertical-solid.svg" alt={alt}
+                                width="24px" height="24px" />
+                        </DetailBtn>
+                    )
+                }
             </ContentDetails>
         </ContentItem> 
     )
 }
 
-export default MainVideoItem
+export default MainVideoItem;

@@ -12,7 +12,7 @@ const NavBtnImg = styled(Img)`
 `
 const NavName = styled(Span)`
   overflow: hidden;
-  text-overflow: ellipsis; /* 넘치는 건 말줄임표로 */
+  text-overflow: ellipsis; 
   white-space: nowrap;
 `
 
@@ -30,10 +30,8 @@ const NavBtnItem = (props) => {
     return (
         <NavBtn className="imnav-btn" value={value} title={title} onMouseOver={imNavBtnHoverEvent} onMouseOut={imNavBtnHoverOutEvent} style={btnStyle} 
             margin="10px 0 7px 0" width="64px" height="74px" flex="v_center">
-            <NavBtnImg src={imgSrc} alt={alt} 
-              width="24px" height="24px" margin="0 0 6px 0" />
-            <NavName
-              width="100%" height="14px" fontSize="11px"> {label} </NavName>
+            <NavBtnImg src={imgSrc} alt={alt} width="24px" height="24px" margin="0 0 6px 0" />
+            <NavName width="100%" height="14px" fontSize="small" fontWeight="thin"> {label} </NavName>
         </NavBtn>
     )
 }

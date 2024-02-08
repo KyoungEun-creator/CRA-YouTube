@@ -17,6 +17,8 @@ const ProfileModal = () => {
             flex="v_start" padding="20px 10px 20px 10px">
             <H3>프로필 이미지 변경</H3>
             <input type="file" />
+            
+            <input type="button" value="변경하기" />
         </Modal>
     )
 }

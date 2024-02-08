@@ -30,9 +30,9 @@ const YoutubePremiumLogo = styled(Img)`
     position: relative;
 `
 const CountryCode = styled(Span)`  
-    color: #606060;
     position: absolute;
     top: 1px;
+    left: 180px;
 `
 const HeaderMiddle = styled(Div)`
 `
@@ -53,7 +53,26 @@ const SearchTypingBtn = styled(Button)`
 `
 const SearchKeyboard = styled(Img)`
 `
+const SearchEnterBtn = styled(Div)`
+    background-color: #f8f8f8;
+    border: 1px solid lightgray;
+    border-radius: 0 20px 20px 0;
+    &:hover {
+        background-color: lightgray;
+        box-shadow: 0.5px 0.5px #f8f8f8;
+    }
+`
+const HoverAlertBtn = styled(Div)`
+    width: 40px;
+    height: 40px;
+    margin: 6px;
+`
 const HeaderRight = styled(Div)`
+`
+const ProfileBtn = styled(Button)`
+`
+const ProfileBtnImg = styled(Img)`
+    border-radius: 50%;
 `
 
 const HeaderContainer = (props) => {
@@ -63,70 +82,21 @@ const HeaderContainer = (props) => {
     const [isProfileModalOpen, setIsProfileModalOpen] = useRecoilState(profileModalAtom);
     const [isUploadModalOpen, setIsUploadModalOpen] = useRecoilState(uploadModalAtom);
 
-    // 프로필 이미지 모달창 이벤트
-    const profileModalOpenEvent = () => {
-        setIsProfileModalOpen(!isProfileModalOpen)
-    }
     // 동영상 업로드 모달창 이벤트
     const uploadModalOpenEvent = () => {
         setIsUploadModalOpen(!isUploadModalOpen)
     }
-
-    const HeaderMiddleItemData = [
-        {
-            id: "HeaderMiddleItem_1",
-            idName: "magnifyingGlassBtn",
-            imgClassName: "magnifyingGlassBtnImg",
-            imgSrc: "imgs/magnifying-glass-solid.svg",
-            alt: "middleHeaderBtn",
-            tagContent: "검색"
-        },
-        {
-            id: "HeaderMiddleItem_2",
-            idName: "microphoneBtn",
-            imgClassName: "microphone",
-            imgSrc: "imgs/microphone-solid.svg",
-            alt: "middleHeaderBtn",
-            tagContent: "음성으로 검색"
-        }
-    ];
-
-    const HeaderRightItemData = [
-        {
-            id: "HeaderRightItem_1",
-            idName: "upload",
-            imgClassName: "headerRightIcons",
-            imgSrc: "imgs/video-solid.svg",
-            alt: "rightHeaderBtn",
-            tagContent: "만들기",
-            clickEvent: uploadModalOpenEvent,
-        },
-        {
-            id: "HeaderRightItem_2",
-            idName: "alarm",
-            imgClassName: "headerRightIcons",
-            imgSrc: "imgs/bell-regular.svg",
-            alt: "rightHeaderBtn",
-            tagContent: "알림",
-            alarmNum: "9+"
-        },
-        {
-            id: "HeaderRightItem_3",
-            idName: "profile",
-            imgId: "profileImg",
-            imgClassName: "headerRightIcons",
-            imgSrc: "https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj",
-            alt: "rightHeaderBtn",
-            clickEvent: profileModalOpenEvent
-        }
-    ];
+    // 프로필 이미지 모달창 이벤트
+    const profileModalOpenEvent = () => {
+        setIsProfileModalOpen(!isProfileModalOpen)
+    }
 
     return (
         <DefaultHeader 
             width="100vw" height="56px" padding="0 16px" bgColor="white" flex="h_between">
             <HeaderLeft flex="h_start">
                 <NavOpenBtn onClick={event} 
-                    width="40px" height="40px" flex="h_center" deco="none">
+                    width="40px" height="40px" flex="h_center">
                     <NavOpenBtnImg src="imgs/bars-solid.svg" alt="navigation 열기" 
                         width="24px" height="24px" padding="5px" />
                 </NavOpenBtn>
@@ -134,7 +104,7 @@ const HeaderContainer = (props) => {
                     <YoutubePremiumLogo src="imgs/YouTube_Premium_logo.svg" alt="Youtube 홈" 
                         width="97px" height="20px" padding="8px 14px 8px 16px" />
                     <CountryCode
-                        fontSize="10px" margin="12px 0 0 -10px">KR</CountryCode>
+                        fontSize="10px" margin="12px 0 0 -10px" color="#606060"> KR </CountryCode>
                 </Link>
             </HeaderLeft>
 
@@ -143,32 +113,35 @@ const HeaderContainer = (props) => {
                 <SearchBar 
                     width="100%" padding="0 4px" margin="0 0 0 40px" flex="h_center">
                     <SearchText>
-                        <SearchInput placeholder="검색" 
+                        <SearchInput type="text" placeholder="검색" 
                             width="536px" height="40px" padding="0 4px 0 16px" margin="0 0 0 32px" />
-                        <SearchTypingBtn deco="none">
+                        <SearchTypingBtn>
                             <SearchKeyboard src="https://www.gstatic.com/inputtools/images/tia.png" alt="검색하기"
                                 width="19px" height="11px" />
                         </SearchTypingBtn>
                     </SearchText>
-
-                    {
-                        HeaderMiddleItemData.map((elem) => {
-                            return <HoverAlertBtnItem key={elem.id} data={elem} />
-                        })
-                    }
+                    <SearchEnterBtn width="64px" height="42px" padding="1px 6px" margin="0 10px 0 0">
+                        <HoverAlertBtnItem imgSrc="imgs/magnifying-glass-solid.svg" alt="middleHeaderBtn" tagContent="검색" />
+                    </SearchEnterBtn>
+                    <HoverAlertBtn>
+                        <HoverAlertBtnItem imgSrc="imgs/microphone-solid.svg" alt="middleHeaderBtn" tagContent="음성으로 검색" />
+                    </HoverAlertBtn>
                 </SearchBar> 
             </HeaderMiddle>
 
-            <HeaderRight 
-                flex="h_end" width="156px" height="40px">
-                {
-                    HeaderRightItemData.map((elem) => {
-                        return <HoverAlertBtnItem key={elem.id} data={elem} isRight/> 
-                    })
-                }
+            <HeaderRight flex="h_end" width="156px" height="40px">
+                <HoverAlertBtn>
+                    <HoverAlertBtnItem imgSrc="imgs/video-solid.svg" alt="rightHeaderBtn" tagContent="만들기" onClick={uploadModalOpenEvent} />
+                </HoverAlertBtn>
+                <HoverAlertBtn>
+                    <HoverAlertBtnItem imgSrc="imgs/bell-regular.svg" alarm="9+" alt="rightHeaderBtn" tagContent="알림" />
+                </HoverAlertBtn>
+                <ProfileBtn onClick={profileModalOpenEvent}>
+                    <ProfileBtnImg width="30px" height="30px" src="https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj" alt="profileImg" />
+                </ProfileBtn>
             </HeaderRight>
         </DefaultHeader>
     )
 }
 
-export default HeaderContainer
+export default HeaderContainer;

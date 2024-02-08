@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import { Div } from "../style/LayoutStyle";
-import { H1 } from "../style/TextStyle";
+import { H1, Span } from "../style/TextStyle";
 import { Button } from "../style/Button";
 import { Img } from "../style/Img";
 import UploadMentionModule from "../Modules/UploadMentionModule";
@@ -59,10 +59,11 @@ const VideoDataMetaImg = styled(Img)`
 `
 const VideoDataBtn = styled(Div)`
   background-color: lightgray;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
 `
-const VideoDataBtnMetaData = styled.div`
-  font-weight: bold;
+const VideoDataBtnMetaData = styled(Span)`
+`
+const MoreBtn = styled(Button)`
 `
 
 const WatchVideoDataItem = (props) => {
@@ -93,7 +94,7 @@ const WatchVideoDataItem = (props) => {
                         <h6> 구독자 {subscribers} </h6>
                     </VideoDataUploader>
                     <SubscribeBtn 
-                        width="60px" height="40px" deco="black"> 구독 </SubscribeBtn>
+                        width="60px" height="40px" color="white" bgColor="black"> 구독 </SubscribeBtn>
                 </VideoDataMiddleLeft>
 
                 <VideoDataMiddleRight 
@@ -122,10 +123,10 @@ const WatchVideoDataItem = (props) => {
 
             <VideoDataBtn 
                 width="100%" height="120px" padding="10px 20px 20px 10px" margin="20px 0 20px 0" flex="v_start_left">
-                <VideoDataBtnMetaData>조회수 {view} {uploadMention}</VideoDataBtnMetaData>
+                <VideoDataBtnMetaData fontWeight="bold"> 조회수 {view} {uploadMention} </VideoDataBtnMetaData>
                 <br/>스웨덴의 전설적인 재즈 피아니스트 얀 요한손의 두 음반,
                 <br/>≪Jazz på svenska≫와 ≪Jazz på ryska≫의 명곡들을 전합니다.
-                <br/>…더보기
+                <MoreBtn>...더보기</MoreBtn>
             </VideoDataBtn>
         </VideoData>
     )

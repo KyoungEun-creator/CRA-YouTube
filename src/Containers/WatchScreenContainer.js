@@ -26,7 +26,7 @@ const WatchScreenContainer = (props) => {
         {
             id: "WatchScreenBtnItem_1",
             idName: "microphoneBtn",
-            imgClassName: "microphone",
+            imgClassName: "microphoneBtnImg",
             imgSrc: `${IP}/imgs/play.png`,
             alt: "재생(k)",
             tagContent: "음성으로 검색"
@@ -34,7 +34,7 @@ const WatchScreenContainer = (props) => {
         {
             id: "WatchScreenBtnItem_2",
             idName: "microphoneBtn",
-            imgClassName: "microphone",
+            imgClassName: "microphoneBtnImg",
             imgSrc: `${IP}/imgs/next.png`,
             alt: "다음",
             tagContent: "다음"
@@ -42,7 +42,7 @@ const WatchScreenContainer = (props) => {
         {
             id: "WatchScreenBtnItem_3",
             idName: "microphoneBtn",
-            imgClassName: "microphone",
+            imgClassName: "microphoneBtnImg",
             imgSrc: `${IP}/imgs/volume.png`,
             alt: "볼륨",
             tagContent: "볼륨"
@@ -52,7 +52,7 @@ const WatchScreenContainer = (props) => {
         {
             id: "WatchScreenBtnItem_4",
             idName: "microphoneBtn",
-            imgClassName: "microphone",
+            imgClassName: "microphoneBtnImg",
             imgSrc: `${IP}/imgs/switch.png`,
             alt: "스위치",
             tagContent: "스위치"
@@ -60,7 +60,7 @@ const WatchScreenContainer = (props) => {
         {
             id: "WatchScreenBtnItem_5",
             idName: "microphoneBtn",
-            imgClassName: "microphone",
+            imgClassName: "microphoneBtnImg",
             imgSrc: `${IP}/imgs/subtitle.png`,
             alt: "자막",
             tagContent: "자막"
@@ -68,7 +68,7 @@ const WatchScreenContainer = (props) => {
         {
             id: "WatchScreenBtnItem_6",
             idName: "microphoneBtn",
-            imgClassName: "microphone",
+            imgClassName: "microphoneBtnImg",
             imgSrc: `${IP}/imgs/settings.png`,
             alt: "설정",
             tagContent: "설정"
@@ -76,7 +76,7 @@ const WatchScreenContainer = (props) => {
         {
             id: "WatchScreenBtnItem_7",
             idName: "microphoneBtn",
-            imgClassName: "microphone",
+            imgClassName: "microphoneBtnImg",
             imgSrc: `${IP}/imgs/rectangle.png`,
             alt: "영화관 모드",
             tagContent: "영화관 모드"
@@ -84,7 +84,7 @@ const WatchScreenContainer = (props) => {
         {
             id: "WatchScreenBtnItem_8",
             idName: "microphoneBtn",
-            imgClassName: "microphone",
+            imgClassName: "microphoneBtnImg",
             imgSrc: `${IP}/imgs/expand.png`,
             alt: "전체보기",
             tagContent: "전체보기"
@@ -100,17 +100,17 @@ const WatchScreenContainer = (props) => {
                 <VideoControlPart flex="h_center">
                     {
                         WatchScreenLeftBtnsData.map((elem) => {
-                            return <HoverAlertBtnItem key={elem.id} data={elem} isHover />
+                            return <HoverAlertBtnItem key={elem.id} data={elem} />
                         })
                     }
-                    <span>0:00/{runningTime}</span>
+                    <span> 0:00/{runningTime} </span>
                 </VideoControlPart>
 
                 <VideoControlPart flex="h_center">
 
                     {
                         WatchScreenRightBtnsData.map((elem) => {
-                            return <HoverAlertBtnItem key={elem.id} data={elem} isHover />
+                            return <HoverAlertBtnItem key={elem.id} data={elem} />
                         })
                     }
                 </VideoControlPart>

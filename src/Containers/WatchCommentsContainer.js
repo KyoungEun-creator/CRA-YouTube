@@ -47,13 +47,12 @@ const WatchCommentsContainer = () => {
     
     return (
         <CommentsContainer flex="v_start">
-            <CommentsCount
-                width="100%" margin="0 0 10px 0"> 댓글 {commentsListData.length}개 </CommentsCount>
+            <CommentsCount width="100%" margin="0 0 10px 0" flex="h_start"> 댓글 {commentsListData.length}개 </CommentsCount>
             <AddComment 
                 width="100%" margin="0 0 30px 0" flex="h_between">
                 <CommentWriter src="https://yt3.ggpht.com/ytc/AOPolaR8cvVX4lWqRCFMDreXwkxAGUSkd8i-gOk2rmgg80Vag4G8-_Ayo5c9L2NduuJn=s88-c-k-c0x00ffffff-no-rj" alt="작성자"
                     width="40px" height="40px" margin="0 10px 0 0" />
-                <WriteCommentInput height="40px" border="1px solid black" />
+                <WriteCommentInput height="40px" type="text" />
             </AddComment>
             {
                 commentsListData.map((elem) => {

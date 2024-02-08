@@ -38,6 +38,9 @@ const RecommendedVideoMetaDatasBox = styled(Div)`
 `
 const RecommendedVideoMetaDatas = styled(Span)`
     color: #606060;
+    font-size: 14px;
+    width: 100%;
+    height: 20px;
 `
 
 const WatchRecommendationItem = (props) => {
@@ -50,23 +53,17 @@ const WatchRecommendationItem = (props) => {
     return (
         <RecommendedVideoContainer 
             height="90px" margin="0 30px 15px 0" flex="h_center">
-            <RecommendedVideoThumbnailBox
-                margin="0 10px 0 0" >
-                <RecommendedVideoThumbnail src={thumbnailImgSrc} alt="추천영상" 
-                    height="90px" />
+            <RecommendedVideoThumbnailBox margin="0 10px 0 0">
+                <RecommendedVideoThumbnail src={thumbnailImgSrc} alt="추천영상" height="90px" />
                 <RecommendedVideoTimeStatus 
-                    padding="2px 4px" fontSize="12px" deco="black"> {runningTime} </RecommendedVideoTimeStatus>
+                    padding="2px 4px" fontSize="small" color="white" bgColor="black"> {runningTime} </RecommendedVideoTimeStatus>
             </RecommendedVideoThumbnailBox>
-            <RecommendedVideoDataContainer 
-                height="100%" flex="v_between">
-                <RecommendedVideoTitle
-                    width="242px"> {videoTitle} </RecommendedVideoTitle>
-                <RecommendedVideoMetaDatasBox 
-                    width="100%" flex="v_start">
-                    <RecommendedVideoMetaDatas className="metadatas" 
-                        fontSize="14px" width="100%" height="20px"> {channelName} </RecommendedVideoMetaDatas>
-                    <RecommendedVideoMetaDatas className="metadatas" 
-                        fontSize="14px" width="100%" height="20px"> 조회수 {view} ∙ {uploadMention} </RecommendedVideoMetaDatas>
+
+            <RecommendedVideoDataContainer width="242px" height="100%" flex="v_between">
+                <RecommendedVideoTitle width="100%"> {videoTitle} </RecommendedVideoTitle>
+                <RecommendedVideoMetaDatasBox width="100%" flex="v_center">
+                    <RecommendedVideoMetaDatas flex="h_start"> {channelName} </RecommendedVideoMetaDatas>
+                    <RecommendedVideoMetaDatas flex="h_start"> 조회수 {view} ∙ {uploadMention} </RecommendedVideoMetaDatas>
                 </RecommendedVideoMetaDatasBox>
             </RecommendedVideoDataContainer>
         </RecommendedVideoContainer>

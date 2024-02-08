@@ -8,7 +8,6 @@ const SimpleNav = styled(Nav)`
   z-index: 0;
   position: fixed;
   top: 56px;
-  background-color: white;
 `
 
 const NavContainer = () => {
@@ -66,7 +65,7 @@ const NavContainer = () => {
 
     return (
         <SimpleNav
-            height="100vh" padding="0 4px">
+            height="100vh" padding="0 4px" bgColor="white" flex="v_start">
             {
                 NavBtnData.map((elem) => {
                     return (
