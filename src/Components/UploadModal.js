@@ -16,7 +16,7 @@ const ModalContent = styled(Div)`
 const UploadModal = () => {
     return (
         <Modal  padding="20px 10px 20px 10px">
-            <ModalContent flex="v_center" border="1px solid red">
+            <ModalContent flex="v_center">
                 <H3>비디오 업로드</H3>
                 <input type="text" placeholder="비디오 제목" />
                 <input type="file" />

@@ -30,6 +30,7 @@ const CommentThumbBtn = styled(Span)`
     &:hover {
         background-color: lightgray;
     }
+    cursor: pointer;
 `
 const CommentThumbImg = styled(Img)`
 `

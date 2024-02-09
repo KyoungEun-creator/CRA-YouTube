@@ -53,7 +53,7 @@ const SearchTypingBtn = styled(Button)`
 `
 const SearchKeyboard = styled(Img)`
 `
-const SearchEnterBtn = styled(Div)`
+const SearchEnterBtn = styled(Button)`
     background-color: #f8f8f8;
     border: 1px solid lightgray;
     border-radius: 0 20px 20px 0;
@@ -62,10 +62,9 @@ const SearchEnterBtn = styled(Div)`
         box-shadow: 0.5px 0.5px #f8f8f8;
     }
 `
-const HoverAlertBtn = styled(Div)`
+const HoverAlertBtn = styled(Button)`
     width: 40px;
     height: 40px;
-    margin: 6px;
 `
 const HeaderRight = styled(Div)`
 `
@@ -129,9 +128,9 @@ const HeaderContainer = (props) => {
                 </SearchBar> 
             </HeaderMiddle>
 
-            <HeaderRight flex="h_end" width="156px" height="40px">
-                <HoverAlertBtn>
-                    <HoverAlertBtnItem imgSrc="imgs/video-solid.svg" alt="rightHeaderBtn" tagContent="만들기" onClick={uploadModalOpenEvent} />
+            <HeaderRight flex="h_between" width="156px" height="40px">
+                <HoverAlertBtn onClick={uploadModalOpenEvent}>
+                    <HoverAlertBtnItem imgSrc="imgs/video-solid.svg" alt="rightHeaderBtn" tagContent="만들기" />
                 </HoverAlertBtn>
                 <HoverAlertBtn>
                     <HoverAlertBtnItem imgSrc="imgs/bell-regular.svg" alarm="9+" alt="rightHeaderBtn" tagContent="알림" />

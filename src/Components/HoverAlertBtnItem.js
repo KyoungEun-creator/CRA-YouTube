@@ -10,7 +10,7 @@ const HoverBtnImg = styled(Img)`
 const AlarmBadge = styled(Span)`
     position: absolute;
     top: 5px;
-    right: 53px;
+    right: 65px;
     border: 2px solid #fff;
     border-radius: 22px;
 `
